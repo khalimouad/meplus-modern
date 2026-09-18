@@ -1,0 +1,151 @@
+/* MEPLUS 2026 Modern Industrial Design System */
+
+:root {
+  --primary-navy: #070e1b;
+  --secondary-navy: #0b172a;
+  --card-bg: rgba(15, 27, 49, 0.7);
+  --card-border: rgba(59, 130, 246, 0.15);
+  --accent-blue: #2563eb;
+  --electric-blue: #3b82f6;
+  --cyan-glow: #06b6d4;
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #070e1b;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3b82f6;
+}
+
+/* Background Glowing Mesh Gradients */
+.mesh-gradient-bg {
+  background-color: #070e1b;
+  background-image: 
+    radial-gradient(at 10% 10%, rgba(37, 99, 235, 0.18) 0px, transparent 50%),
+    radial-gradient(at 90% 20%, rgba(6, 182, 212, 0.14) 0px, transparent 50%),
+    radial-gradient(at 50% 70%, rgba(29, 78, 216, 0.15) 0px, transparent 60%),
+    radial-gradient(at 80% 90%, rgba(14, 165, 233, 0.12) 0px, transparent 50%);
+  background-attachment: fixed;
+}
+
+/* Glassmorphism Cards */
+.glass-panel {
+  background: rgba(15, 27, 49, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(59, 130, 246, 0.18);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-panel:hover {
+  border-color: rgba(59, 130, 246, 0.4);
+  box-shadow: 0 12px 40px -10px rgba(37, 99, 235, 0.25);
+  transform: translateY(-2px);
+}
+
+.glass-nav {
+  background: rgba(7, 14, 27, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(59, 130, 246, 0.15);
+}
+
+/* Ambient glow pills */
+.badge-glow {
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.35);
+}
+
+.cyan-glow-text {
+  text-shadow: 0 0 20px rgba(6, 182, 212, 0.5);
+}
+
+/* Marquee Animation */
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: flex;
+  width: 200%;
+  animation: marquee 28s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Modal Animations */
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.96) translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.modal-animate {
+  animation: modalFadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Pulse radar effect */
+@keyframes radarPing {
+  0% { transform: scale(0.9); opacity: 0.8; }
+  50% { transform: scale(1.4); opacity: 0; }
+  100% { transform: scale(0.9); opacity: 0; }
+}
+
+.radar-dot {
+  position: relative;
+}
+.radar-dot::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 9999px;
+  background-color: #38bdf8;
+  animation: radarPing 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+/* Custom range slider styling */
+input[type=range] {
+  -webkit-appearance: none;
+  background: #1e293b;
+  border-radius: 8px;
+  height: 8px;
+}
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 22px;
+  width: 22px;
+  border-radius: 50%;
+  background: #3b82f6;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(59, 130, 246, 0.6);
+  border: 2px solid #ffffff;
+}
+
+/* Responsive Touch Target */
+@media (max-width: 768px) {
+  .touch-btn {
+    min-height: 48px;
+  }
+}
