@@ -181,11 +181,76 @@ body {
 .animate-marquee {
   display: flex;
   width: 200%;
-  animation: marquee 30s linear infinite;
+  animation: marquee 35s linear infinite;
+  align-items: center;
 }
 
 .animate-marquee:hover {
   animation-play-state: paused;
+}
+
+/* Client Logo Capsules in Marquee */
+.client-logo-card {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 3.75rem;
+  padding: 0.5rem 1.25rem;
+  border-radius: 1rem;
+  background: #ffffff;
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  box-shadow: 0 2px 8px -2px rgba(0, 0, 0, 0.05);
+  transition: all 0.25s ease;
+  flex-shrink: 0;
+}
+
+.dark .client-logo-card {
+  background: rgba(15, 27, 49, 0.85);
+  border-color: rgba(51, 65, 85, 0.7);
+  box-shadow: 0 4px 12px -2px rgba(0, 0, 0, 0.3);
+}
+
+.client-logo-card:hover {
+  transform: translateY(-2px) scale(1.03);
+  border-color: rgba(37, 99, 235, 0.4);
+}
+
+.client-logo-card img {
+  max-height: 2.25rem;
+  max-width: 7.5rem;
+  object-fit: contain;
+  transition: filter 0.3s ease;
+}
+
+/* Mobile Drawer Slide-in Animation */
+@keyframes drawerSlideRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.drawer-panel-animate {
+  animation: drawerSlideRight 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Mobile Bottom Floating Dock */
+.mobile-bottom-dock {
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.12);
+}
+
+.dark .mobile-bottom-dock {
+  background: rgba(11, 23, 42, 0.92);
+  border-color: rgba(51, 65, 85, 0.8);
+  box-shadow: 0 15px 35px -5px rgba(0, 0, 0, 0.6);
 }
 
 /* Custom range slider styling */

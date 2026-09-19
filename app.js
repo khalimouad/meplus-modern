@@ -56,22 +56,24 @@ document.addEventListener('DOMContentLoaded', () => {
   const mobileMenuBtn = document.getElementById('mobile-menu-btn');
   const mobileDrawer = document.getElementById('mobile-drawer');
   const closeDrawerBtn = document.getElementById('close-drawer-btn');
+  const closeDrawerBackdrop = document.getElementById('close-drawer-backdrop');
 
-  mobileMenuBtn?.addEventListener('click', () => {
+  function openDrawer() {
     mobileDrawer?.classList.remove('hidden');
     document.body.style.overflow = 'hidden';
-  });
+  }
 
-  closeDrawerBtn?.addEventListener('click', () => {
+  function closeDrawer() {
     mobileDrawer?.classList.add('hidden');
     document.body.style.overflow = 'auto';
-  });
+  }
+
+  mobileMenuBtn?.addEventListener('click', openDrawer);
+  closeDrawerBtn?.addEventListener('click', closeDrawer);
+  closeDrawerBackdrop?.addEventListener('click', closeDrawer);
 
   document.querySelectorAll('.drawer-link').forEach(link => {
-    link.addEventListener('click', () => {
-      mobileDrawer?.classList.add('hidden');
-      document.body.style.overflow = 'auto';
-    });
+    link.addEventListener('click', closeDrawer);
   });
 
   // 4. Data Extraction from data.js
@@ -648,25 +650,25 @@ document.addEventListener('DOMContentLoaded', () => {
       <div class="glass-card p-6 md:p-7 rounded-3xl flex flex-col justify-between border border-slate-200/90 dark:border-slate-800 hover:border-blue-500/40 transition group">
         <div>
           <div class="flex items-center gap-4 mb-4">
-            <div class="w-14 h-14 rounded-2xl overflow-hidden border-2 border-blue-500/30 shrink-0 bg-slate-200 dark:bg-slate-800 shadow-md">
-              <img src="${c.avatar}" alt="${c.name}" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" />
+            <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl overflow-hidden border-2 border-blue-500/30 shrink-0 bg-gradient-to-b from-slate-100 to-slate-200 dark:from-slate-800 dark:to-slate-900 shadow-md p-1 flex items-center justify-center">
+              <img src="${c.avatar}" alt="${c.name}" class="w-full h-full object-contain object-top group-hover:scale-105 transition duration-300" onerror="this.onerror=null; this.src='./assets/consultants/meskini.png';" />
             </div>
             <div>
-              <span class="text-[10px] font-bold tracking-wider uppercase text-blue-600 dark:text-cyan-400 bg-blue-500/10 px-2 py-0.5 rounded-md">
+              <span class="text-[10px] font-bold tracking-wider uppercase text-blue-600 dark:text-cyan-400 bg-blue-500/10 px-2.5 py-0.5 rounded-full border border-blue-500/20">
                 ${c.tag}
               </span>
-              <h3 class="text-base font-bold text-slate-900 dark:text-white mt-1 group-hover:text-blue-600 dark:group-hover:text-cyan-400 transition">
+              <h3 class="text-base sm:text-lg font-bold text-slate-900 dark:text-white mt-1 group-hover:text-blue-600 dark:group-hover:text-cyan-400 transition">
                 ${c.name}
               </h3>
-              <div class="text-xs text-slate-500 dark:text-slate-400 leading-tight line-clamp-1">${c.role}</div>
+              <div class="text-xs text-slate-500 dark:text-slate-400 leading-tight">${c.role}</div>
             </div>
           </div>
 
-          <p class="text-slate-600 dark:text-slate-400 text-xs mb-5 leading-relaxed">
+          <p class="text-slate-600 dark:text-slate-300 text-xs mb-5 leading-relaxed">
             ${c.credentials}
           </p>
 
-          <div class="space-y-1 mb-4">
+          <div class="space-y-1.5 mb-4">
             <div class="text-[10px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider">Expertises clés :</div>
             <div class="flex flex-wrap gap-1.5">
               ${c.specialties.map(s => `
@@ -678,11 +680,14 @@ document.addEventListener('DOMContentLoaded', () => {
           </div>
         </div>
 
-        <div class="pt-3.5 border-t border-slate-200/80 dark:border-slate-800 flex items-center justify-between text-xs text-blue-600 dark:text-blue-400 font-semibold">
-          <span>Cabinet ME PLUS</span>
-          <span class="flex items-center gap-1.5 text-emerald-600 dark:text-emerald-400">
+        <div class="pt-4 border-t border-slate-200/80 dark:border-slate-800 flex items-center justify-between text-xs text-blue-600 dark:text-blue-400 font-semibold">
+          <a href="contact.html?sujet=Consultant%20${encodeURIComponent(c.name)}" class="hover:underline flex items-center gap-1 text-xs">
+            <span>Solliciter pour un audit</span>
+            <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+          </a>
+          <span class="flex items-center gap-1.5 text-emerald-600 dark:text-emerald-400 text-[11px]">
             <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-            Disponible au Maroc
+            Disponible
           </span>
         </div>
       </div>
