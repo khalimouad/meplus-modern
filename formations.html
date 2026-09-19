@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Catalogue des Formations (85+ Modules) | ME PLUS Maroc</title>
+  <meta name="description" content="Découvrez le catalogue complet de 85+ formations certifiantes ME PLUS : Sécurité & Hygiène SST, Technique Industrielle, Management de la Maintenance et Qualité DMO. Éligibles CSF / GIAC." />
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="https://meplus.ma/wp-content/uploads/2019/10/cropped-logo-meplus.png" />
+
+  <!-- Google Fonts: Plus Jakarta Sans & Space Grotesk -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            mono: ['"Space Grotesk"', 'monospace']
+          },
+          colors: {
+            brand: {
+              navy: '#070e1b',
+              surface: '#0f1b31',
+              blue: '#2563eb',
+              electric: '#3b82f6',
+              cyan: '#06b6d4',
+              accent: '#00d2ff'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Anti-FOUC Theme Preloader -->
+  <script>
+    (function() {
+      const theme = localStorage.getItem('meplus_theme');
+      if (theme === 'dark') {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    })();
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body class="industrial-mesh-bg font-sans antialiased min-h-screen text-slate-900 dark:text-slate-100 selection:bg-blue-600 selection:text-white pb-20 md:pb-0">
+
+  <!-- Toast Container -->
+  <div id="toast-container" class="fixed bottom-24 md:bottom-8 right-6 z-50 flex flex-col gap-3 max-w-sm pointer-events-none"></div>
+
+  <!-- FLOATING PILL HEADER -->
+  <header class="fixed top-0 left-0 right-0 z-40 px-4 sm:px-6 lg:px-8 pt-4 pb-2">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      
+      <!-- Brand Logo -->
+      <a href="index.html" class="flex items-center gap-3 group bg-white/90 dark:bg-slate-900/90 py-2 px-4 rounded-full shadow-md border border-slate-200/80 dark:border-slate-800 backdrop-blur-xl transition hover:scale-105">
+        <div class="w-9 h-9 rounded-full bg-gradient-to-tr from-blue-600 to-cyan-400 p-0.5 shadow-sm">
+          <div class="w-full h-full bg-[#070e1b] rounded-full flex items-center justify-center font-bold text-sm font-mono text-cyan-400 tracking-tighter">
+            ME<span class="text-blue-500">+</span>
+          </div>
+        </div>
+        <div class="flex flex-col">
+          <span class="text-base font-extrabold tracking-tight text-slate-900 dark:text-white flex items-center gap-1">
+            ME<span class="text-blue-600 dark:text-blue-400">PLUS</span>
+            <span class="w-1.5 h-1.5 rounded-full bg-cyan-500 animate-pulse"></span>
+          </span>
+          <span class="text-[9px] tracking-widest uppercase font-semibold text-slate-500 dark:text-slate-400">Maroc • Casablanca</span>
+        </div>
+      </a>
+
+      <!-- Desktop Floating Navigation Pill -->
+      <div class="hidden lg:flex items-center gap-6 floating-pill-nav py-2 px-6 rounded-full">
+        <nav class="flex items-center gap-6 text-sm font-medium text-slate-600 dark:text-slate-300">
+          <a href="index.html" class="hover:text-blue-600 dark:hover:text-cyan-400 transition">Accueil</a>
+          <a href="formations.html" class="nav-link-active transition flex items-center gap-1.5">
+            Formations
+            <span class="text-[10px] font-bold px-2 py-0.2 rounded-full bg-blue-500/10 text-blue-600 dark:text-blue-400 border border-blue-500/20">85+</span>
+          </a>
+          <a href="services.html" class="hover:text-blue-600 dark:hover:text-cyan-400 transition">Services & Audits</a>
+          <a href="simulateur.html" class="hover:text-blue-600 dark:hover:text-cyan-400 transition flex items-center gap-1 font-semibold text-blue-600 dark:text-cyan-300">
+            <i data-lucide="calculator" class="w-3.5 h-3.5"></i>
+            Simulateur CSF
+          </a>
+          <a href="reglementation.html" class="hover:text-blue-600 dark:hover:text-cyan-400 transition">Réglementation</a>
+          <a href="consultants.html" class="hover:text-blue-600 dark:hover:text-cyan-400 transition">Consultants</a>
+        </nav>
+
+        <div class="h-5 w-px bg-slate-200 dark:bg-slate-700"></div>
+
+        <!-- Theme Toggle Button -->
+        <button class="theme-toggle-btn p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-300 transition" title="Changer de thème">
+          <i data-lucide="sun" class="icon-sun w-4 h-4 hidden text-amber-400"></i>
+          <i data-lucide="moon" class="icon-moon w-4 h-4 text-slate-600"></i>
+        </button>
+
+        <a href="contact.html" class="btn-pill-cyan px-5 py-2 text-xs uppercase tracking-wider font-bold">
+          Devis & Formulaire F2
+        </a>
+      </div>
+
+      <!-- Mobile Controls -->
+      <div class="lg:hidden flex items-center gap-2">
+        <button class="theme-toggle-btn p-2.5 rounded-full bg-white/90 dark:bg-slate-800 text-slate-700 dark:text-slate-300 shadow-sm border border-slate-200 dark:border-slate-700 transition" aria-label="Thème">
+          <i data-lucide="sun" class="icon-sun w-4 h-4 hidden text-amber-400"></i>
+          <i data-lucide="moon" class="icon-moon w-4 h-4 text-slate-600"></i>
+        </button>
+        <button id="mobile-menu-btn" class="p-2.5 rounded-full bg-white/90 dark:bg-slate-800 text-slate-700 dark:text-slate-300 shadow-sm border border-slate-200 dark:border-slate-700 transition" aria-label="Menu">
+          <i data-lucide="menu" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- MOBILE MENU DRAWER -->
+  <div id="mobile-drawer" class="fixed inset-0 z-50 bg-black/70 backdrop-blur-xl hidden flex flex-col justify-between p-6">
+    <div>
+      <div class="flex items-center justify-between pb-6 border-b border-slate-200 dark:border-slate-800">
+        <div class="flex items-center gap-2">
+          <span class="text-xl font-extrabold text-slate-900 dark:text-white">ME<span class="text-blue-600 dark:text-blue-400">PLUS</span></span>
+          <span class="text-xs px-2.5 py-0.5 rounded-full bg-blue-500/10 text-blue-600 dark:text-blue-400 font-mono">2026 Edition</span>
+        </div>
+        <button id="close-drawer-btn" class="p-2 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300" aria-label="Fermer">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+      <nav class="flex flex-col gap-3 mt-6 text-base font-semibold text-slate-800 dark:text-slate-200">
+        <a href="index.html" class="drawer-link flex items-center justify-between py-2 hover:text-blue-600">
+          <span>Accueil</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-slate-400"></i>
+        </a>
+        <a href="formations.html" class="drawer-link flex items-center justify-between py-2 text-blue-600 dark:text-blue-400">
+          <span>Catalogue Formations (85 Modules)</span>
+          <span class="text-xs bg-blue-600 text-white px-2 py-0.5 rounded-full">85+</span>
+        </a>
+        <a href="services.html" class="drawer-link flex items-center justify-between py-2 hover:text-blue-600">
+          <span>Services & Audits Industriels</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-slate-400"></i>
+        </a>
+        <a href="simulateur.html" class="drawer-link flex items-center justify-between py-2 text-cyan-600 dark:text-cyan-300">
+          <span>Simulateur Remboursement CSF / GIAC</span>
+          <i data-lucide="calculator" class="w-4 h-4"></i>
+        </a>
+        <a href="reglementation.html" class="drawer-link flex items-center justify-between py-2 hover:text-blue-600">
+          <span>Réglementation Maroc (B.O.)</span>
+          <i data-lucide="download" class="w-4 h-4 text-cyan-500"></i>
+        </a>
+        <a href="consultants.html" class="drawer-link flex items-center justify-between py-2 hover:text-blue-600">
+          <span>Experts & Consultants Seniors</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-slate-400"></i>
+        </a>
+        <a href="contact.html" class="drawer-link flex items-center justify-between py-2 hover:text-blue-600">
+          <span>Contact & Localisation Casablanca</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-slate-400"></i>
+        </a>
+      </nav>
+    </div>
+    <div class="pt-6 border-t border-slate-200 dark:border-slate-800 flex flex-col gap-3">
+      <a href="tel:+212661450248" class="w-full py-3 rounded-xl bg-slate-100 dark:bg-slate-800 text-center font-bold text-sm text-slate-900 dark:text-white flex items-center justify-center gap-2">
+        <i data-lucide="phone" class="w-4 h-4 text-cyan-500"></i>
+        +212 6 61 45 02 48
+      </a>
+      <a href="contact.html" class="drawer-link w-full py-3 rounded-xl btn-pill-cyan text-center font-bold text-sm flex items-center justify-center gap-2">
+        Demande de Devis & Formulaire F2
+      </a>
+    </div>
+  </div>
+
+  <!-- MAIN CATALOG CONTENT -->
+  <main class="relative pt-28 md:pt-32 pb-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- ELEVATED HERO BANNER (Directly Inspired by Reference Design) -->
+      <section class="relative rounded-3xl overflow-hidden mb-12 border border-slate-200/90 dark:border-slate-800 bg-gradient-to-r from-blue-50/90 via-sky-50/50 to-slate-50/30 dark:from-slate-900 dark:via-[#0c182c] dark:to-slate-950 p-6 sm:p-8 lg:p-10 shadow-sm">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          
+          <!-- Left Text Column: Clean, High-Contrast Typography -->
+          <div class="lg:col-span-7 flex flex-col justify-center">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="w-2.5 h-2.5 rounded-full bg-blue-600"></span>
+              <span class="text-xs font-extrabold uppercase tracking-widest text-blue-600 dark:text-cyan-400 font-mono">
+                CATALOGUE DE FORMATION 2026
+              </span>
+            </div>
+
+            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight leading-[1.15] mb-4">
+              Développez les compétences<br />
+              <span class="text-blue-600 dark:text-cyan-400">qui font la différence.</span>
+            </h1>
+
+            <p class="text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed mb-8 max-w-xl">
+              85+ formations professionnelles en sécurité, industrie et management, animées par des experts terrain.
+            </p>
+
+            <div class="flex flex-wrap items-center gap-6 pt-2 text-xs md:text-sm font-semibold text-slate-800 dark:text-slate-200">
+              <div class="flex items-center gap-2.5">
+                <div class="w-6 h-6 rounded-full bg-blue-100 dark:bg-blue-950/80 text-blue-600 dark:text-cyan-400 flex items-center justify-center shrink-0">
+                  <i data-lucide="shield-check" class="w-4 h-4"></i>
+                </div>
+                <span>Programmes certifiants</span>
+              </div>
+              <div class="h-4 w-px bg-slate-300 dark:bg-slate-700 hidden sm:block"></div>
+              <div class="flex items-center gap-2.5">
+                <div class="w-6 h-6 rounded-full bg-blue-100 dark:bg-blue-950/80 text-blue-600 dark:text-cyan-400 flex items-center justify-center shrink-0">
+                  <i data-lucide="users" class="w-4 h-4"></i>
+                </div>
+                <span>Experts de l'industrie</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Real Engineers Photo with High Contrast & Floating 80% Badge -->
+          <div class="lg:col-span-5 relative">
+            <div class="relative rounded-2xl overflow-hidden shadow-lg border border-slate-200/80 dark:border-slate-700/80 group">
+              <!-- Real high-res, vibrant photograph -->
+              <img 
+                src="./assets/hero_engineers.jpg" 
+                alt="Ingénieurs ME PLUS Maroc sur site industriel" 
+                class="w-full h-72 sm:h-80 object-cover object-center filter saturate-[1.25] contrast-[1.08] group-hover:scale-105 transition duration-700"
+              />
+              
+              <!-- Top-right quote with subtle dark backing for 100% contrast -->
+              <div class="absolute top-3 right-3 max-w-[210px] text-right bg-slate-950/65 backdrop-blur-md px-3 py-1.5 rounded-xl border border-white/20">
+                <span class="text-[11px] sm:text-xs font-semibold text-white leading-tight block">
+                  Des compétences durables pour une industrie plus sûre
+                </span>
+              </div>
+
+              <!-- Floating CSF 80% Card in Bottom Right (Exact match to reference) -->
+              <div class="absolute bottom-3 right-3 left-3 sm:left-auto bg-white/95 dark:bg-slate-900/95 backdrop-blur-md rounded-2xl p-3 sm:p-4 shadow-xl border border-slate-200/80 dark:border-slate-700 flex items-center justify-between gap-3">
+                <div class="flex items-center gap-3">
+                  <div class="w-10 h-10 rounded-xl bg-blue-50 dark:bg-blue-950/60 flex items-center justify-center text-blue-600 dark:text-cyan-400 shrink-0">
+                    <i data-lucide="bar-chart-2" class="w-5 h-5"></i>
+                  </div>
+                  <div>
+                    <div class="text-sm sm:text-base font-extrabold text-slate-900 dark:text-white leading-tight">
+                      Jusqu'à 80 %
+                    </div>
+                    <div class="text-[10px] sm:text-[11px] text-slate-500 dark:text-slate-400">
+                      de financement via le CSF OFPPT & GIAC
+                    </div>
+                  </div>
+                </div>
+                <a href="simulateur.html" class="w-8 h-8 rounded-full bg-cyan-500 hover:bg-cyan-400 text-white flex items-center justify-center transition shadow-md shrink-0 ml-1" title="Calculer mon éligibilité">
+                  <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </a>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- CATALOGUE EXPLORATION SECTION -->
+      <section class="mb-16">
+        
+        <!-- Section Title & Subtitle -->
+        <div class="mb-6">
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+            Trouvez votre prochaine formation
+          </h2>
+          <p class="text-slate-500 dark:text-slate-400 text-sm mt-1">
+            85 modules pour faire évoluer vos équipes
+          </p>
+        </div>
+
+        <!-- Search Bar with [Filtres] Button -->
+        <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 mb-6">
+          <div class="relative flex-1">
+            <i data-lucide="search" class="w-5 h-5 text-blue-600 absolute left-4 top-1/2 -translate-y-1/2"></i>
+            <input 
+              type="text" 
+              id="search-input" 
+              placeholder="Rechercher une formation, un thème, une compétence..." 
+              class="w-full pl-12 pr-4 py-3.5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-sm text-slate-900 dark:text-white placeholder-slate-400 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 outline-none transition shadow-sm"
+            />
+          </div>
+          <button id="toggle-filter-btn" class="px-5 py-3.5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:border-blue-500 flex items-center justify-center gap-2 font-semibold text-sm shadow-sm transition shrink-0">
+            <i data-lucide="sliders-horizontal" class="w-4 h-4 text-blue-600 dark:text-cyan-400"></i>
+            <span>Filtres</span>
+          </button>
+        </div>
+
+        <!-- Category Filter Pills with Exact Count Badges from Reference -->
+        <div class="flex flex-wrap items-center gap-2.5 mb-6 pb-2">
+          <button data-domain="all" class="domain-pill-btn is-active">
+            <span>Toutes les formations</span>
+            <span class="pill-counter">85</span>
+          </button>
+          <button data-domain="securite" class="domain-pill-btn">
+            <i data-lucide="shield" class="w-4 h-4 text-blue-500"></i>
+            <span>Sécurité & Hygiène</span>
+            <span class="pill-counter">30</span>
+          </button>
+          <button data-domain="technique" class="domain-pill-btn">
+            <i data-lucide="settings" class="w-4 h-4 text-teal-500"></i>
+            <span>Technique industrielle</span>
+            <span class="pill-counter">37</span>
+          </button>
+          <button data-domain="management" class="domain-pill-btn">
+            <i data-lucide="users" class="w-4 h-4 text-emerald-500"></i>
+            <span>Management</span>
+            <span class="pill-counter">10</span>
+          </button>
+          <button data-domain="qualite" class="domain-pill-btn">
+            <i data-lucide="target" class="w-4 h-4 text-purple-500"></i>
+            <span>Qualité & BMO</span>
+            <span class="pill-counter">8</span>
+          </button>
+        </div>
+
+        <!-- Results Counter & Sort Selector Bar -->
+        <div class="flex items-center justify-between gap-4 py-3 mb-6 border-b border-slate-200/80 dark:border-slate-800 text-xs sm:text-sm">
+          <div id="formation-count" class="font-medium text-slate-500 dark:text-slate-400">
+            85 formations disponibles
+          </div>
+          <div class="flex items-center gap-2 text-slate-600 dark:text-slate-300">
+            <span class="text-xs">Trier par :</span>
+            <select id="sort-select" class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl px-3 py-1.5 text-xs font-semibold text-slate-800 dark:text-slate-200 outline-none focus:border-blue-500 cursor-pointer">
+              <option value="relevance">Pertinence</option>
+              <option value="title-asc">Nom (A-Z)</option>
+              <option value="domain">Par Domaine</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Formations Cards Grid (3 Columns) -->
+        <div id="formations-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+          <!-- Populated dynamically by app.js -->
+        </div>
+
+        <!-- Bottom Pagination Controls (< (1) 2 3 ... 10 >) -->
+        <div id="formations-pagination" class="pagination-nav py-4">
+          <!-- Populated dynamically by app.js -->
+        </div>
+
+      </section>
+
+    </div>
+  </main>
+
+  <!-- UNIFIED FOOTER -->
+  <footer class="border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-[#050b15] py-16 text-slate-600 dark:text-slate-400 text-xs transition">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+        <div>
+          <div class="flex items-center gap-2 mb-4">
+            <span class="text-xl font-extrabold text-slate-900 dark:text-white">ME<span class="text-blue-600 dark:text-blue-400">PLUS</span></span>
+          </div>
+          <p class="leading-relaxed mb-4">
+            Cabinet de formation continue et de conseil industriel agréé par l'État marocain. Plus de 350 usines et multinationales accompagnées depuis 2004.
+          </p>
+          <div class="text-[11px] font-semibold text-blue-600 dark:text-blue-400">
+            Homologué DFP • OFPPT • GIAC • AFOM • Maroc PME
+          </div>
+        </div>
+
+        <div>
+          <h4 class="text-slate-900 dark:text-white font-bold text-sm mb-4">Navigation Rapide</h4>
+          <ul class="space-y-2">
+            <li><a href="index.html" class="hover:text-blue-600 dark:hover:text-white transition">Accueil</a></li>
+            <li><a href="formations.html" class="hover:text-blue-600 dark:hover:text-white transition font-bold text-blue-600 dark:text-cyan-400">Catalogue Formations (85+)</a></li>
+            <li><a href="services.html" class="hover:text-blue-600 dark:hover:text-white transition">Services & Audits GPEC / TPM</a></li>
+            <li><a href="simulateur.html" class="hover:text-cyan-600 dark:hover:text-cyan-400 transition font-medium">Simulateur Remboursement CSF</a></li>
+            <li><a href="reglementation.html" class="hover:text-blue-600 dark:hover:text-white transition">Réglementation Maroc (B.O.)</a></li>
+            <li><a href="consultants.html" class="hover:text-blue-600 dark:hover:text-white transition">Consultants & Experts</a></li>
+            <li><a href="contact.html" class="hover:text-blue-600 dark:hover:text-white transition">Contact & Devis Express</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-slate-900 dark:text-white font-bold text-sm mb-4">Pôles Pédagogiques</h4>
+          <ul class="space-y-2">
+            <li><span class="font-semibold text-slate-700 dark:text-slate-300">Sécurité :</span> Habilitations NM 06.1.225, Incendie, ATEX</li>
+            <li><span class="font-semibold text-slate-700 dark:text-slate-300">Technique :</span> Automatisme, Hydraulique, Chaudières</li>
+            <li><span class="font-semibold text-slate-700 dark:text-slate-300">Management :</span> TPM, SMED, 5S, Résolution Problèmes</li>
+            <li><span class="font-semibold text-slate-700 dark:text-slate-300">Qualité :</span> Audits ISO 45001, IATF 16949, PPAP</li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-slate-900 dark:text-white font-bold text-sm mb-4">Réservation & Devis</h4>
+          <div class="space-y-2.5">
+            <p>Casablanca, Quartier Bourgogne, Rue Moussa Al Kadim</p>
+            <p class="font-mono text-slate-800 dark:text-slate-200 font-semibold">+212 6 61 45 02 48</p>
+            <p class="font-mono text-blue-600 dark:text-cyan-400">formation@meplus.ma</p>
+            <a href="contact.html" class="inline-block mt-2 btn-pill-cyan px-4 py-2 text-[11px] font-bold">
+              Demander le Formulaire F2
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="pt-8 border-t border-slate-200 dark:border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-slate-500">
+        <div>© 2026 ME PLUS Maroc. Tous droits réservés.</div>
+        <div class="flex items-center gap-6">
+          <a href="https://meplus.ma/" target="_blank" class="hover:text-blue-600 dark:hover:text-white transition">Site meplus.ma</a>
+          <a href="#" class="hover:text-blue-600 dark:hover:text-white transition">Haut de page ↑</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MOBILE BOTTOM FLOATING DOCK -->
+  <div class="md:hidden fixed bottom-3 left-4 right-4 z-40 floating-pill-nav rounded-full p-2 px-5 flex items-center justify-between shadow-2xl">
+    <a href="index.html" class="flex flex-col items-center gap-0.5 text-[10px] text-slate-500 dark:text-slate-400 hover:text-blue-600">
+      <i data-lucide="home" class="w-4 h-4"></i>
+      <span>Accueil</span>
+    </a>
+    <a href="formations.html" class="flex flex-col items-center gap-0.5 text-[10px] text-blue-600 dark:text-cyan-400 font-bold">
+      <i data-lucide="book-open" class="w-4 h-4"></i>
+      <span>Formations</span>
+    </a>
+    <a href="simulateur.html" class="flex flex-col items-center gap-0.5 text-[10px] text-slate-500 dark:text-slate-400">
+      <div class="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center text-white shadow-md">
+        <i data-lucide="calculator" class="w-4 h-4"></i>
+      </div>
+      <span>CSF</span>
+    </a>
+    <a href="reglementation.html" class="flex flex-col items-center gap-0.5 text-[10px] text-slate-500 dark:text-slate-400 hover:text-blue-600">
+      <i data-lucide="file-check-2" class="w-4 h-4"></i>
+      <span>Lois BO</span>
+    </a>
+    <a href="contact.html" class="flex flex-col items-center gap-0.5 text-[10px] text-slate-500 dark:text-slate-400 hover:text-blue-600">
+      <i data-lucide="phone" class="w-4 h-4"></i>
+      <span>Contact</span>
+    </a>
+  </div>
+
+  <!-- COURSE DETAILS MODAL -->
+  <div id="course-modal" class="fixed inset-0 z-50 bg-black/75 backdrop-blur-xl hidden flex items-center justify-center p-4 overflow-y-auto">
+    <div class="relative w-full max-w-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl shadow-2xl overflow-hidden modal-animate my-8 max-h-[90vh] flex flex-col">
+      <button id="close-modal-btn" class="absolute top-5 right-5 p-2 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition z-10" aria-label="Fermer">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+      <div id="modal-body" class="overflow-y-auto">
+        <!-- Dynamically injected via app.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="./data.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>

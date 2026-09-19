@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ME PLUS | Ingénierie de Formation, Sécurité Industrielle & Maintenance au Maroc</title>
-  <meta name="description" content="Leader marocain en ingénierie de formation continue, gestion des risques professionnels, habilitations électriques, audits réglementaires et maintenance industrielle." />
+  <meta name="description" content="Leader marocain en ingénierie de formation continue, gestion des risques professionnels, habilitations électriques NM 06.1.225, audits réglementaires et maintenance industrielle." />
   
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="https://meplus.ma/wp-content/uploads/2019/10/cropped-logo-meplus.png" />
@@ -14,10 +14,11 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet" />
 
-  <!-- Tailwind CSS CDN -->
+  <!-- Tailwind CSS CDN with dark mode class configuration -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
+      darkMode: 'class',
       theme: {
         extend: {
           fontFamily: {
@@ -31,12 +32,24 @@
               blue: '#2563eb',
               electric: '#3b82f6',
               cyan: '#06b6d4',
-              accent: '#38bdf8'
+              accent: '#00d2ff'
             }
           }
         }
       }
     }
+  </script>
+
+  <!-- Anti-FOUC Theme Preloader (Light Mode Default) -->
+  <script>
+    (function() {
+      const theme = localStorage.getItem('meplus_theme');
+      if (theme === 'dark') {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    })();
   </script>
 
   <!-- Lucide Icons -->
@@ -45,820 +58,742 @@
   <!-- Custom Styles -->
   <link rel="stylesheet" href="./style.css" />
 </head>
-<body class="mesh-gradient-bg text-slate-100 font-sans antialiased min-h-screen relative pb-20 md:pb-0 selection:bg-blue-600 selection:text-white">
+<body class="industrial-mesh-bg font-sans antialiased min-h-screen text-slate-900 dark:text-slate-100 selection:bg-blue-600 selection:text-white pb-20 md:pb-0">
 
   <!-- Toast Notification Container -->
   <div id="toast-container" class="fixed bottom-24 md:bottom-8 right-6 z-50 flex flex-col gap-3 max-w-sm pointer-events-none"></div>
 
-  <!-- NAVIGATION BAR (Glassmorphism Sticky) -->
-  <header class="fixed top-0 left-0 right-0 z-40 glass-nav transition-all duration-300">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+  <!-- FLOATING PILL HEADER (Inspired by Machine Discovery & Modern B2B) -->
+  <header class="fixed top-0 left-0 right-0 z-40 px-4 sm:px-6 lg:px-8 pt-4 pb-2">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
       
-      <!-- Brand Logo -->
-      <a href="#" class="flex items-center gap-3 group">
-        <div class="w-11 h-11 rounded-xl bg-gradient-to-tr from-blue-700 via-blue-600 to-cyan-400 p-0.5 shadow-lg shadow-blue-500/30 group-hover:shadow-cyan-400/50 transition">
-          <div class="w-full h-full bg-[#070e1b] rounded-[10px] flex items-center justify-center font-bold text-lg font-mono text-cyan-400 tracking-tighter">
+      <!-- Brand Logo Left -->
+      <a href="index.html" class="flex items-center gap-3 group bg-white/90 dark:bg-slate-900/90 py-2 px-4 rounded-full shadow-md border border-slate-200/80 dark:border-slate-800 backdrop-blur-xl transition hover:scale-105">
+        <div class="w-9 h-9 rounded-full bg-gradient-to-tr from-blue-600 to-cyan-400 p-0.5 shadow-sm">
+          <div class="w-full h-full bg-[#070e1b] rounded-full flex items-center justify-center font-bold text-sm font-mono text-cyan-400 tracking-tighter">
             ME<span class="text-blue-500">+</span>
           </div>
         </div>
         <div class="flex flex-col">
-          <span class="text-xl font-extrabold tracking-tight text-white flex items-center gap-1">
-            ME<span class="text-blue-400">PLUS</span>
-            <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse"></span>
+          <span class="text-base font-extrabold tracking-tight text-slate-900 dark:text-white flex items-center gap-1">
+            ME<span class="text-blue-600 dark:text-blue-400">PLUS</span>
+            <span class="w-1.5 h-1.5 rounded-full bg-cyan-500 animate-pulse"></span>
           </span>
-          <span class="text-[10px] tracking-widest uppercase font-semibold text-slate-400">Ingénierie & Sécurité</span>
+          <span class="text-[9px] tracking-widest uppercase font-semibold text-slate-500 dark:text-slate-400">Maroc • Casablanca</span>
         </div>
       </a>
 
-      <!-- Desktop Navigation Links -->
-      <nav class="hidden lg:flex items-center gap-7 text-sm font-medium text-slate-300">
-        <a href="#hero" class="hover:text-blue-400 transition">Accueil</a>
-        <a href="#formations" class="hover:text-blue-400 transition flex items-center gap-1.5">
-          Formations
-          <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-blue-500/20 text-blue-400 border border-blue-500/30">85+</span>
-        </a>
-        <a href="#services" class="hover:text-blue-400 transition">Services & Audits</a>
-        <a href="#reglementation" class="hover:text-blue-400 transition flex items-center gap-1">
-          Réglementation
-          <span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
-        </a>
-        <a href="#simulateur" class="hover:text-blue-400 transition text-cyan-300 flex items-center gap-1 font-semibold">
-          <i data-lucide="calculator" class="w-4 h-4"></i>
-          Simulateur CSF
-        </a>
-        <a href="#consultants" class="hover:text-blue-400 transition">Consultants</a>
-        <a href="#contact" class="hover:text-blue-400 transition">Contact</a>
-      </nav>
+      <!-- Desktop Floating Capsule Navigation Right -->
+      <div class="hidden lg:flex items-center gap-6 floating-pill-nav py-2 px-6 rounded-full">
+        <nav class="flex items-center gap-6 text-sm font-medium text-slate-600 dark:text-slate-300">
+          <a href="index.html" class="nav-link-active transition">Accueil</a>
+          <a href="formations.html" class="hover:text-blue-600 dark:hover:text-cyan-400 transition flex items-center gap-1.5">
+            Formations
+            <span class="text-[10px] font-bold px-2 py-0.2 rounded-full bg-blue-500/10 text-blue-600 dark:text-blue-400 border border-blue-500/20">85+</span>
+          </a>
+          <a href="services.html" class="hover:text-blue-600 dark:hover:text-cyan-400 transition">Services & Audits</a>
+          <a href="simulateur.html" class="hover:text-blue-600 dark:hover:text-cyan-400 transition flex items-center gap-1 font-semibold text-blue-600 dark:text-cyan-300">
+            <i data-lucide="calculator" class="w-3.5 h-3.5"></i>
+            Simulateur CSF
+          </a>
+          <a href="reglementation.html" class="hover:text-blue-600 dark:hover:text-cyan-400 transition">Réglementation</a>
+          <a href="consultants.html" class="hover:text-blue-600 dark:hover:text-cyan-400 transition">Consultants</a>
+        </nav>
 
-      <!-- Right Header Actions -->
-      <div class="flex items-center gap-3">
-        <a href="tel:+212661450248" class="hidden sm:inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-slate-800/80 hover:bg-slate-800 border border-slate-700/60 text-xs font-semibold text-slate-300 hover:text-white transition">
-          <i data-lucide="phone-call" class="w-3.5 h-3.5 text-cyan-400"></i>
-          +212 6 61 45 02 48
-        </a>
-        <a href="#contact" class="hidden md:inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-500 hover:to-cyan-400 text-white text-xs font-bold shadow-lg shadow-blue-500/25 transition">
-          <i data-lucide="file-text" class="w-3.5 h-3.5"></i>
+        <div class="h-5 w-px bg-slate-200 dark:bg-slate-700"></div>
+
+        <!-- Theme Toggle Button -->
+        <button class="theme-toggle-btn p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-300 transition" title="Changer de thème">
+          <i data-lucide="sun" class="icon-sun w-4 h-4 hidden text-amber-400"></i>
+          <i data-lucide="moon" class="icon-moon w-4 h-4 text-slate-600"></i>
+        </button>
+
+        <!-- CTA Pill Button (Machine Discovery / Reference Inspired) -->
+        <a href="contact.html" class="btn-pill-cyan px-5 py-2 text-xs uppercase tracking-wider font-bold">
           Devis & Formulaire F2
         </a>
-        <!-- Mobile Menu Toggle Button -->
-        <button id="mobile-menu-btn" class="lg:hidden p-2.5 rounded-xl bg-slate-800 text-slate-300 hover:text-white hover:bg-slate-700 transition" aria-label="Menu">
-          <i data-lucide="menu" class="w-6 h-6"></i>
+      </div>
+
+      <!-- Mobile Right Controls (Toggle + Menu Button) -->
+      <div class="lg:hidden flex items-center gap-2">
+        <button class="theme-toggle-btn p-2.5 rounded-full bg-white/90 dark:bg-slate-800 text-slate-700 dark:text-slate-300 shadow-sm border border-slate-200 dark:border-slate-700 transition" aria-label="Thème">
+          <i data-lucide="sun" class="icon-sun w-4 h-4 hidden text-amber-400"></i>
+          <i data-lucide="moon" class="icon-moon w-4 h-4 text-slate-600"></i>
+        </button>
+        <button id="mobile-menu-btn" class="p-2.5 rounded-full bg-white/90 dark:bg-slate-800 text-slate-700 dark:text-slate-300 shadow-sm border border-slate-200 dark:border-slate-700 transition" aria-label="Menu">
+          <i data-lucide="menu" class="w-5 h-5"></i>
         </button>
       </div>
+
     </div>
   </header>
 
   <!-- MOBILE MENU DRAWER -->
-  <div id="mobile-drawer" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-xl hidden flex flex-col justify-between p-6">
+  <div id="mobile-drawer" class="fixed inset-0 z-50 bg-black/70 backdrop-blur-xl hidden flex flex-col justify-between p-6">
     <div>
-      <div class="flex items-center justify-between pb-6 border-b border-slate-800">
+      <div class="flex items-center justify-between pb-6 border-b border-slate-200 dark:border-slate-800">
         <div class="flex items-center gap-2">
-          <span class="text-xl font-extrabold text-white">ME<span class="text-blue-400">PLUS</span></span>
-          <span class="text-xs px-2 py-0.5 rounded bg-blue-500/20 text-blue-300 font-mono">2026 Edition</span>
+          <span class="text-xl font-extrabold text-slate-900 dark:text-white">ME<span class="text-blue-600 dark:text-blue-400">PLUS</span></span>
+          <span class="text-xs px-2.5 py-0.5 rounded-full bg-blue-500/10 text-blue-600 dark:text-blue-400 font-mono">2026 Edition</span>
         </div>
-        <button id="close-drawer-btn" class="p-2 rounded-xl bg-slate-800 text-slate-300" aria-label="Fermer le menu">
-          <i data-lucide="x" class="w-6 h-6"></i>
+        <button id="close-drawer-btn" class="p-2 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300" aria-label="Fermer">
+          <i data-lucide="x" class="w-5 h-5"></i>
         </button>
       </div>
-      <nav class="flex flex-col gap-4 mt-8 text-lg font-semibold text-slate-200">
-        <a href="#hero" class="drawer-link flex items-center justify-between py-2 hover:text-blue-400">
+      <nav class="flex flex-col gap-3 mt-6 text-base font-semibold text-slate-800 dark:text-slate-200">
+        <a href="index.html" class="drawer-link flex items-center justify-between py-2 text-blue-600 dark:text-blue-400">
           <span>Accueil</span>
-          <i data-lucide="chevron-right" class="w-4 h-4 text-slate-500"></i>
+          <i data-lucide="chevron-right" class="w-4 h-4"></i>
         </a>
-        <a href="#formations" class="drawer-link flex items-center justify-between py-2 hover:text-blue-400">
-          <span>Catalogue Formations (85)</span>
-          <span class="text-xs bg-blue-600 px-2 py-0.5 rounded-full text-white">Tous les modules</span>
+        <a href="formations.html" class="drawer-link flex items-center justify-between py-2 hover:text-blue-600">
+          <span>Catalogue Formations (85 Modules)</span>
+          <span class="text-xs bg-blue-600 text-white px-2 py-0.5 rounded-full">85+</span>
         </a>
-        <a href="#services" class="drawer-link flex items-center justify-between py-2 hover:text-blue-400">
+        <a href="services.html" class="drawer-link flex items-center justify-between py-2 hover:text-blue-600">
           <span>Services & Audits Industriels</span>
-          <i data-lucide="chevron-right" class="w-4 h-4 text-slate-500"></i>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-slate-400"></i>
         </a>
-        <a href="#reglementation" class="drawer-link flex items-center justify-between py-2 hover:text-blue-400">
-          <span>Réglementation Maroc (B.O.)</span>
-          <i data-lucide="download" class="w-4 h-4 text-cyan-400"></i>
-        </a>
-        <a href="#simulateur" class="drawer-link flex items-center justify-between py-2 hover:text-blue-400 text-cyan-300">
-          <span>Simulateur Remboursement GIAC / CSF</span>
+        <a href="simulateur.html" class="drawer-link flex items-center justify-between py-2 text-cyan-600 dark:text-cyan-300">
+          <span>Simulateur Remboursement CSF / GIAC</span>
           <i data-lucide="calculator" class="w-4 h-4"></i>
         </a>
-        <a href="#consultants" class="drawer-link flex items-center justify-between py-2 hover:text-blue-400">
-          <span>Équipe d'Experts & Consultants</span>
-          <i data-lucide="chevron-right" class="w-4 h-4 text-slate-500"></i>
+        <a href="reglementation.html" class="drawer-link flex items-center justify-between py-2 hover:text-blue-600">
+          <span>Réglementation Maroc (B.O.)</span>
+          <i data-lucide="download" class="w-4 h-4 text-cyan-500"></i>
         </a>
-        <a href="#contact" class="drawer-link flex items-center justify-between py-2 hover:text-blue-400">
+        <a href="consultants.html" class="drawer-link flex items-center justify-between py-2 hover:text-blue-600">
+          <span>Experts & Consultants Seniors</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-slate-400"></i>
+        </a>
+        <a href="contact.html" class="drawer-link flex items-center justify-between py-2 hover:text-blue-600">
           <span>Contact & Localisation Casablanca</span>
-          <i data-lucide="chevron-right" class="w-4 h-4 text-slate-500"></i>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-slate-400"></i>
         </a>
       </nav>
     </div>
-    <div class="pt-6 border-t border-slate-800 flex flex-col gap-3">
-      <a href="tel:+212661450248" class="w-full py-3 rounded-xl bg-slate-800 text-center font-bold text-sm text-white flex items-center justify-center gap-2">
-        <i data-lucide="phone" class="w-4 h-4 text-cyan-400"></i>
-        Appeler un Conseiller : +212 6 61 45 02 48
+    <div class="pt-6 border-t border-slate-200 dark:border-slate-800 flex flex-col gap-3">
+      <a href="tel:+212661450248" class="w-full py-3 rounded-xl bg-slate-100 dark:bg-slate-800 text-center font-bold text-sm text-slate-900 dark:text-white flex items-center justify-center gap-2">
+        <i data-lucide="phone" class="w-4 h-4 text-cyan-500"></i>
+        +212 6 61 45 02 48
       </a>
-      <a href="#contact" class="drawer-link w-full py-3 rounded-xl bg-blue-600 text-center font-bold text-sm text-white flex items-center justify-center gap-2">
-        Demander le Formulaire F2
+      <a href="contact.html" class="drawer-link w-full py-3 rounded-xl btn-pill-cyan text-center font-bold text-sm flex items-center justify-center gap-2">
+        Demande de Devis & Formulaire F2
       </a>
     </div>
   </div>
 
   <main>
-    <!-- HERO SECTION -->
-    <section id="hero" class="relative pt-36 pb-20 md:pt-44 md:pb-28 overflow-hidden">
-      <!-- Glow ambient light behind hero -->
-      <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-blue-600/15 rounded-full blur-[120px] pointer-events-none"></div>
+    <!-- HERO SECTION (Curved Arch Top Container inspired by Reference 2 + Machine Discovery) -->
+    <section class="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden bg-gradient-to-b from-blue-50/70 via-slate-50/40 to-transparent dark:from-slate-950 dark:via-[#070e1b] dark:to-transparent rounded-b-[40px] md:rounded-b-[60px] border-b border-slate-200/80 dark:border-slate-800/80 hero-curves-bg">
+      
+      <!-- Faded Industrial Hero Image (Seamlessly fades into page background) -->
+      <div class="header-fade-bg">
+        <img src="./assets/hero_plant.jpg" alt="Ingénierie Industrielle ME PLUS Maroc" />
+      </div>
 
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
         
-        <!-- Homologation Pill -->
-        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/25 text-xs font-semibold text-blue-300 mb-8 badge-glow">
-          <span class="w-2 h-2 rounded-full bg-cyan-400 animate-ping"></span>
+        <!-- Moroccan Homologation Pill -->
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/90 dark:bg-blue-500/10 border border-slate-200 dark:border-blue-500/25 text-xs font-bold text-blue-700 dark:text-blue-300 mb-8 shadow-sm shimmer-badge">
+          <span class="w-2 h-2 rounded-full bg-cyan-500 animate-ping"></span>
           <span>🇲🇦 Cabinet Homologé DFP • OFPPT • GIAC • AFOM • Maroc PME</span>
         </div>
 
         <!-- Main Headline -->
-        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.15] max-w-4xl mx-auto mb-6">
-          L'Excellence Industrielle par <span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-cyan-300 to-blue-500">l'Ingénierie de Formation</span> & la Sécurité
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 dark:text-white tracking-tight leading-[1.12] max-w-4xl mx-auto mb-6">
+          L'Excellence Industrielle par <span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 via-cyan-500 to-blue-700">l'Ingénierie de Formation</span> & la Sécurité
         </h1>
 
         <!-- Subtitle -->
-        <p class="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto mb-10 leading-relaxed">
-          Depuis 2004, **ME PLUS** accompagne les plus grands groupes industriels du Maroc dans le management de la maintenance, la conformité réglementaire SST et la montée en compétences certifiée.
+        <p class="text-base sm:text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto mb-10 leading-relaxed font-normal">
+          Depuis 2004, **ME PLUS** accompagne les leaders de l'industrie marocaine dans le management de la maintenance, la conformité réglementaire SST et la montée en compétences certifiée.
         </p>
 
         <!-- CTA Action Buttons -->
         <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16 max-w-md mx-auto sm:max-w-none">
-          <a href="#formations" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-500 hover:to-blue-400 text-white font-bold text-sm shadow-xl shadow-blue-500/30 flex items-center justify-center gap-2 transition duration-200">
+          <a href="formations.html" class="w-full sm:w-auto px-8 py-4 rounded-full bg-blue-600 hover:bg-blue-500 text-white font-bold text-sm shadow-xl shadow-blue-600/25 flex items-center justify-center gap-2 transition duration-200">
             <i data-lucide="book-open" class="w-4 h-4"></i>
             Explorer le Catalogue (85 Modules)
           </a>
-          <a href="#simulateur" class="w-full sm:w-auto px-7 py-4 rounded-xl glass-panel hover:bg-slate-800/80 text-cyan-300 font-bold text-sm border border-cyan-500/30 flex items-center justify-center gap-2 transition duration-200">
+          <a href="simulateur.html" class="w-full sm:w-auto px-7 py-4 rounded-full bg-white dark:bg-slate-900/80 hover:bg-slate-100 dark:hover:bg-slate-800 text-cyan-600 dark:text-cyan-300 font-bold text-sm border border-cyan-500/40 shadow-sm flex items-center justify-center gap-2 transition duration-200">
             <i data-lucide="calculator" class="w-4 h-4"></i>
-            Simulateur Remboursement GIAC
+            Simulateur Remboursement GIAC / CSF
           </a>
         </div>
 
         <!-- Trust Stats Counter Strip -->
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
-          <div class="glass-panel p-5 rounded-2xl text-center">
-            <div class="text-3xl font-extrabold text-white font-mono mb-1 text-cyan-400">20+ Ans</div>
-            <div class="text-xs text-slate-400 font-medium">d'Expertise Terrain (Depuis 2004)</div>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto reveal-on-scroll">
+          <div class="glass-card p-5 rounded-3xl text-center group hover:border-blue-500/40 transition">
+            <div class="text-3xl font-extrabold text-blue-600 dark:text-cyan-400 font-mono mb-1">20+ Ans</div>
+            <div class="text-xs text-slate-500 dark:text-slate-400 font-medium">d'Expertise Terrain (Depuis 2004)</div>
           </div>
-          <div class="glass-panel p-5 rounded-2xl text-center">
-            <div class="text-3xl font-extrabold text-white font-mono mb-1 text-blue-400">85+</div>
-            <div class="text-xs text-slate-400 font-medium">Formations Certifiantes</div>
+          <div class="glass-card p-5 rounded-3xl text-center group hover:border-blue-500/40 transition">
+            <div class="text-3xl font-extrabold text-blue-600 dark:text-blue-400 font-mono mb-1">85+</div>
+            <div class="text-xs text-slate-500 dark:text-slate-400 font-medium">Formations Certifiantes</div>
           </div>
-          <div class="glass-panel p-5 rounded-2xl text-center">
-            <div class="text-3xl font-extrabold text-white font-mono mb-1 text-cyan-400">350+</div>
-            <div class="text-xs text-slate-400 font-medium">Entreprises Accompagnées</div>
+          <div class="glass-card p-5 rounded-3xl text-center group hover:border-cyan-500/40 transition">
+            <div class="text-3xl font-extrabold text-cyan-600 dark:text-cyan-400 font-mono mb-1">350+</div>
+            <div class="text-xs text-slate-500 dark:text-slate-400 font-medium">Entreprises Accompagnées</div>
           </div>
-          <div class="glass-panel p-5 rounded-2xl text-center">
-            <div class="text-3xl font-extrabold text-white font-mono mb-1 text-emerald-400">99.2%</div>
-            <div class="text-xs text-slate-400 font-medium">Satisfaction Clients Vérifiée</div>
+          <div class="glass-card p-5 rounded-3xl text-center group hover:border-emerald-500/40 transition">
+            <div class="text-3xl font-extrabold text-emerald-600 dark:text-emerald-400 font-mono mb-1">99.2%</div>
+            <div class="text-xs text-slate-500 dark:text-slate-400 font-medium">Satisfaction Clients Vérifiée</div>
           </div>
         </div>
 
       </div>
     </section>
 
-    <!-- CLIENT MARQUEE (Trusted by Industrial Champions) -->
-    <section class="py-10 border-y border-slate-800/80 bg-slate-900/40 overflow-hidden relative">
+    <!-- CLIENT LOGO MARQUEE (Inspired by Reference 2 "Our Partners") -->
+    <section class="py-10 border-b border-slate-200/80 dark:border-slate-800/80 bg-white/50 dark:bg-slate-900/30 overflow-hidden relative">
       <div class="max-w-7xl mx-auto px-4 mb-4 text-center">
-        <span class="text-xs font-semibold tracking-wider uppercase text-slate-400">
+        <span class="text-xs font-bold tracking-wider uppercase text-slate-500 dark:text-slate-400">
           Ils font confiance à l'expertise ME PLUS au Maroc
         </span>
       </div>
       <div class="relative w-full overflow-hidden flex items-center">
-        <div class="animate-marquee flex items-center gap-10 whitespace-nowrap">
-          <span class="text-sm font-bold text-slate-300 px-4 py-2 rounded-lg bg-slate-800/50 border border-slate-700/40">OCP Group</span>
-          <span class="text-sm font-bold text-slate-300 px-4 py-2 rounded-lg bg-slate-800/50 border border-slate-700/40">SONASID</span>
-          <span class="text-sm font-bold text-slate-300 px-4 py-2 rounded-lg bg-slate-800/50 border border-slate-700/40">LafargeHolcim</span>
-          <span class="text-sm font-bold text-slate-300 px-4 py-2 rounded-lg bg-slate-800/50 border border-slate-700/40">Centrale Danone</span>
-          <span class="text-sm font-bold text-slate-300 px-4 py-2 rounded-lg bg-slate-800/50 border border-slate-700/40">Les Conserves de Meknès (Aïcha)</span>
-          <span class="text-sm font-bold text-slate-300 px-4 py-2 rounded-lg bg-slate-800/50 border border-slate-700/40">Nexans Maroc</span>
-          <span class="text-sm font-bold text-slate-300 px-4 py-2 rounded-lg bg-slate-800/50 border border-slate-700/40">Jorf Lasfar Energy (JLEC)</span>
-          <span class="text-sm font-bold text-slate-300 px-4 py-2 rounded-lg bg-slate-800/50 border border-slate-700/40">Yazaki Maroc</span>
-          <span class="text-sm font-bold text-slate-300 px-4 py-2 rounded-lg bg-slate-800/50 border border-slate-700/40">Suzuki Maroc</span>
-          <span class="text-sm font-bold text-slate-300 px-4 py-2 rounded-lg bg-slate-800/50 border border-slate-700/40">CEGELEC SAS</span>
-          <span class="text-sm font-bold text-slate-300 px-4 py-2 rounded-lg bg-slate-800/50 border border-slate-700/40">Ciments du Maroc</span>
-          <span class="text-sm font-bold text-slate-300 px-4 py-2 rounded-lg bg-slate-800/50 border border-slate-700/40">Richbond & Dolidol</span>
-          <span class="text-sm font-bold text-slate-300 px-4 py-2 rounded-lg bg-slate-800/50 border border-slate-700/40">Sotherma (Sidi Ali)</span>
-          <span class="text-sm font-bold text-slate-300 px-4 py-2 rounded-lg bg-slate-800/50 border border-slate-700/40">Somadir</span>
+        <div class="animate-marquee flex items-center gap-8 whitespace-nowrap">
+          <span class="text-sm font-bold text-slate-700 dark:text-slate-300 px-5 py-2.5 rounded-full bg-white dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 shadow-sm">OCP Group</span>
+          <span class="text-sm font-bold text-slate-700 dark:text-slate-300 px-5 py-2.5 rounded-full bg-white dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 shadow-sm">SONASID</span>
+          <span class="text-sm font-bold text-slate-700 dark:text-slate-300 px-5 py-2.5 rounded-full bg-white dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 shadow-sm">LafargeHolcim</span>
+          <span class="text-sm font-bold text-slate-700 dark:text-slate-300 px-5 py-2.5 rounded-full bg-white dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 shadow-sm">Centrale Danone</span>
+          <span class="text-sm font-bold text-slate-700 dark:text-slate-300 px-5 py-2.5 rounded-full bg-white dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 shadow-sm">Les Conserves de Meknès (Aïcha)</span>
+          <span class="text-sm font-bold text-slate-700 dark:text-slate-300 px-5 py-2.5 rounded-full bg-white dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 shadow-sm">Nexans Maroc</span>
+          <span class="text-sm font-bold text-slate-700 dark:text-slate-300 px-5 py-2.5 rounded-full bg-white dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 shadow-sm">Jorf Lasfar Energy (JLEC)</span>
+          <span class="text-sm font-bold text-slate-700 dark:text-slate-300 px-5 py-2.5 rounded-full bg-white dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 shadow-sm">Yazaki Maroc</span>
+          <span class="text-sm font-bold text-slate-700 dark:text-slate-300 px-5 py-2.5 rounded-full bg-white dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 shadow-sm">Suzuki Maroc</span>
+          <span class="text-sm font-bold text-slate-700 dark:text-slate-300 px-5 py-2.5 rounded-full bg-white dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 shadow-sm">CEGELEC SAS</span>
+          <span class="text-sm font-bold text-slate-700 dark:text-slate-300 px-5 py-2.5 rounded-full bg-white dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 shadow-sm">Ciments du Maroc</span>
+          <span class="text-sm font-bold text-slate-700 dark:text-slate-300 px-5 py-2.5 rounded-full bg-white dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 shadow-sm">Richbond & Dolidol</span>
+          <span class="text-sm font-bold text-slate-700 dark:text-slate-300 px-5 py-2.5 rounded-full bg-white dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 shadow-sm">Sotherma (Sidi Ali)</span>
           <!-- Repeat for infinite marquee effect -->
-          <span class="text-sm font-bold text-slate-300 px-4 py-2 rounded-lg bg-slate-800/50 border border-slate-700/40">OCP Group</span>
-          <span class="text-sm font-bold text-slate-300 px-4 py-2 rounded-lg bg-slate-800/50 border border-slate-700/40">SONASID</span>
-          <span class="text-sm font-bold text-slate-300 px-4 py-2 rounded-lg bg-slate-800/50 border border-slate-700/40">LafargeHolcim</span>
-          <span class="text-sm font-bold text-slate-300 px-4 py-2 rounded-lg bg-slate-800/50 border border-slate-700/40">Centrale Danone</span>
-          <span class="text-sm font-bold text-slate-300 px-4 py-2 rounded-lg bg-slate-800/50 border border-slate-700/40">Les Conserves de Meknès (Aïcha)</span>
-          <span class="text-sm font-bold text-slate-300 px-4 py-2 rounded-lg bg-slate-800/50 border border-slate-700/40">Nexans Maroc</span>
-          <span class="text-sm font-bold text-slate-300 px-4 py-2 rounded-lg bg-slate-800/50 border border-slate-700/40">Jorf Lasfar Energy (JLEC)</span>
-          <span class="text-sm font-bold text-slate-300 px-4 py-2 rounded-lg bg-slate-800/50 border border-slate-700/40">Yazaki Maroc</span>
+          <span class="text-sm font-bold text-slate-700 dark:text-slate-300 px-5 py-2.5 rounded-full bg-white dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 shadow-sm">OCP Group</span>
+          <span class="text-sm font-bold text-slate-700 dark:text-slate-300 px-5 py-2.5 rounded-full bg-white dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 shadow-sm">SONASID</span>
+          <span class="text-sm font-bold text-slate-700 dark:text-slate-300 px-5 py-2.5 rounded-full bg-white dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 shadow-sm">LafargeHolcim</span>
+          <span class="text-sm font-bold text-slate-700 dark:text-slate-300 px-5 py-2.5 rounded-full bg-white dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 shadow-sm">Centrale Danone</span>
         </div>
       </div>
     </section>
 
-    <!-- SERVICES BENTO GRID -->
-    <section id="services" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center max-w-3xl mx-auto mb-16">
-        <span class="text-xs font-bold uppercase tracking-wider text-cyan-400 bg-cyan-500/10 border border-cyan-500/20 px-3 py-1 rounded-full">
-          Expertise 360°
-        </span>
-        <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-4 mb-4 tracking-tight">
-          Nos Domaines d'Intervention Stratégiques
-        </h2>
-        <p class="text-slate-400 text-sm sm:text-base leading-relaxed">
-          Une approche globale associant ingénierie de compétences, diagnostic réglementaire sur site et accompagnement méthodologique terrain.
-        </p>
-      </div>
-
-      <!-- Bento Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <!-- 2-COLUMN PRESENTATION SECTION (Directly Inspired by Reference 2 "About Business") -->
+    <section class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
         
-        <!-- Bento Card 1: Ingénierie de Formation -->
-        <div class="glass-panel p-8 rounded-3xl md:col-span-2 border border-slate-800 relative overflow-hidden group">
-          <div class="absolute -right-10 -bottom-10 w-60 h-60 bg-blue-600/10 rounded-full blur-3xl pointer-events-none group-hover:bg-blue-600/20 transition"></div>
-          <div class="w-12 h-12 rounded-2xl bg-blue-600/20 border border-blue-500/30 flex items-center justify-center text-blue-400 mb-6">
-            <i data-lucide="graduation-cap" class="w-6 h-6"></i>
-          </div>
-          <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-blue-400 transition">
-            Ingénierie de Formation & Gestion Prévisionnelle (GPEC)
-          </h3>
-          <p class="text-slate-400 text-sm leading-relaxed mb-6">
-            Démarche éprouvée en 3 étapes : description et diagnostic de l'entreprise, identification méthodique des besoins en compétences terrain, et élaboration du plan de formation annuel. **Assistance complète au montage des dossiers CSF auprès de l'OFPPT** pour le remboursement légal des frais engagés.
-          </p>
-          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs">
-            <div class="p-3 rounded-xl bg-slate-900/60 border border-slate-800">
-              <span class="font-bold text-blue-400 block mb-1">Étape 1 : Diagnostic</span>
-              <span class="text-slate-400">Cartographie des emplois et flux opérationnels</span>
-            </div>
-            <div class="p-3 rounded-xl bg-slate-900/60 border border-slate-800">
-              <span class="font-bold text-cyan-400 block mb-1">Étape 2 : Compétences</span>
-              <span class="text-slate-400">Détection des écarts et besoins d'ateliers</span>
-            </div>
-            <div class="p-3 rounded-xl bg-slate-900/60 border border-slate-800">
-              <span class="font-bold text-emerald-400 block mb-1">Étape 3 : Financement</span>
-              <span class="text-slate-400">Montage administratif CSF / GIAC</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Bento Card 2: Audits Réglementaires -->
-        <div class="glass-panel p-8 rounded-3xl border border-slate-800 group">
-          <div class="w-12 h-12 rounded-2xl bg-cyan-600/20 border border-cyan-500/30 flex items-center justify-center text-cyan-400 mb-6">
-            <i data-lucide="shield-check" class="w-6 h-6"></i>
-          </div>
-          <h3 class="text-xl font-bold text-white mb-3 group-hover:text-cyan-400 transition">
-            Audits Réglementaires & Systèmes de Management
-          </h3>
-          <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-6">
-            Évaluation rigoureuse de la conformité aux exigences des décrets marocains et référentiels internationaux pour sécuriser la responsabilité civile et pénale du dirigeant.
-          </p>
-          <ul class="space-y-2 text-xs text-slate-300">
-            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-cyan-400"></i> Décret 2.14.499 (Sécurité Incendie)</li>
-            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-cyan-400"></i> Décret 2.12.236 (Sécurité Machines)</li>
-            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-cyan-400"></i> Audits ISO 45001, 14001, 9001 & IATF</li>
-          </ul>
-        </div>
-
-        <!-- Bento Card 3: Accompagnement Opérationnel -->
-        <div class="glass-panel p-8 rounded-3xl border border-slate-800 group">
-          <div class="w-12 h-12 rounded-2xl bg-emerald-600/20 border border-emerald-500/30 flex items-center justify-center text-emerald-400 mb-6">
-            <i data-lucide="wrench" class="w-6 h-6"></i>
-          </div>
-          <h3 class="text-xl font-bold text-white mb-3 group-hover:text-emerald-400 transition">
-            Accompagnement Terrain & TPM
-          </h3>
-          <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-6">
-            Processus d'implémentation en 6 étapes : structuration du service maintenance, maintenance autonome par les opérateurs, gammes standards et amélioration du TRS.
-          </p>
-          <div class="flex flex-wrap gap-2 text-xs">
-            <span class="px-2.5 py-1 rounded-lg bg-slate-800 text-emerald-300 border border-emerald-500/20">TPM</span>
-            <span class="px-2.5 py-1 rounded-lg bg-slate-800 text-emerald-300 border border-emerald-500/20">5S & SMED</span>
-            <span class="px-2.5 py-1 rounded-lg bg-slate-800 text-emerald-300 border border-emerald-500/20">GMAO</span>
-            <span class="px-2.5 py-1 rounded-lg bg-slate-800 text-emerald-300 border border-emerald-500/20">AMDEC</span>
-          </div>
-        </div>
-
-        <!-- Bento Card 4: Habilitations Électriques & Métiers à Risques -->
-        <div class="glass-panel p-8 rounded-3xl md:col-span-2 border border-slate-800 relative overflow-hidden group">
-          <div class="w-12 h-12 rounded-2xl bg-purple-600/20 border border-purple-500/30 flex items-center justify-center text-purple-400 mb-6">
-            <i data-lucide="zap" class="w-6 h-6"></i>
-          </div>
-          <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-purple-400 transition">
-            Habilitations Électriques (NM 06.1.225) & Métiers à Risques
-          </h3>
-          <p class="text-slate-400 text-sm leading-relaxed mb-6">
-            Dispositif certifiant conforme à la **Norme Marocaine 06.1.225** et aux publications internationales. Formations théoriques et pratiques avec tests éliminatoires (seuil 70/100) pour sécuriser l'attribution des titres d'habilitation par l'employeur (B0, H0, B1V, B2V, BR, BC, ammoniac, CACES chariots).
-          </p>
-          <div class="flex flex-wrap gap-2">
-            <span class="text-xs px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-slate-300">⚡ Habilitation Basse & Haute Tension</span>
-            <span class="text-xs px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-slate-300">🏗️ Travaux en Hauteur & Échafaudages</span>
-            <span class="text-xs px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-slate-300">🔒 Consignation / Déconsignation LOTO</span>
-            <span class="text-xs px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-slate-300">🧪 Risques Chimiques & ATEX</span>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- INTERACTIVE COURSE CATALOG (The Core Hub) -->
-    <section id="formations" class="py-24 bg-slate-900/40 border-y border-slate-800/80">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        <!-- Header & Live Search Bar -->
-        <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-12">
-          <div>
-            <span class="text-xs font-bold uppercase tracking-wider text-blue-400 bg-blue-500/10 border border-blue-500/20 px-3 py-1 rounded-full">
-              Catalogue Formations 2026
-            </span>
-            <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-4 mb-2 tracking-tight">
-              85+ Modules de Formation Certifiante
-            </h2>
-            <p id="formation-count" class="text-slate-400 text-sm font-medium">
-              Chargement des modules disponibles...
-            </p>
-          </div>
-
-          <!-- Real-Time Search Input -->
-          <div class="w-full lg:w-96 relative">
-            <i data-lucide="search" class="w-5 h-5 text-slate-400 absolute left-4 top-1/2 -translate-y-1/2"></i>
-            <input 
-              type="text" 
-              id="search-input" 
-              placeholder="Rechercher par titre, automate, norme..." 
-              class="w-full pl-12 pr-4 py-3.5 rounded-2xl bg-slate-900/90 border border-slate-700/80 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 text-sm text-white placeholder-slate-400 outline-none transition"
+        <!-- Left: Image with Floating Accent Badges (Signature Reference 2) -->
+        <div class="lg:col-span-6 relative reveal-on-scroll">
+          <div class="relative rounded-3xl overflow-hidden shadow-2xl border border-slate-200 dark:border-slate-800 aspect-[4/3] bg-slate-100 group">
+            <img 
+              src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=900&q=80" 
+              alt="Ingénierie Industrielle ME PLUS" 
+              class="w-full h-full object-cover group-hover:scale-105 transition duration-700 ease-out" 
             />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
+          </div>
+
+          <!-- Top Floating Counter Badge (Reference 2 style "+32 Users") -->
+          <div class="absolute -top-6 -right-3 sm:right-4 p-3.5 rounded-2xl bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl shadow-xl border border-slate-200/90 dark:border-slate-800 flex items-center gap-3 animate-float-delayed">
+            <div class="flex -space-x-2">
+              <img class="inline-block h-8 w-8 rounded-full ring-2 ring-white dark:ring-slate-900 object-cover" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop&crop=face" alt="Expert" />
+              <img class="inline-block h-8 w-8 rounded-full ring-2 ring-white dark:ring-slate-900 object-cover" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face" alt="Expert" />
+              <img class="inline-block h-8 w-8 rounded-full ring-2 ring-white dark:ring-slate-900 object-cover" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop&crop=face" alt="Expert" />
+            </div>
+            <div class="text-[11px] font-bold text-slate-800 dark:text-slate-200 leading-tight">
+              +350 Usines<br/><span class="text-blue-600 dark:text-cyan-400 font-semibold text-[10px]">Accompagnées</span>
+            </div>
+          </div>
+
+          <!-- Overlapping Floating Accent Card (Signature of Reference 2) -->
+          <div class="absolute -bottom-6 -left-4 sm:left-6 p-5 rounded-3xl bg-cyan-400 text-slate-950 shadow-2xl border-4 border-white dark:border-slate-900 max-w-xs animate-float-slow">
+            <div class="flex items-center gap-3 mb-2">
+              <div class="w-9 h-9 rounded-2xl bg-slate-950 text-cyan-400 flex items-center justify-center font-bold">
+                <i data-lucide="award" class="w-5 h-5"></i>
+              </div>
+              <div class="text-xs font-extrabold uppercase tracking-wider">Agréé & Homologué</div>
+            </div>
+            <div class="text-sm font-extrabold leading-snug">
+              Prise en charge CSF jusqu'à 80% par l'OFPPT & le GIAC
+            </div>
+            <div class="text-[11px] font-semibold opacity-90 mt-1">
+              Formulaire F2 conforme & accompagnement administratif inclus
+            </div>
           </div>
         </div>
 
-        <!-- Domain Filter Tabs -->
-        <div class="flex flex-wrap items-center gap-2 mb-10 pb-2 overflow-x-auto">
-          <button data-domain="all" class="domain-tab active-tab px-4 py-2 rounded-xl text-xs font-semibold bg-blue-600 text-white transition border border-transparent">
-            Tous les Modules (85)
-          </button>
-          <button data-domain="securite" class="domain-tab px-4 py-2 rounded-xl text-xs font-semibold bg-slate-800/70 hover:bg-slate-800 text-slate-300 transition border border-slate-700/60">
-            ⚡ Sécurité & Hygiène (30)
-          </button>
-          <button data-domain="technique" class="domain-tab px-4 py-2 rounded-xl text-xs font-semibold bg-slate-800/70 hover:bg-slate-800 text-slate-300 transition border border-slate-700/60">
-            ⚙️ Technique Industrielle (37)
-          </button>
-          <button data-domain="management" class="domain-tab px-4 py-2 rounded-xl text-xs font-semibold bg-slate-800/70 hover:bg-slate-800 text-slate-300 transition border border-slate-700/60">
-            📊 Management & Performance (10)
-          </button>
-          <button data-domain="qualite" class="domain-tab px-4 py-2 rounded-xl text-xs font-semibold bg-slate-800/70 hover:bg-slate-800 text-slate-300 transition border border-slate-700/60">
-            🎯 Qualité & DMO (8)
-          </button>
-        </div>
+        <!-- Right: Content & Key Benefits -->
+        <div class="lg:col-span-6 reveal-on-scroll">
+          <span class="text-xs font-bold uppercase tracking-wider text-blue-600 dark:text-cyan-400 bg-blue-500/10 px-3.5 py-1 rounded-full border border-blue-500/20">
+            À Propos de ME PLUS
+          </span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white mt-4 mb-4 tracking-tight leading-tight">
+            Un Cabinet d'Ingénierie de Conseil & d'Audits Stratégiques au Maroc
+          </h2>
+          <p class="text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed mb-6">
+            Fondé en 2008 dans la continuité de **ME Consult (créé en 2004)** par M. Mohamed El Meskini, le cabinet **ME PLUS** s'est imposé comme la référence nationale en sécurisation des personnes, conformité des installations et optimisation des rendements de production.
+          </p>
 
-        <!-- Formations Grid -->
-        <div id="formations-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <!-- Dynamically populated by app.js -->
-        </div>
-
-      </div>
-    </section>
-
-    <!-- INTERACTIVE GIAC / CSF REIMBURSEMENT SIMULATOR -->
-    <section id="simulateur" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="glass-panel p-8 md:p-12 rounded-3xl border border-blue-500/30 relative overflow-hidden">
-        
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          
-          <!-- Left: Information & Explanations -->
-          <div class="lg:col-span-6">
-            <span class="text-xs font-bold uppercase tracking-wider text-cyan-400 bg-cyan-500/10 border border-cyan-500/20 px-3 py-1 rounded-full">
-              Optimisation Budgétaire
-            </span>
-            <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-4 mb-4 tracking-tight">
-              Simulateur de Remboursement GIAC & CSF (OFPPT)
-            </h2>
-            <p class="text-slate-300 text-sm leading-relaxed mb-6">
-              Saviez-vous que vos formations avec le cabinet **ME PLUS** peuvent être prises en charge **jusqu'à 70% à 80%** par les Contrats Spéciaux de Formation (CSF) financés par la Taxe de Formation Professionnelle ?
-            </p>
-            
-            <div class="space-y-3 text-xs text-slate-300 mb-8">
-              <div class="flex items-center gap-2">
-                <i data-lucide="check-circle" class="w-4 h-4 text-cyan-400 shrink-0"></i>
-                <span>Conseil gratuit sur la démarche administrative et le montage de dossier</span>
+          <!-- Highlights Checklist -->
+          <div class="space-y-3.5 mb-8">
+            <div class="flex items-start gap-3">
+              <div class="w-6 h-6 rounded-full bg-blue-600/10 text-blue-600 dark:text-cyan-400 flex items-center justify-center shrink-0 mt-0.5">
+                <i data-lucide="check" class="w-4 h-4"></i>
               </div>
-              <div class="flex items-center gap-2">
-                <i data-lucide="check-circle" class="w-4 h-4 text-cyan-400 shrink-0"></i>
-                <span>Prise en charge de l'ingénierie par le GIAC avant le plan de formation</span>
-              </div>
-              <div class="flex items-center gap-2">
-                <i data-lucide="check-circle" class="w-4 h-4 text-cyan-400 shrink-0"></i>
-                <span>Cabinet agréé assurant les fiches techniques conformes (Formulaire F2)</span>
+              <div>
+                <strong class="text-sm text-slate-900 dark:text-white block">Diagnostic & Ingénierie GPEC :</strong>
+                <span class="text-xs text-slate-500 dark:text-slate-400">Cartographie des compétences et élaboration de plans de formation remboursables.</span>
               </div>
             </div>
 
-            <!-- Download Formulaire F2 CTA -->
-            <a href="#contact" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs shadow-lg transition">
-              <i data-lucide="file-down" class="w-4 h-4"></i>
-              Télécharger le Formulaire F2 & Dossier CSF
+            <div class="flex items-start gap-3">
+              <div class="w-6 h-6 rounded-full bg-blue-600/10 text-blue-600 dark:text-cyan-400 flex items-center justify-center shrink-0 mt-0.5">
+                <i data-lucide="check" class="w-4 h-4"></i>
+              </div>
+              <div>
+                <strong class="text-sm text-slate-900 dark:text-white block">Conformité Légale & Audits Réglementaires :</strong>
+                <span class="text-xs text-slate-500 dark:text-slate-400">Audits rigoureux Décret 2.14.499 (Incendie), Décret 2.12.236 (Machines) et Norme NM 06.1.225.</span>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3">
+              <div class="w-6 h-6 rounded-full bg-blue-600/10 text-blue-600 dark:text-cyan-400 flex items-center justify-center shrink-0 mt-0.5">
+                <i data-lucide="check" class="w-4 h-4"></i>
+              </div>
+              <div>
+                <strong class="text-sm text-slate-900 dark:text-white block">Réseau d'Anciens Directeurs & Experts Seniors :</strong>
+                <span class="text-xs text-slate-500 dark:text-slate-400">Interventions pédagogiques directes au sein de vos ateliers partout au Maroc.</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Action Button -->
+          <div class="flex items-center gap-4">
+            <a href="services.html" class="px-6 py-3 rounded-full bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs shadow-lg shadow-blue-600/25 flex items-center gap-2 transition">
+              Découvrir nos Domaines d'Intervention
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+            <a href="consultants.html" class="px-5 py-3 rounded-full bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 font-semibold text-xs transition">
+              Notre Équipe
             </a>
           </div>
 
-          <!-- Right: Interactive Interactive Calculator Widget -->
-          <div class="lg:col-span-6 bg-slate-900/90 p-6 md:p-8 rounded-2xl border border-slate-700/80">
-            <h3 class="text-lg font-bold text-white mb-6 flex items-center gap-2">
-              <i data-lucide="sliders" class="w-5 h-5 text-blue-400"></i>
-              Paramètres de votre Entreprise
-            </h3>
-
-            <!-- Slider 1: Annual Budget -->
-            <div class="mb-6">
-              <div class="flex justify-between items-center mb-2">
-                <label class="text-xs font-semibold text-slate-300">Budget Formation Annuel Estimé :</label>
-                <span id="sim-budget-val" class="text-sm font-bold font-mono text-cyan-400">120 000 MAD</span>
-              </div>
-              <input type="range" id="sim-budget" min="20000" max="800000" step="10000" value="120000" class="w-full" />
-              <div class="flex justify-between text-[10px] text-slate-400 mt-1">
-                <span>20 000 MAD</span>
-                <span>800 000 MAD</span>
-              </div>
-            </div>
-
-            <!-- Slider 2: Number of employees -->
-            <div class="mb-8">
-              <div class="flex justify-between items-center mb-2">
-                <label class="text-xs font-semibold text-slate-300">Effectif Salarié :</label>
-                <span id="sim-employees-val" class="text-sm font-bold font-mono text-blue-400">75 salariés</span>
-              </div>
-              <input type="range" id="sim-employees" min="10" max="500" step="5" value="75" class="w-full" />
-              <div class="flex justify-between text-[10px] text-slate-400 mt-1">
-                <span>10 salariés</span>
-                <span>500+ salariés</span>
-              </div>
-            </div>
-
-            <!-- Calculation Output Cards -->
-            <div class="grid grid-cols-2 gap-3 pt-6 border-t border-slate-800 mb-6">
-              <div class="p-3.5 rounded-xl bg-slate-800/60 border border-slate-700/50">
-                <div class="text-[11px] text-slate-400 mb-0.5">Remboursement CSF (70%)</div>
-                <div id="sim-csf-refund" class="text-lg font-extrabold font-mono text-emerald-400">84 000 MAD</div>
-              </div>
-              <div class="p-3.5 rounded-xl bg-slate-800/60 border border-slate-700/50">
-                <div class="text-[11px] text-slate-400 mb-0.5">Appui Diagnostic GIAC</div>
-                <div id="sim-giac-refund" class="text-lg font-extrabold font-mono text-cyan-400">18 000 MAD</div>
-              </div>
-            </div>
-
-            <!-- Net Cost highlight -->
-            <div class="p-4 rounded-xl bg-blue-600/20 border border-blue-500/40 flex items-center justify-between">
-              <div>
-                <span class="text-xs text-slate-300 block font-medium">Coût Net Réel Restant à Charge :</span>
-                <span class="text-[10px] text-slate-400">Après déduction des remboursements étatiques</span>
-              </div>
-              <div id="sim-net-cost" class="text-2xl font-extrabold font-mono text-white">18 000 MAD</div>
-            </div>
-
-          </div>
-
         </div>
 
       </div>
     </section>
 
-    <!-- MOROCCAN REGULATORY LIBRARY (Bulletins Officiels Downloads) -->
-    <section id="reglementation" class="py-24 bg-slate-900/40 border-y border-slate-800/80">
+    <!-- BENTO GRID SERVICES (Inspired by Reference 2's Bento Mix of Photos & Color Cards) -->
+    <section class="py-24 bg-slate-50/70 dark:bg-slate-900/40 border-y border-slate-200/80 dark:border-slate-800/80">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div class="text-center max-w-3xl mx-auto mb-16">
-          <span class="text-xs font-bold uppercase tracking-wider text-cyan-400 bg-cyan-500/10 border border-cyan-500/20 px-3 py-1 rounded-full">
-            Veille & Conformité Juridique
+          <span class="text-xs font-bold uppercase tracking-wider text-blue-600 dark:text-cyan-400 bg-blue-500/10 px-3 py-1 rounded-full border border-blue-500/20">
+            Savoir-Faire & Pratique Terrain
           </span>
-          <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-4 mb-4 tracking-tight">
-            Centre de Documentation & Textes Réglementaires Marocains
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white mt-4 mb-3 tracking-tight">
+            Nos 4 Pôles Stratégiques d'Intervention
           </h2>
-          <p class="text-slate-400 text-sm sm:text-base leading-relaxed">
-            Consultez et téléchargez librement les Bulletins Officiels (B.O.), arrêtés ministériels et dahirs régissant l'hygiène, la sécurité et la conformité des usines au Maroc.
+          <p class="text-slate-600 dark:text-slate-400 text-sm sm:text-base leading-relaxed">
+            De la mise en sécurité des opérateurs jusqu'au pilotage stratégique de la productivité industrielle.
           </p>
         </div>
 
-        <!-- Regulations Cards Grid -->
-        <div id="regulations-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <!-- Dynamically rendered by app.js -->
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+          
+          <!-- Bento 1: Large Card (GPEC & Formation) -->
+          <div class="glass-card md:col-span-7 p-8 rounded-3xl relative overflow-hidden flex flex-col justify-between group reveal-on-scroll">
+            <div>
+              <div class="flex items-center justify-between gap-4 mb-6">
+                <div class="w-12 h-12 rounded-2xl bg-blue-600/10 text-blue-600 dark:text-blue-400 flex items-center justify-center">
+                  <i data-lucide="graduation-cap" class="w-6 h-6"></i>
+                </div>
+                <span class="text-xs font-semibold px-3 py-1 rounded-full bg-blue-500/10 text-blue-600 dark:text-blue-400 border border-blue-500/20">
+                  Plan de Formation OFPPT
+                </span>
+              </div>
+              <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-blue-600 dark:group-hover:text-cyan-400 transition">
+                Ingénierie de Formation & Diagnostic GPEC
+              </h3>
+              <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-6">
+                Accompagnement en 3 étapes : diagnostic des postes de travail, identification précise des écarts de compétences et montage administratif complet des **dossiers CSF auprès de l'OFPPT** pour le remboursement légal des frais de formation.
+              </p>
+            </div>
+
+            <!-- Real Mini Showcase Strip -->
+            <div class="relative h-28 rounded-2xl overflow-hidden mb-6 group/img border border-slate-200/80 dark:border-slate-800">
+              <img src="https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?w=800&auto=format&fit=crop&q=80" alt="Atelier Industriel ME PLUS" class="w-full h-full object-cover group-hover/img:scale-105 transition duration-700 ease-out" />
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/30 to-transparent flex items-end p-3.5">
+                <span class="text-[11px] text-white font-semibold flex items-center gap-1.5">
+                  <i data-lucide="check-circle" class="w-3.5 h-3.5 text-cyan-400"></i>
+                  Formations pratiques en situation réelle sur machine
+                </span>
+              </div>
+            </div>
+
+            <div class="flex items-center justify-between pt-4 border-t border-slate-200 dark:border-slate-800">
+              <span class="text-xs text-blue-600 dark:text-cyan-400 font-bold">Éligible Financement GIAC / CSF (70% - 80%)</span>
+              <a href="services.html" class="inline-flex items-center gap-1 text-xs font-bold text-slate-900 dark:text-white hover:text-blue-600 dark:hover:text-cyan-400">
+                En savoir plus <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Bento 2: Photo Card (Audits Réglementaires) -->
+          <div class="glass-card md:col-span-5 p-8 rounded-3xl relative overflow-hidden flex flex-col justify-between group reveal-on-scroll">
+            <div>
+              <div class="flex items-center justify-between gap-4 mb-4">
+                <div class="w-12 h-12 rounded-2xl bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 flex items-center justify-center">
+                  <i data-lucide="shield-check" class="w-6 h-6"></i>
+                </div>
+                <span class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-cyan-500/10 text-cyan-700 dark:text-cyan-400 border border-cyan-500/20">
+                  Décret 2.14.499
+                </span>
+              </div>
+              <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition">
+                Audits Réglementaires & Sécurité
+              </h3>
+              <p class="text-slate-600 dark:text-slate-300 text-xs sm:text-sm leading-relaxed mb-4">
+                Évaluation rigoureuse de la conformité aux décrets marocains : Incendie, Machines et appareils sous pression.
+              </p>
+
+              <!-- Real Photo with Soft Mask -->
+              <div class="relative h-32 rounded-2xl overflow-hidden mb-4 group/img border border-slate-200/80 dark:border-slate-800">
+                <img src="https://images.unsplash.com/photo-1581092921461-eab62e97a780?w=800&auto=format&fit=crop&q=80" alt="Audit de Sécurité Industrielle" class="w-full h-full object-cover group-hover/img:scale-105 transition duration-700 ease-out" />
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent"></div>
+              </div>
+            </div>
+            <div class="pt-4 border-t border-slate-200 dark:border-slate-800">
+              <a href="reglementation.html" class="text-xs font-bold text-cyan-600 dark:text-cyan-400 flex items-center gap-1">
+                Consulter les textes officiels (B.O.) <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Bento 3: Photo Card (Habilitations Électriques NM 06.1.225) -->
+          <div class="glass-card md:col-span-5 p-8 rounded-3xl relative overflow-hidden flex flex-col justify-between group reveal-on-scroll">
+            <div>
+              <div class="flex items-center justify-between gap-4 mb-4">
+                <div class="w-12 h-12 rounded-2xl bg-purple-500/10 text-purple-600 dark:text-purple-400 flex items-center justify-center">
+                  <i data-lucide="zap" class="w-6 h-6"></i>
+                </div>
+                <span class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-purple-500/10 text-purple-600 dark:text-purple-400 border border-purple-500/20">
+                  Norme NM 06.1.225
+                </span>
+              </div>
+              <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition">
+                Habilitations Électriques BT & HT
+              </h3>
+              <p class="text-slate-600 dark:text-slate-300 text-xs sm:text-sm leading-relaxed mb-4">
+                Dispositif certifiant B0, H0, B1V, B2V, BR, BC avec évaluations éliminatoires pour la délivrance des titres.
+              </p>
+
+              <!-- Real Photo with Soft Mask -->
+              <div class="relative h-32 rounded-2xl overflow-hidden mb-4 group/img border border-slate-200/80 dark:border-slate-800">
+                <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&auto=format&fit=crop&q=80" alt="Habilitation Électrique NM 06.1.225" class="w-full h-full object-cover group-hover/img:scale-105 transition duration-700 ease-out" />
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent"></div>
+              </div>
+            </div>
+            <div class="pt-4 border-t border-slate-200 dark:border-slate-800">
+              <a href="formations.html" class="text-xs font-bold text-purple-600 dark:text-purple-400 flex items-center gap-1">
+                Voir les 85 modules <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Bento 4: Large Card (TPM & Maintenance) -->
+          <div class="glass-card md:col-span-7 p-8 rounded-3xl relative overflow-hidden flex flex-col justify-between group reveal-on-scroll">
+            <div>
+              <div class="flex items-center justify-between gap-4 mb-6">
+                <div class="w-12 h-12 rounded-2xl bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 flex items-center justify-center">
+                  <i data-lucide="wrench" class="w-6 h-6"></i>
+                </div>
+                <span class="text-xs font-semibold px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20">
+                  Performance Opérationnelle
+                </span>
+              </div>
+              <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition">
+                Accompagnement TPM & Maintenance Autonome
+              </h3>
+              <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-6">
+                Déploiement en 6 étapes : organisation du magasin de pièces, gammes préventives, méthodes 5S, SMED, AMDEC et amélioration continue du Taux de Rendement Synthétique (TRS).
+              </p>
+            </div>
+
+            <!-- Real Mini Showcase Strip -->
+            <div class="relative h-28 rounded-2xl overflow-hidden mb-6 group/img border border-slate-200/80 dark:border-slate-800">
+              <img src="https://images.unsplash.com/photo-1581092335397-9583fe92d232?w=800&auto=format&fit=crop&q=80" alt="Ligne automatisée et TPM" class="w-full h-full object-cover group-hover/img:scale-105 transition duration-700 ease-out" />
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/30 to-transparent flex items-end p-3.5">
+                <span class="text-[11px] text-white font-semibold flex items-center gap-1.5">
+                  <i data-lucide="trending-up" class="w-3.5 h-3.5 text-emerald-400"></i>
+                  Réduction mesurée des pannes et arrêts non planifiés
+                </span>
+              </div>
+            </div>
+
+            <div class="flex items-center justify-between pt-4 border-t border-slate-200 dark:border-slate-800">
+              <span class="text-xs text-emerald-600 dark:text-emerald-400 font-bold">Gains concrets sur le TRS et les coûts de maintenance</span>
+              <a href="services.html" class="inline-flex items-center gap-1 text-xs font-bold text-slate-900 dark:text-white hover:text-emerald-600">
+                Découvrir la méthode <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+              </a>
+            </div>
+          </div>
+
         </div>
 
       </div>
     </section>
 
-    <!-- CONSULTANTS & EXPERTS ROSTER -->
-    <section id="consultants" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- POPULAR FORMATIONS PREVIEW (Grid with link to full formations.html) -->
+    <section class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-wider text-blue-600 dark:text-cyan-400 bg-blue-500/10 px-3.5 py-1 rounded-full border border-blue-500/20">
+            Formations Certifiantes
+          </span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white mt-4 mb-2 tracking-tight">
+            Modules les Plus Demandés par les Usines
+          </h2>
+          <p class="text-slate-600 dark:text-slate-400 text-sm font-medium">
+            Programmes opérationnels animés en intra ou inter-entreprises.
+          </p>
+        </div>
+        <a href="formations.html" class="px-6 py-3 rounded-full bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs shadow-lg shadow-blue-600/20 inline-flex items-center gap-2 transition">
+          Consulter les 85+ Formations
+          <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </a>
+      </div>
+
+      <!-- Formations Grid Preview (populated with 6 courses by app.js) -->
+      <div id="formations-grid" data-preview="true" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Injected via app.js -->
+      </div>
+    </section>
+
+    <!-- CSF SIMULATOR TEASER BANNER -->
+    <section class="py-20 bg-blue-600 text-white rounded-3xl max-w-7xl mx-4 sm:mx-auto px-6 sm:px-12 relative overflow-hidden shadow-2xl my-12">
+      <div class="absolute -right-20 -bottom-20 w-96 h-96 bg-cyan-400/20 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        <div class="lg:col-span-8">
+          <span class="text-xs font-bold uppercase tracking-wider bg-white/20 px-3 py-1 rounded-full text-white inline-block mb-4">
+            Financement Étatique Marocain
+          </span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight mb-4">
+            Faites financer jusqu'à 80% de vos formations par les CSF & le GIAC
+          </h2>
+          <p class="text-blue-100 text-sm sm:text-base leading-relaxed max-w-2xl">
+            Grâce à l'agrément officiel ME PLUS auprès de l'OFPPT, votre entreprise récupère la majorité de ses investissements de formation via la Taxe de Formation Professionnelle.
+          </p>
+        </div>
+        <div class="lg:col-span-4 flex flex-col sm:flex-row lg:flex-col gap-3 justify-end">
+          <a href="simulateur.html" class="btn-pill-cyan text-center px-6 py-3.5 text-xs font-bold uppercase tracking-wider shadow-lg">
+            Calculer mon remboursement
+          </a>
+          <a href="contact.html?sujet=Demande+Formulaire+F2" class="px-6 py-3.5 rounded-full bg-white/10 hover:bg-white/20 text-white text-center text-xs font-bold border border-white/30 transition">
+            Télécharger le Formulaire F2
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS SECTION -->
+    <section class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center max-w-3xl mx-auto mb-16">
-        <span class="text-xs font-bold uppercase tracking-wider text-blue-400 bg-blue-500/10 border border-blue-500/20 px-3 py-1 rounded-full">
-          Capital Humain d'Excellence
+        <span class="text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 px-3.5 py-1 rounded-full border border-emerald-500/20">
+          Témoignages Vérifiés
         </span>
-        <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-4 mb-4 tracking-tight">
-          Notre Équipe d'Experts & Consultants Seniors
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white mt-4 mb-3 tracking-tight">
+          Ce que disent nos Clients Industriels
         </h2>
-        <p class="text-slate-400 text-sm sm:text-base leading-relaxed">
-          Des professionnels chevronnés, anciens directeurs d'usines et auditeurs certifiés cumulant plus de 20 ans d'expertise sur le terrain industriel marocain.
+        <p class="text-slate-600 dark:text-slate-400 text-sm">
+          Retours d'expérience de Directeurs d'usines et Responsables HSE à Casablanca, Tanger, Jorf Lasfar et Kénitra.
         </p>
       </div>
 
-      <!-- Consultants Cards Grid -->
-      <div id="consultants-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <!-- Dynamically rendered by app.js -->
-      </div>
-    </section>
-
-    <!-- TESTIMONIALS & SOCIAL PROOF -->
-    <section class="py-20 bg-slate-900/60 border-y border-slate-800/80">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-12">
-          <span class="text-xs font-bold uppercase tracking-wider text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-3 py-1 rounded-full">
-            Témoignages Vérifiés
-          </span>
-          <h2 class="text-3xl font-extrabold text-white mt-4 tracking-tight">
-            Ce que disent nos Collaborateurs & Dirigeants Industriels
-          </h2>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div class="glass-panel p-6 rounded-2xl flex flex-col justify-between border border-slate-800">
-            <div>
-              <div class="flex items-center gap-1 text-amber-400 mb-4">
-                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
-                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
-                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
-                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
-                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
-              </div>
-              <p class="text-slate-300 text-xs sm:text-sm leading-relaxed mb-6 italic">
-                « La collaboration avec le cabinet ME Plus s’inscrit dans le cadre d’un professionnalisme exemplaire. M. El Meskini est à l’écoute de nos besoins et sait y apporter des réponses pertinentes. Son équipe et lui-même sont d’un niveau d’expertise dont la valeur ajoutée est clairement visible sur le terrain. »
-              </p>
-            </div>
-            <div class="pt-4 border-t border-slate-800">
-              <div class="font-bold text-white text-sm">Majida MAJEDDINE</div>
-              <div class="text-xs text-blue-400">Responsable Formation & DRH</div>
-            </div>
-          </div>
-
-          <div class="glass-panel p-6 rounded-2xl flex flex-col justify-between border border-slate-800">
-            <div>
-              <div class="flex items-center gap-1 text-amber-400 mb-4">
-                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
-                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
-                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
-                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
-                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
-              </div>
-              <p class="text-slate-300 text-xs sm:text-sm leading-relaxed mb-6 italic">
-                « Il y a les hommes du savoir dont fait partie Si Mohamed El Meskini, et il y a ceux qui en font une passion de communiquer le savoir aux autres hommes, et Ssi Mohamed El Meskini est aussi de ceux-là... »
-              </p>
-            </div>
-            <div class="pt-4 border-t border-slate-800">
-              <div class="font-bold text-white text-sm">Alaoui Moulay Youssef</div>
-              <div class="text-xs text-cyan-400">PDG – CEO (Groupe SOMADU – FAMAB – LADCI)</div>
-            </div>
-          </div>
-
-          <div class="glass-panel p-6 rounded-2xl flex flex-col justify-between border border-slate-800">
-            <div>
-              <div class="flex items-center gap-1 text-amber-400 mb-4">
-                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
-                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
-                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
-                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
-                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
-              </div>
-              <p class="text-slate-300 text-xs sm:text-sm leading-relaxed mb-6 italic">
-                « Notre coopération avec ME Plus dans le domaine de la formation professionnelle nous a permis de mettre au point des programmes spécifiques répondant parfaitement à nos exigences, avec un catalogue complet centré sur le secteur industriel. »
-              </p>
-            </div>
-            <div class="pt-4 border-t border-slate-800">
-              <div class="font-bold text-white text-sm">Malik BENBRAHIM</div>
-              <div class="text-xs text-emerald-400">Directeur de Site Industriel</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACT & QUOTE GENERATION HUB -->
-    <section id="contact" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
-        
-        <!-- Contact Information Details -->
-        <div class="lg:col-span-5 flex flex-col justify-between">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="glass-card p-7 rounded-3xl flex flex-col justify-between">
           <div>
-            <span class="text-xs font-bold uppercase tracking-wider text-cyan-400 bg-cyan-500/10 border border-cyan-500/20 px-3 py-1 rounded-full">
-              Contact & Devis
-            </span>
-            <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-4 mb-4 tracking-tight">
-              Parlons de vos Projets de Formation & d'Audit
-            </h2>
-            <p class="text-slate-400 text-sm leading-relaxed mb-8">
-              Nos ingénieurs pédagogiques et consultants se déplacent sur l'ensemble du territoire marocain pour évaluer vos installations et concevoir vos programmes.
-            </p>
-
-            <div class="space-y-6 text-sm">
-              <div class="flex items-start gap-4">
-                <div class="w-10 h-10 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 shrink-0">
-                  <i data-lucide="map-pin" class="w-5 h-5"></i>
-                </div>
-                <div>
-                  <div class="font-bold text-white">Siège Social ME PLUS</div>
-                  <div class="text-slate-400 text-xs leading-relaxed mt-0.5">
-                    Rue Moussa Al Kadim, Immeuble Le Lys N° 21, Quartier Bourgogne, Casablanca, Maroc
-                  </div>
-                </div>
-              </div>
-
-              <div class="flex items-start gap-4">
-                <div class="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 shrink-0">
-                  <i data-lucide="phone" class="w-5 h-5"></i>
-                </div>
-                <div>
-                  <div class="font-bold text-white">Téléphones & WhatsApp Pro</div>
-                  <div class="text-slate-300 text-xs mt-0.5 font-mono">
-                    <a href="tel:+212661450248" class="hover:text-cyan-400 transition">+212 6 61 45 02 48</a> <br />
-                    <a href="tel:+212522483948" class="hover:text-cyan-400 transition">+212 5 22 48 39 48</a>
-                  </div>
-                </div>
-              </div>
-
-              <div class="flex items-start gap-4">
-                <div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 shrink-0">
-                  <i data-lucide="mail" class="w-5 h-5"></i>
-                </div>
-                <div>
-                  <div class="font-bold text-white">Courriels Officiels</div>
-                  <div class="text-slate-300 text-xs mt-0.5 font-mono">
-                    <a href="mailto:formation@meplus.ma" class="hover:text-emerald-400 transition">formation@meplus.ma</a> <br />
-                    <a href="mailto:m.elmeskini@meplus.ma" class="hover:text-emerald-400 transition">m.elmeskini@meplus.ma</a>
-                  </div>
-                </div>
-              </div>
+            <div class="flex items-center gap-1 text-amber-400 mb-4">
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
             </div>
-          </div>
-
-          <!-- Bottom Notice -->
-          <div class="p-4 rounded-2xl bg-slate-900/80 border border-slate-800 mt-8">
-            <div class="text-xs text-blue-400 font-bold mb-1">🇲🇦 Démarche Administrative GIAC Gratuite</div>
-            <p class="text-[11px] text-slate-400">
-              Bénéficiez d'une séance d'orientation sans engagement pour auditer l'éligibilité de votre entreprise au remboursement de la Taxe de Formation Professionnelle.
+            <p class="text-slate-600 dark:text-slate-300 text-xs sm:text-sm leading-relaxed mb-6 italic">
+              « La collaboration avec le cabinet ME PLUS s’inscrit dans un professionnalisme exemplaire. M. El Meskini et son équipe sont d’un niveau d’expertise dont la valeur ajoutée est directement visible sur le terrain de nos ateliers. »
             </p>
+          </div>
+          <div class="pt-4 border-t border-slate-200 dark:border-slate-800">
+            <div class="font-bold text-slate-900 dark:text-white text-sm">Majida MAJEDDINE</div>
+            <div class="text-xs text-blue-600 dark:text-blue-400">Responsable Formation & DRH</div>
           </div>
         </div>
 
-        <!-- Contact & Quote Request Form -->
-        <div class="lg:col-span-7 glass-panel p-8 md:p-10 rounded-3xl border border-slate-800">
-          <h3 class="text-xl font-bold text-white mb-6 flex items-center gap-2">
-            <i data-lucide="send" class="w-5 h-5 text-blue-400"></i>
-            Demande d'Intervention ou de Devis Express
-          </h3>
-
-          <form id="contact-form" class="space-y-4">
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div>
-                <label class="text-xs font-semibold text-slate-300 block mb-1">Prénom & Nom *</label>
-                <input type="text" required placeholder="ex. Ahmed Benani" class="w-full px-4 py-3 rounded-xl bg-slate-900/80 border border-slate-700 text-sm text-white placeholder-slate-500 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 outline-none transition" />
-              </div>
-              <div>
-                <label class="text-xs font-semibold text-slate-300 block mb-1">Entreprise & Fonction *</label>
-                <input type="text" required placeholder="ex. Nexans Maroc - Responsable HSE" class="w-full px-4 py-3 rounded-xl bg-slate-900/80 border border-slate-700 text-sm text-white placeholder-slate-500 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 outline-none transition" />
-              </div>
+        <div class="glass-card p-7 rounded-3xl flex flex-col justify-between">
+          <div>
+            <div class="flex items-center gap-1 text-amber-400 mb-4">
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
             </div>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div>
-                <label class="text-xs font-semibold text-slate-300 block mb-1">Numéro de Téléphone *</label>
-                <input type="tel" required placeholder="+212 6 XX XX XX XX" class="w-full px-4 py-3 rounded-xl bg-slate-900/80 border border-slate-700 text-sm text-white placeholder-slate-500 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 outline-none transition" />
-              </div>
-              <div>
-                <label class="text-xs font-semibold text-slate-300 block mb-1">Email Professionnel *</label>
-                <input type="email" required placeholder="contact@entreprise.ma" class="w-full px-4 py-3 rounded-xl bg-slate-900/80 border border-slate-700 text-sm text-white placeholder-slate-500 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 outline-none transition" />
-              </div>
-            </div>
-
-            <div>
-              <label class="text-xs font-semibold text-slate-300 block mb-1">Objet de la Demande</label>
-              <input type="text" id="contact-subject" placeholder="ex. Devis Formation Habilitation Électrique / Audit Incendie" class="w-full px-4 py-3 rounded-xl bg-slate-900/80 border border-slate-700 text-sm text-white placeholder-slate-500 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 outline-none transition" />
-            </div>
-
-            <div>
-              <label class="text-xs font-semibold text-slate-300 block mb-1">Détaillez votre besoin ou nombre de personnes à former</label>
-              <textarea rows="4" placeholder="Précisez vos objectifs, le site d'intervention et vos contraintes de calendrier..." class="w-full px-4 py-3 rounded-xl bg-slate-900/80 border border-slate-700 text-sm text-white placeholder-slate-500 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 outline-none transition"></textarea>
-            </div>
-
-            <button type="submit" class="w-full py-4 rounded-xl bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-500 hover:to-cyan-400 text-white font-bold text-sm shadow-xl shadow-blue-500/30 flex items-center justify-center gap-2 transition duration-200">
-              Envoyer la Demande & Obtenir le Devis
-              <i data-lucide="arrow-right" class="w-4 h-4"></i>
-            </button>
-          </form>
+            <p class="text-slate-600 dark:text-slate-300 text-xs sm:text-sm leading-relaxed mb-6 italic">
+              « Il y a les hommes du savoir dont fait partie Si Mohamed El Meskini, et il y a ceux qui en font une passion de communiquer le savoir aux autres, et Ssi Mohamed est incontestablement de ceux-là... »
+            </p>
+          </div>
+          <div class="pt-4 border-t border-slate-200 dark:border-slate-800">
+            <div class="font-bold text-slate-900 dark:text-white text-sm">Alaoui Moulay Youssef</div>
+            <div class="text-xs text-cyan-600 dark:text-cyan-400">PDG – CEO (Groupe SOMADU – FAMAB)</div>
+          </div>
         </div>
 
+        <div class="glass-card p-7 rounded-3xl flex flex-col justify-between">
+          <div>
+            <div class="flex items-center gap-1 text-amber-400 mb-4">
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+            </div>
+            <p class="text-slate-600 dark:text-slate-300 text-xs sm:text-sm leading-relaxed mb-6 italic">
+              « Notre coopération avec ME PLUS nous a permis de mettre au point des programmes techniques spécifiques répondant à 100% à nos contraintes de machines industrielles et de sécurité du travail. »
+            </p>
+          </div>
+          <div class="pt-4 border-t border-slate-200 dark:border-slate-800">
+            <div class="font-bold text-slate-900 dark:text-white text-sm">Malik BENBRAHIM</div>
+            <div class="text-xs text-emerald-600 dark:text-emerald-400">Directeur de Site Industriel</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BOTTOM CTA BANNER -->
+    <section class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
+      <div class="glass-card p-10 md:p-14 rounded-3xl border border-blue-500/30 text-center relative overflow-hidden">
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white mb-4 tracking-tight">
+          Prêt à Sécuriser vos Ateliers & Optimiser vos Équipes ?
+        </h2>
+        <p class="text-slate-600 dark:text-slate-300 text-sm sm:text-base max-w-2xl mx-auto mb-8 leading-relaxed">
+          Nos conseillers pédagogiques et consultants seniors vous transmettent une proposition d'intervention détaillée et vous accompagnent dans le montage CSF auprès de l'OFPPT.
+        </p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a href="contact.html" class="btn-pill-cyan px-8 py-3.5 text-xs uppercase tracking-wider font-bold">
+            Demander un Devis Express
+          </a>
+          <a href="tel:+212661450248" class="px-6 py-3.5 rounded-full bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 text-xs font-bold border border-slate-300 dark:border-slate-700 transition flex items-center gap-2">
+            <i data-lucide="phone" class="w-4 h-4 text-cyan-500"></i>
+            Appeler le +212 6 61 45 02 48
+          </a>
+        </div>
       </div>
     </section>
   </main>
 
-  <!-- FOOTER -->
-  <footer class="border-t border-slate-800 bg-[#050b15] py-16 text-slate-400 text-xs">
+  <!-- UNIFIED FOOTER -->
+  <footer class="border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-[#050b15] py-16 text-slate-600 dark:text-slate-400 text-xs transition">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
         
-        <div class="md:col-span-1">
+        <div>
           <div class="flex items-center gap-2 mb-4">
-            <span class="text-xl font-extrabold text-white">ME<span class="text-blue-400">PLUS</span></span>
+            <span class="text-xl font-extrabold text-slate-900 dark:text-white">ME<span class="text-blue-600 dark:text-blue-400">PLUS</span></span>
           </div>
-          <p class="leading-relaxed mb-4 text-slate-400">
-            Cabinet de formation continue et de conseil industriel fondé en 2008 dans la continuité de ME Consult (créé en 2004). Spécialiste du management de la sécurité et de la maintenance.
+          <p class="leading-relaxed mb-4">
+            Cabinet de formation continue et de conseil industriel fondé en 2008 dans la continuité de ME Consult (2004). Spécialiste de la sécurité au travail et du management de maintenance.
           </p>
-          <div class="text-[11px] text-slate-500">
-            Homologué DFP • OFPPT • GIAC • AFOM
+          <div class="text-[11px] font-semibold text-blue-600 dark:text-blue-400">
+            Homologué DFP • OFPPT • GIAC • AFOM • Maroc PME
           </div>
         </div>
 
         <div>
-          <h4 class="text-white font-bold text-sm mb-4">Pôles d'Expertise</h4>
+          <h4 class="text-slate-900 dark:text-white font-bold text-sm mb-4">Pages du Portail</h4>
           <ul class="space-y-2">
-            <li><a href="#formations" class="hover:text-white transition">Habilitations Électriques (NM 06.1.225)</a></li>
-            <li><a href="#formations" class="hover:text-white transition">Sécurité des Machines & LOTO</a></li>
-            <li><a href="#formations" class="hover:text-white transition">Total Productive Maintenance (TPM)</a></li>
-            <li><a href="#formations" class="hover:text-white transition">Automatisme & Instrumentation</a></li>
-            <li><a href="#formations" class="hover:text-white transition">Audits ISO 45001 & IATF 16949</a></li>
+            <li><a href="index.html" class="hover:text-blue-600 dark:hover:text-white transition">Accueil</a></li>
+            <li><a href="formations.html" class="hover:text-blue-600 dark:hover:text-white transition">Catalogue Formations (85+)</a></li>
+            <li><a href="services.html" class="hover:text-blue-600 dark:hover:text-white transition">Services & Audits GPEC / TPM</a></li>
+            <li><a href="simulateur.html" class="hover:text-cyan-600 dark:hover:text-cyan-400 transition font-medium">Simulateur Remboursement CSF</a></li>
+            <li><a href="reglementation.html" class="hover:text-blue-600 dark:hover:text-white transition">Réglementation Maroc (B.O.)</a></li>
+            <li><a href="consultants.html" class="hover:text-blue-600 dark:hover:text-white transition">Consultants & Experts</a></li>
+            <li><a href="contact.html" class="hover:text-blue-600 dark:hover:text-white transition">Contact & Devis Express</a></li>
           </ul>
         </div>
 
         <div>
-          <h4 class="text-white font-bold text-sm mb-4">Réglementation & Veille</h4>
+          <h4 class="text-slate-900 dark:text-white font-bold text-sm mb-4">Textes & Bulletins Officiels</h4>
           <ul class="space-y-2">
-            <li><a href="#reglementation" class="hover:text-white transition">Décret Sécurité Incendie 2.14.499</a></li>
-            <li><a href="#reglementation" class="hover:text-white transition">Décret Sécurité Machines 2.12.236</a></li>
-            <li><a href="#reglementation" class="hover:text-white transition">Appareils à Pression de Gaz & Vapeur</a></li>
-            <li><a href="#reglementation" class="hover:text-white transition">Code du Travail (Loi 65-99)</a></li>
-            <li><a href="#simulateur" class="hover:text-cyan-400 transition">Simulateur Remboursement CSF</a></li>
+            <li><a href="reglementation.html" class="hover:text-blue-600 dark:hover:text-white transition">Décret n° 2.14.499 (Incendie)</a></li>
+            <li><a href="reglementation.html" class="hover:text-blue-600 dark:hover:text-white transition">Décret n° 2.12.236 (Machines)</a></li>
+            <li><a href="reglementation.html" class="hover:text-blue-600 dark:hover:text-white transition">Appareils à Pression (BO 2207)</a></li>
+            <li><a href="reglementation.html" class="hover:text-blue-600 dark:hover:text-white transition">Code du Travail (Loi 65-99)</a></li>
+            <li><a href="reglementation.html" class="hover:text-blue-600 dark:hover:text-white transition">Habilitations Électriques (NM 06.1.225)</a></li>
           </ul>
         </div>
 
         <div>
-          <h4 class="text-white font-bold text-sm mb-4">Coordonnées</h4>
-          <div class="space-y-2">
-            <p>Rue Moussa Al Kadim, Imm. Le Lys N° 21, Bourgogne, Casablanca</p>
-            <p class="font-mono text-slate-300">+212 6 61 45 02 48</p>
-            <p class="font-mono text-slate-300">formation@meplus.ma</p>
-            <p class="text-[11px] text-emerald-400 pt-2">Bureau ouvert du Lundi au Vendredi : 08h30 - 18h00</p>
+          <h4 class="text-slate-900 dark:text-white font-bold text-sm mb-4">Siège & Coordonnées</h4>
+          <div class="space-y-2.5">
+            <p>Rue Moussa Al Kadim, Imm. Le Lys N° 21, Quartier Bourgogne, Casablanca, Maroc</p>
+            <p class="font-mono text-slate-800 dark:text-slate-200 font-semibold">+212 6 61 45 02 48</p>
+            <p class="font-mono text-slate-800 dark:text-slate-200 font-semibold">+212 5 22 48 39 48</p>
+            <p class="font-mono text-blue-600 dark:text-cyan-400">formation@meplus.ma</p>
+            <p class="text-[11px] text-emerald-600 dark:text-emerald-400 pt-1 font-medium">Bureaux ouverts du Lundi au Vendredi : 08h30 - 18h00</p>
           </div>
         </div>
 
       </div>
 
-      <div class="pt-8 border-t border-slate-800/80 flex flex-col sm:flex-row items-center justify-between gap-4 text-slate-500">
+      <div class="pt-8 border-t border-slate-200 dark:border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-slate-500">
         <div>
           © 2026 ME PLUS Maroc. Tous droits réservés.
         </div>
         <div class="flex items-center gap-6">
-          <a href="https://meplus.ma/" target="_blank" class="hover:text-white transition">Site Original meplus.ma</a>
-          <a href="#hero" class="hover:text-white transition">Haut de page ↑</a>
+          <a href="https://meplus.ma/" target="_blank" class="hover:text-blue-600 dark:hover:text-white transition">Site Original meplus.ma</a>
+          <a href="#" class="hover:text-blue-600 dark:hover:text-white transition">Haut de page ↑</a>
         </div>
       </div>
     </div>
   </footer>
 
-  <!-- MOBILE BOTTOM FLOATING NAVIGATION BAR (2026 Mobile-First UX) -->
-  <div class="md:hidden fixed bottom-3 left-4 right-4 z-40 glass-nav rounded-2xl p-2 px-4 flex items-center justify-around shadow-2xl border border-blue-500/20">
-    <a href="#hero" class="flex flex-col items-center gap-1 text-[10px] text-slate-400 hover:text-cyan-400 transition">
-      <i data-lucide="home" class="w-5 h-5"></i>
+  <!-- MOBILE BOTTOM FLOATING DOCK (One-Thumb Quick Access) -->
+  <div class="md:hidden fixed bottom-3 left-4 right-4 z-40 floating-pill-nav rounded-full p-2 px-5 flex items-center justify-between shadow-2xl">
+    <a href="index.html" class="flex flex-col items-center gap-0.5 text-[10px] text-blue-600 dark:text-cyan-400 font-bold">
+      <i data-lucide="home" class="w-4 h-4"></i>
       <span>Accueil</span>
     </a>
-    <a href="#formations" class="flex flex-col items-center gap-1 text-[10px] text-slate-400 hover:text-cyan-400 transition">
-      <i data-lucide="book-open" class="w-5 h-5"></i>
+    <a href="formations.html" class="flex flex-col items-center gap-0.5 text-[10px] text-slate-500 dark:text-slate-400 hover:text-blue-600">
+      <i data-lucide="book-open" class="w-4 h-4"></i>
       <span>Formations</span>
     </a>
-    <a href="#simulateur" class="flex flex-col items-center gap-1 text-[10px] text-cyan-400 font-bold">
-      <div class="w-9 h-9 rounded-full bg-blue-600 flex items-center justify-center -mt-5 shadow-lg shadow-blue-500/50 text-white">
-        <i data-lucide="calculator" class="w-5 h-5"></i>
+    <a href="simulateur.html" class="flex flex-col items-center gap-0.5 text-[10px] text-slate-500 dark:text-slate-400">
+      <div class="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center text-white shadow-md">
+        <i data-lucide="calculator" class="w-4 h-4"></i>
       </div>
       <span>CSF</span>
     </a>
-    <a href="#reglementation" class="flex flex-col items-center gap-1 text-[10px] text-slate-400 hover:text-cyan-400 transition">
-      <i data-lucide="file-check-2" class="w-5 h-5"></i>
+    <a href="reglementation.html" class="flex flex-col items-center gap-0.5 text-[10px] text-slate-500 dark:text-slate-400 hover:text-blue-600">
+      <i data-lucide="file-check-2" class="w-4 h-4"></i>
       <span>Lois BO</span>
     </a>
-    <a href="#contact" class="flex flex-col items-center gap-1 text-[10px] text-slate-400 hover:text-cyan-400 transition">
-      <i data-lucide="phone" class="w-5 h-5"></i>
+    <a href="contact.html" class="flex flex-col items-center gap-0.5 text-[10px] text-slate-500 dark:text-slate-400 hover:text-blue-600">
+      <i data-lucide="phone" class="w-4 h-4"></i>
       <span>Contact</span>
     </a>
   </div>
 
   <!-- COURSE DETAILS MODAL -->
-  <div id="course-modal" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-xl hidden flex items-center justify-center p-4 overflow-y-auto">
-    <div class="relative w-full max-w-2xl bg-slate-900 border border-blue-500/40 rounded-3xl shadow-2xl overflow-hidden modal-animate my-8 max-h-[90vh] flex flex-col">
-      <!-- Close button -->
-      <button id="close-modal-btn" class="absolute top-5 right-5 p-2 rounded-full bg-slate-800 text-slate-400 hover:text-white transition z-10" aria-label="Fermer">
+  <div id="course-modal" class="fixed inset-0 z-50 bg-black/75 backdrop-blur-xl hidden flex items-center justify-center p-4 overflow-y-auto">
+    <div class="relative w-full max-w-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl shadow-2xl overflow-hidden modal-animate my-8 max-h-[90vh] flex flex-col">
+      <button id="close-modal-btn" class="absolute top-5 right-5 p-2 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition z-10" aria-label="Fermer">
         <i data-lucide="x" class="w-5 h-5"></i>
       </button>
-
-      <!-- Scrollable Modal Content -->
       <div id="modal-body" class="overflow-y-auto">
-        <!-- Injected via app.js -->
+        <!-- Dynamically injected via app.js -->
       </div>
     </div>
   </div>
 
-  <!-- Load Data and Application Scripts -->
+  <!-- Scripts -->
   <script src="./data.js"></script>
   <script src="./app.js"></script>
 </body>

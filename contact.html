@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact, Devis Express & Formulaire F2 | ME PLUS Casablanca</title>
+  <meta name="description" content="Contactez le cabinet ME PLUS à Casablanca. Obtenez un devis express pour vos formations ou audits industriels sous 2h et recevez votre Formulaire F2 homologué OFPPT." />
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="https://meplus.ma/wp-content/uploads/2019/10/cropped-logo-meplus.png" />
+
+  <!-- Google Fonts: Plus Jakarta Sans & Space Grotesk -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            mono: ['"Space Grotesk"', 'monospace']
+          },
+          colors: {
+            brand: {
+              navy: '#070e1b',
+              surface: '#0f1b31',
+              blue: '#2563eb',
+              electric: '#3b82f6',
+              cyan: '#06b6d4',
+              accent: '#00d2ff'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Anti-FOUC Theme Preloader -->
+  <script>
+    (function() {
+      const theme = localStorage.getItem('meplus_theme');
+      if (theme === 'dark') {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    })();
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body class="industrial-mesh-bg font-sans antialiased min-h-screen text-slate-900 dark:text-slate-100 selection:bg-blue-600 selection:text-white pb-20 md:pb-0">
+
+  <!-- Toast Container -->
+  <div id="toast-container" class="fixed bottom-24 md:bottom-8 right-6 z-50 flex flex-col gap-3 max-w-sm pointer-events-none"></div>
+
+  <!-- FLOATING PILL HEADER -->
+  <header class="fixed top-0 left-0 right-0 z-40 px-4 sm:px-6 lg:px-8 pt-4 pb-2">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      
+      <!-- Brand Logo -->
+      <a href="index.html" class="flex items-center gap-3 group bg-white/90 dark:bg-slate-900/90 py-2 px-4 rounded-full shadow-md border border-slate-200/80 dark:border-slate-800 backdrop-blur-xl transition hover:scale-105">
+        <div class="w-9 h-9 rounded-full bg-gradient-to-tr from-blue-600 to-cyan-400 p-0.5 shadow-sm">
+          <div class="w-full h-full bg-[#070e1b] rounded-full flex items-center justify-center font-bold text-sm font-mono text-cyan-400 tracking-tighter">
+            ME<span class="text-blue-500">+</span>
+          </div>
+        </div>
+        <div class="flex flex-col">
+          <span class="text-base font-extrabold tracking-tight text-slate-900 dark:text-white flex items-center gap-1">
+            ME<span class="text-blue-600 dark:text-blue-400">PLUS</span>
+            <span class="w-1.5 h-1.5 rounded-full bg-cyan-500 animate-pulse"></span>
+          </span>
+          <span class="text-[9px] tracking-widest uppercase font-semibold text-slate-500 dark:text-slate-400">Maroc • Casablanca</span>
+        </div>
+      </a>
+
+      <!-- Desktop Floating Navigation Pill -->
+      <div class="hidden lg:flex items-center gap-6 floating-pill-nav py-2 px-6 rounded-full">
+        <nav class="flex items-center gap-6 text-sm font-medium text-slate-600 dark:text-slate-300">
+          <a href="index.html" class="hover:text-blue-600 dark:hover:text-cyan-400 transition">Accueil</a>
+          <a href="formations.html" class="hover:text-blue-600 dark:hover:text-cyan-400 transition flex items-center gap-1.5">
+            Formations
+            <span class="text-[10px] font-bold px-2 py-0.2 rounded-full bg-blue-500/10 text-blue-600 dark:text-blue-400 border border-blue-500/20">85+</span>
+          </a>
+          <a href="services.html" class="hover:text-blue-600 dark:hover:text-cyan-400 transition">Services & Audits</a>
+          <a href="simulateur.html" class="hover:text-blue-600 dark:hover:text-cyan-400 transition flex items-center gap-1 font-semibold text-blue-600 dark:text-cyan-300">
+            <i data-lucide="calculator" class="w-3.5 h-3.5"></i>
+            Simulateur CSF
+          </a>
+          <a href="reglementation.html" class="hover:text-blue-600 dark:hover:text-cyan-400 transition">Réglementation</a>
+          <a href="consultants.html" class="hover:text-blue-600 dark:hover:text-cyan-400 transition">Consultants</a>
+        </nav>
+
+        <div class="h-5 w-px bg-slate-200 dark:bg-slate-700"></div>
+
+        <!-- Theme Toggle Button -->
+        <button class="theme-toggle-btn p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-300 transition" title="Changer de thème">
+          <i data-lucide="sun" class="icon-sun w-4 h-4 hidden text-amber-400"></i>
+          <i data-lucide="moon" class="icon-moon w-4 h-4 text-slate-600"></i>
+        </button>
+
+        <a href="contact.html" class="btn-pill-cyan px-5 py-2 text-xs uppercase tracking-wider font-bold">
+          Devis & Formulaire F2
+        </a>
+      </div>
+
+      <!-- Mobile Controls -->
+      <div class="lg:hidden flex items-center gap-2">
+        <button class="theme-toggle-btn p-2.5 rounded-full bg-white/90 dark:bg-slate-800 text-slate-700 dark:text-slate-300 shadow-sm border border-slate-200 dark:border-slate-700 transition" aria-label="Thème">
+          <i data-lucide="sun" class="icon-sun w-4 h-4 hidden text-amber-400"></i>
+          <i data-lucide="moon" class="icon-moon w-4 h-4 text-slate-600"></i>
+        </button>
+        <button id="mobile-menu-btn" class="p-2.5 rounded-full bg-white/90 dark:bg-slate-800 text-slate-700 dark:text-slate-300 shadow-sm border border-slate-200 dark:border-slate-700 transition" aria-label="Menu">
+          <i data-lucide="menu" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- MOBILE MENU DRAWER -->
+  <div id="mobile-drawer" class="fixed inset-0 z-50 bg-black/70 backdrop-blur-xl hidden flex flex-col justify-between p-6">
+    <div>
+      <div class="flex items-center justify-between pb-6 border-b border-slate-200 dark:border-slate-800">
+        <div class="flex items-center gap-2">
+          <span class="text-xl font-extrabold text-slate-900 dark:text-white">ME<span class="text-blue-600 dark:text-blue-400">PLUS</span></span>
+          <span class="text-xs px-2.5 py-0.5 rounded-full bg-blue-500/10 text-blue-600 dark:text-blue-400 font-mono">2026 Edition</span>
+        </div>
+        <button id="close-drawer-btn" class="p-2 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300" aria-label="Fermer">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+      <nav class="flex flex-col gap-3 mt-6 text-base font-semibold text-slate-800 dark:text-slate-200">
+        <a href="index.html" class="drawer-link flex items-center justify-between py-2 hover:text-blue-600">
+          <span>Accueil</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-slate-400"></i>
+        </a>
+        <a href="formations.html" class="drawer-link flex items-center justify-between py-2 hover:text-blue-600">
+          <span>Catalogue Formations (85 Modules)</span>
+          <span class="text-xs bg-blue-600 text-white px-2 py-0.5 rounded-full">85+</span>
+        </a>
+        <a href="services.html" class="drawer-link flex items-center justify-between py-2 hover:text-blue-600">
+          <span>Services & Audits Industriels</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-slate-400"></i>
+        </a>
+        <a href="simulateur.html" class="drawer-link flex items-center justify-between py-2 text-cyan-600 dark:text-cyan-300">
+          <span>Simulateur Remboursement CSF / GIAC</span>
+          <i data-lucide="calculator" class="w-4 h-4"></i>
+        </a>
+        <a href="reglementation.html" class="drawer-link flex items-center justify-between py-2 hover:text-blue-600">
+          <span>Réglementation Maroc (B.O.)</span>
+          <i data-lucide="download" class="w-4 h-4 text-cyan-500"></i>
+        </a>
+        <a href="consultants.html" class="drawer-link flex items-center justify-between py-2 hover:text-blue-600">
+          <span>Experts & Consultants Seniors</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-slate-400"></i>
+        </a>
+        <a href="contact.html" class="drawer-link flex items-center justify-between py-2 text-blue-600 dark:text-blue-400">
+          <span>Contact & Localisation Casablanca</span>
+          <i data-lucide="chevron-right" class="w-4 h-4"></i>
+        </a>
+      </nav>
+    </div>
+    <div class="pt-6 border-t border-slate-200 dark:border-slate-800 flex flex-col gap-3">
+      <a href="tel:+212661450248" class="w-full py-3 rounded-xl bg-slate-100 dark:bg-slate-800 text-center font-bold text-sm text-slate-900 dark:text-white flex items-center justify-center gap-2">
+        <i data-lucide="phone" class="w-4 h-4 text-cyan-500"></i>
+        +212 6 61 45 02 48
+      </a>
+      <a href="contact.html" class="drawer-link w-full py-3 rounded-xl btn-pill-cyan text-center font-bold text-sm flex items-center justify-center gap-2">
+        Demande de Devis & Formulaire F2
+      </a>
+    </div>
+  </div>
+
+  <!-- MAIN CONTACT CONTENT -->
+  <main class="relative">
+    
+    <!-- Hero Banner with Faded Background Image -->
+    <section class="relative pt-32 pb-16 md:pt-36 md:pb-20 overflow-hidden bg-gradient-to-b from-blue-50/60 via-slate-50/40 to-transparent dark:from-slate-950 dark:via-[#070e1b] dark:to-transparent rounded-b-[40px] md:rounded-b-[50px] border-b border-slate-200/80 dark:border-slate-800/80 mb-12">
+      <div class="header-fade-bg">
+        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1600&auto=format&fit=crop&q=80" alt="Siège ME PLUS Casablanca" />
+      </div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+        <span class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-blue-600 dark:text-cyan-400 bg-white/90 dark:bg-blue-500/10 px-3.5 py-1 rounded-full border border-slate-200 dark:border-blue-500/20 shadow-sm shimmer-badge">
+          <span class="w-2 h-2 rounded-full bg-cyan-500 animate-pulse"></span>
+          Réactivité & Accompagnement Pro sous 2h
+        </span>
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 dark:text-white mt-4 mb-3 tracking-tight">
+          Contactez notre Siège à Casablanca
+        </h1>
+        <p class="text-slate-600 dark:text-slate-400 text-sm sm:text-base leading-relaxed max-w-3xl mx-auto">
+          Nos conseillers pédagogiques vous répondent sous 2 heures ouvrées avec une proposition d'intervention chiffrée et la fiche technique officielle (Formulaire F2).
+        </p>
+      </div>
+    </section>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-24">
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-20">
+      
+      <!-- Left: Contact Details & Headquarters -->
+      <div class="lg:col-span-5 flex flex-col justify-between reveal-on-scroll">
+        <div>
+          <!-- Casablanca HQ Real Office Photo Card with Soft Mask -->
+          <div class="relative h-44 rounded-3xl overflow-hidden mb-8 group border border-slate-200 dark:border-slate-800 shadow-md">
+            <img 
+              src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80" 
+              alt="Siège ME PLUS Casablanca" 
+              class="w-full h-full object-cover group-hover:scale-105 transition duration-700 ease-out" 
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/30 to-transparent flex flex-col justify-end p-5">
+              <span class="text-xs text-cyan-400 font-bold uppercase tracking-wider mb-1">Siège Régional Casablanca</span>
+              <div class="text-sm font-bold text-white flex items-center gap-2">
+                <i data-lucide="map-pin" class="w-4 h-4 text-cyan-400 shrink-0"></i>
+                Quartier Bourgogne • Rue Moussa Al Kadim
+              </div>
+            </div>
+          </div>
+
+          <h2 class="text-2xl font-extrabold text-slate-900 dark:text-white mb-6">
+            Nos Coordonnées Directes
+          </h2>
+
+          <div class="space-y-6 text-sm">
+            <div class="flex items-start gap-4">
+              <div class="w-11 h-11 rounded-2xl bg-blue-600/10 text-blue-600 dark:text-blue-400 flex items-center justify-center shrink-0">
+                <i data-lucide="map-pin" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <div class="font-bold text-slate-900 dark:text-white">Siège Social ME PLUS</div>
+                <div class="text-slate-600 dark:text-slate-400 text-xs leading-relaxed mt-0.5">
+                  Rue Moussa Al Kadim, Immeuble Le Lys N° 21, Quartier Bourgogne, Casablanca, Maroc
+                </div>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4">
+              <div class="w-11 h-11 rounded-2xl bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 flex items-center justify-center shrink-0">
+                <i data-lucide="phone-call" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <div class="font-bold text-slate-900 dark:text-white">Téléphones Directs & WhatsApp</div>
+                <div class="text-xs mt-1 space-y-1 font-mono">
+                  <p><a href="tel:+212661450248" class="text-slate-700 dark:text-slate-300 hover:text-blue-600 font-semibold">+212 6 61 45 02 48</a> <span class="text-slate-400">(Directeur / WhatsApp)</span></p>
+                  <p><a href="tel:+212522483948" class="text-slate-700 dark:text-slate-300 hover:text-blue-600 font-semibold">+212 5 22 48 39 48</a> <span class="text-slate-400">(Standard Fixe)</span></p>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4">
+              <div class="w-11 h-11 rounded-2xl bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 flex items-center justify-center shrink-0">
+                <i data-lucide="mail" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <div class="font-bold text-slate-900 dark:text-white">Courriels Professionnels</div>
+                <div class="text-xs mt-1 space-y-1 font-mono">
+                  <p><a href="mailto:formation@meplus.ma" class="text-blue-600 dark:text-cyan-400 hover:underline">formation@meplus.ma</a></p>
+                  <p><a href="mailto:m.elmeskini@meplus.ma" class="text-blue-600 dark:text-cyan-400 hover:underline">m.elmeskini@meplus.ma</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-8 p-5 rounded-2xl bg-blue-50 dark:bg-blue-600/10 border border-blue-200 dark:border-blue-500/30">
+            <div class="text-xs font-bold text-blue-700 dark:text-blue-400 mb-1">🇲🇦 Intervention sur Tout le Royaume</div>
+            <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+              Nos équipes d'experts et consultants seniors interviennent dans toutes les zones industrielles du Maroc : Casablanca-Nouaceur, Tanger Med, Kénitra Atlantic, Jorf Lasfar, Fès, Meknès, Safi et Agadir.
+            </p>
+          </div>
+        </div>
+
+        <div class="pt-6 border-t border-slate-200 dark:border-slate-800 text-xs text-slate-500">
+          Bureaux ouverts du Lundi au Vendredi de 08h30 à 18h00.
+        </div>
+      </div>
+
+      <!-- Right: Interactive Express Quote & F2 Request Form -->
+      <div class="lg:col-span-7 glass-card p-8 sm:p-10 rounded-3xl border border-slate-200/90 dark:border-slate-800">
+        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2 flex items-center gap-2">
+          <i data-lucide="send" class="w-5 h-5 text-blue-600 dark:text-blue-400"></i>
+          Demande d'Intervention ou de Devis Express
+        </h3>
+        <p class="text-xs text-slate-500 dark:text-slate-400 mb-6">
+          Remplissez ce formulaire pour recevoir votre devis et la fiche technique officielle Formulaire F2.
+        </p>
+
+        <form id="contact-form" class="space-y-4">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="text-xs font-bold text-slate-700 dark:text-slate-300 block mb-1">Nom & Prénom *</label>
+              <input type="text" required placeholder="ex. Ahmed Benani" class="w-full px-4 py-3 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-sm text-slate-900 dark:text-white placeholder-slate-400 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 outline-none transition" />
+            </div>
+            <div>
+              <label class="text-xs font-bold text-slate-700 dark:text-slate-300 block mb-1">Entreprise & Fonction *</label>
+              <input type="text" required placeholder="ex. OCP Group - Responsable HSE" class="w-full px-4 py-3 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-sm text-slate-900 dark:text-white placeholder-slate-400 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 outline-none transition" />
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="text-xs font-bold text-slate-700 dark:text-slate-300 block mb-1">Téléphone de Contact *</label>
+              <input type="tel" required placeholder="+212 6 XX XX XX XX" class="w-full px-4 py-3 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-sm text-slate-900 dark:text-white placeholder-slate-400 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 outline-none transition" />
+            </div>
+            <div>
+              <label class="text-xs font-bold text-slate-700 dark:text-slate-300 block mb-1">Email Professionnel *</label>
+              <input type="email" required placeholder="contact@entreprise.ma" class="w-full px-4 py-3 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-sm text-slate-900 dark:text-white placeholder-slate-400 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 outline-none transition" />
+            </div>
+          </div>
+
+          <div>
+            <label class="text-xs font-bold text-slate-700 dark:text-slate-300 block mb-1">Objet de la Demande *</label>
+            <input type="text" id="contact-subject" required placeholder="ex. Devis Formation Habilitation Électrique / Audit Décret 2.14.499" class="w-full px-4 py-3 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-sm text-slate-900 dark:text-white placeholder-slate-400 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 outline-none transition" />
+          </div>
+
+          <div>
+            <label class="text-xs font-bold text-slate-700 dark:text-slate-300 block mb-1">Détails de votre besoin ou nombre de salariés à former</label>
+            <textarea rows="4" placeholder="Précisez le site d'intervention (ville), les dates souhaitées et vos contraintes..." class="w-full px-4 py-3 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-sm text-slate-900 dark:text-white placeholder-slate-400 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 outline-none transition"></textarea>
+          </div>
+
+          <button type="submit" class="w-full py-4 rounded-full btn-pill-cyan font-extrabold text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-xl shadow-cyan-400/20">
+            Envoyer la Demande & Obtenir le Devis
+            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </button>
+        </form>
+      </div>
+
+    </div>
+
+    <!-- FAQ SECTION -->
+    <section class="glass-card p-8 sm:p-12 rounded-3xl border border-slate-200 dark:border-slate-800">
+      <div class="text-center max-w-2xl mx-auto mb-10">
+        <span class="text-xs font-bold uppercase tracking-wider text-blue-600 dark:text-cyan-400 bg-blue-500/10 px-3 py-1 rounded-full">
+          Foire Aux Questions
+        </span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white mt-3 mb-2">
+          Questions Fréquentes de nos Clients Industriels
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm">
+        <div class="p-6 rounded-2xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800">
+          <h3 class="font-bold text-slate-900 dark:text-white mb-2 flex items-center gap-2">
+            <i data-lucide="help-circle" class="w-4 h-4 text-blue-600 dark:text-cyan-400"></i>
+            Comment fonctionne le remboursement CSF avec l'OFPPT ?
+          </h3>
+          <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+            Votre entreprise cotise chaque mois à la Taxe de Formation Professionnelle (1.6% de la masse salariale). ME PLUS vous fournit les fiches techniques (F2) homologuées nécessaires pour récupérer jusqu'à 70-80% du coût des formations réalisées.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800">
+          <h3 class="font-bold text-slate-900 dark:text-white mb-2 flex items-center gap-2">
+            <i data-lucide="help-circle" class="w-4 h-4 text-blue-600 dark:text-cyan-400"></i>
+            Les formations sont-elles animées dans nos locaux ?
+          </h3>
+          <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+            Oui, 90% de nos formations sont dispensées en intra-entreprise, directement dans vos usines et ateliers au Maroc, sur vos propres équipements et machines de production.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800">
+          <h3 class="font-bold text-slate-900 dark:text-white mb-2 flex items-center gap-2">
+            <i data-lucide="help-circle" class="w-4 h-4 text-blue-600 dark:text-cyan-400"></i>
+            Quels sont les délais pour mobiliser un consultant ?
+          </h3>
+          <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+            Pour une formation standard ou une habilitation électrique, nous pouvons mobiliser nos experts sous 5 à 10 jours ouvrés selon vos disponibilités et contraintes de rotation des équipes.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800">
+          <h3 class="font-bold text-slate-900 dark:text-white mb-2 flex items-center gap-2">
+            <i data-lucide="help-circle" class="w-4 h-4 text-blue-600 dark:text-cyan-400"></i>
+            Les titres d'habilitation sont-ils conformes à la loi ?
+          </h3>
+          <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+            Absolument. Nos programmes d'habilitation électrique respectent scrupuleusement la Norme Marocaine NM 06.1.225 et la publication UTE C 18-510 avec tests éliminatoires validant la délivrance du titre par l'employeur.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    </div>
+  </main>
+
+  <!-- UNIFIED FOOTER -->
+  <footer class="border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-[#050b15] py-16 text-slate-600 dark:text-slate-400 text-xs transition">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+        <div>
+          <div class="flex items-center gap-2 mb-4">
+            <span class="text-xl font-extrabold text-slate-900 dark:text-white">ME<span class="text-blue-600 dark:text-blue-400">PLUS</span></span>
+          </div>
+          <p class="leading-relaxed mb-4">
+            Cabinet de formation continue et de conseil industriel agréé par l'État marocain. Accompagnement réactif et devis sous 2h ouvrées.
+          </p>
+          <div class="text-[11px] font-semibold text-blue-600 dark:text-blue-400">
+            Homologué DFP • OFPPT • GIAC • AFOM • Maroc PME
+          </div>
+        </div>
+
+        <div>
+          <h4 class="text-slate-900 dark:text-white font-bold text-sm mb-4">Navigation Rapide</h4>
+          <ul class="space-y-2">
+            <li><a href="index.html" class="hover:text-blue-600 dark:hover:text-white transition">Accueil</a></li>
+            <li><a href="formations.html" class="hover:text-blue-600 dark:hover:text-white transition">Catalogue Formations (85+)</a></li>
+            <li><a href="services.html" class="hover:text-blue-600 dark:hover:text-white transition">Services & Audits GPEC / TPM</a></li>
+            <li><a href="simulateur.html" class="hover:text-cyan-600 dark:hover:text-cyan-400 transition font-medium">Simulateur Remboursement CSF</a></li>
+            <li><a href="reglementation.html" class="hover:text-blue-600 dark:hover:text-white transition">Réglementation Maroc (B.O.)</a></li>
+            <li><a href="consultants.html" class="hover:text-blue-600 dark:hover:text-white transition">Consultants & Experts</a></li>
+            <li><a href="contact.html" class="hover:text-blue-600 dark:hover:text-white transition font-bold text-blue-600 dark:text-cyan-400">Contact & Devis Express</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-slate-900 dark:text-white font-bold text-sm mb-4">Support Administratif</h4>
+          <ul class="space-y-2">
+            <li>Élaboration Formulaires F2 OFPPT</li>
+            <li>Montage Dossier CSF & Liquidation</li>
+            <li>Attestations de Stage Certifiées</li>
+            <li>Conventions Intra-Entreprises</li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-slate-900 dark:text-white font-bold text-sm mb-4">Coordonnées</h4>
+          <div class="space-y-2.5">
+            <p>Casablanca, Quartier Bourgogne, Rue Moussa Al Kadim</p>
+            <p class="font-mono text-slate-800 dark:text-slate-200 font-semibold">+212 6 61 45 02 48</p>
+            <p class="font-mono text-blue-600 dark:text-cyan-400">formation@meplus.ma</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="pt-8 border-t border-slate-200 dark:border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-slate-500">
+        <div>© 2026 ME PLUS Maroc. Tous droits réservés.</div>
+        <div class="flex items-center gap-6">
+          <a href="https://meplus.ma/" target="_blank" class="hover:text-blue-600 dark:hover:text-white transition">Site meplus.ma</a>
+          <a href="#" class="hover:text-blue-600 dark:hover:text-white transition">Haut de page ↑</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MOBILE BOTTOM FLOATING DOCK -->
+  <div class="md:hidden fixed bottom-3 left-4 right-4 z-40 floating-pill-nav rounded-full p-2 px-5 flex items-center justify-between shadow-2xl">
+    <a href="index.html" class="flex flex-col items-center gap-0.5 text-[10px] text-slate-500 dark:text-slate-400 hover:text-blue-600">
+      <i data-lucide="home" class="w-4 h-4"></i>
+      <span>Accueil</span>
+    </a>
+    <a href="formations.html" class="flex flex-col items-center gap-0.5 text-[10px] text-slate-500 dark:text-slate-400 hover:text-blue-600">
+      <i data-lucide="book-open" class="w-4 h-4"></i>
+      <span>Formations</span>
+    </a>
+    <a href="simulateur.html" class="flex flex-col items-center gap-0.5 text-[10px] text-slate-500 dark:text-slate-400">
+      <div class="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center text-white shadow-md">
+        <i data-lucide="calculator" class="w-4 h-4"></i>
+      </div>
+      <span>CSF</span>
+    </a>
+    <a href="reglementation.html" class="flex flex-col items-center gap-0.5 text-[10px] text-slate-500 dark:text-slate-400 hover:text-blue-600">
+      <i data-lucide="file-check-2" class="w-4 h-4"></i>
+      <span>Lois BO</span>
+    </a>
+    <a href="contact.html" class="flex flex-col items-center gap-0.5 text-[10px] text-blue-600 dark:text-cyan-400 font-bold">
+      <i data-lucide="phone" class="w-4 h-4"></i>
+      <span>Contact</span>
+    </a>
+  </div>
+
+  <!-- Scripts -->
+  <script src="./data.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>

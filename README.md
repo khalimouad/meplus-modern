@@ -1,44 +1,29 @@
-# ⚡ ME PLUS | Modern Industrial Web Platform (2026 Edition)
+# ⚡ ME PLUS | Modern Industrial Multi-Page Platform (2026 Edition)
 
 ![ME PLUS Banner](https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1200&h=400&fit=crop&crop=center)
 
-> **Next-Generation B2B Portal for Industrial Training, Safety Management & Maintenance Engineering in Morocco.**  
-> Redesigned with the cutting-edge design trends of 2026, preserving ME PLUS's signature deep navy and electric blue identity while delivering fluid animations, real-time course search, an interactive Moroccan CSF/GIAC reimbursement simulator, and a mobile-first user experience.
+> **Next-Generation B2B Multi-Page Portal for Industrial Training, Safety Management & Maintenance Engineering in Morocco.**  
+> Built with modern minimalist high-precision aesthetics (inspired by floating pill capsule navigation & sculptured industrial wave layouts), **Light Mode first** by default with an instant Dark Mode toggle, preserving ME PLUS's signature deep oceanic navy and vivid electric cyan identity.
 
 ---
 
-## 🌟 Key Highlights & 2026 Features
+## 🌟 Key Features & Multi-Page Architecture
 
-### 🎨 1. 2026 Industrial Design System
-- **Mesh Gradients & Ambient Glows**: Deep oceanic navy (`#070e1b`), cobalt blue (`#2563eb`), and cyan accents (`#06b6d4`).
-- **Glassmorphic Bento Grid**: Multi-layered backdrop blurs (`backdrop-blur-xl`), subtle neon borders, and tactile elevations.
-- **Client Logo Marquee**: Infinite smooth sliding ticker showcasing Morocco's top industrial firms (*OCP Group, SONASID, LafargeHolcim, Centrale Danone, Aïcha, Nexans, Yazaki, Suzuki, etc.*).
+### 🧭 1. Complete Multi-Page Architecture (8 Dedicated Pages)
+- **`index.html` (Accueil)** : Hero with curved arch container, Moroccan homologations (DFP, OFPPT, GIAC), trust metrics, client logo marquee (*OCP, SONASID, LafargeHolcim, Nexans, Aïcha, etc.*), 2-column "About" section with floating badge, 4-pillar bento grid, popular course preview, CSF reimbursement teaser, and verified testimonials.
+- **`formations.html` (Catalogue des 85+ Formations)** : Split hero inspired by the reference design with real Moroccan industrial engineers (`assets/hero_engineers.jpg`), floating CSF 80% card, instant search + filters button, domain pills with count badges (*Toutes 85, Sécurité 30, Technique 37, Management 10, Qualité 8*), sort by relevance/name, crisp cards with `Voir le programme ↗`, and bottom pagination (`< 1 2 3 ... 10 >`).
+- **`formation-detail.html` (Page Dédiée par Formation)** : Single dedicated page for every course with a prominent **"← Retour au catalogue"** button, dynamic breadcrumb, full objectives checklist, numbered modular syllabus, pedagogical methodology (70% practice, test benches), Moroccan legal conformity, CSF 80% simulation link, instant quote request pre-fill, and related courses.
+- **`services.html` (Services & Audits Industriels)** : In-depth presentation of GPEC engineering, regulatory audits (*Décret 2.14.499 Incendie*, *Décret 2.12.236 Machines*), 6-step TPM maintenance accompaniment, and Moroccan electrical qualifications (*NM 06.1.225*).
+- **`simulateur.html` (Simulateur Remboursement GIAC / CSF)** : Interactive financial calculator with real-time sliders for training budget and employee headcount, Moroccan legal reimbursement breakdown (up to 70-80%), and step-by-step procedure.
+- **`reglementation.html` (Centre de Documentation Réglementaire)** : Downloadable official Bulletins Officiels (B.O.), Dahirs, and ministerial decrees with employer legal responsibility checklists.
+- **`consultants.html` (Équipe d'Experts & Consultants Seniors)** : Profiles of senior industrial experts, former plant directors, accredited auditors, and the ME PLUS pedagogical charter.
+- **`contact.html` (Contact, Devis Express & Formulaire F2)** : Interactive quote request form with automatic URL pre-fill from course cards (`?formation=...`), Casablanca headquarters details, phone/WhatsApp pro, and client FAQ.
 
-### 🔍 2. Interactive Course Catalog (85+ Real Modules)
-- **Instant Client-Side Search**: Search in real-time across all 85 programs by keywords, equipment (Siemens, PLC, presses), or regulatory codes (NM 06.1.225).
-- **Domain Filter Badges**:
-  - ⚡ **Sécurité & Hygiène** (30 modules)
-  - ⚙️ **Technique Industrielle** (37 modules)
-  - 📊 **Management & Performance** (10 modules)
-  - 🎯 **Qualité & DMO** (8 modules)
-- **Dynamic Program Modal**: Click any card to pop up the complete pedagogical syllabus, target audience, and prerequisite list without refreshing the page.
-
-### 💰 3. Interactive Moroccan CSF & GIAC Reimbursement Simulator
-- Interactive sliders for **Annual Training Budget** and **Headcount**.
-- Real-time calculation of estimated reimbursement under Moroccan Law (up to **70% to 80%** covered by the *Contrats Spéciaux de Formation* / OFPPT and GIAC diagnostic studies).
-- Direct download triggers for official Moroccan CSF registration forms (**Formulaire F2**).
-
-### 📑 4. Moroccan Legal Compliance Library (Bulletins Officiels)
-- Direct PDF download links for official Moroccan decrees and Dahirs:
-  - *Décret n° 2.14.499* (Sécurité Incendie dans les constructions)
-  - *Décret n° 2.12.236* (Sécurité des machines et carterage)
-  - *Appareils à vapeur et à pression de gaz* (BO n° 2207 & 2623)
-  - *Appareils de levage et ponts roulants* (BO n° 2066)
-  - *Code du Travail marocain (Loi 65-99 - Hygiène et Sécurité)*
-
-### 📱 5. Mobile-First Navigation & Floating Bottom Bar
-- Custom floating bottom dock for one-thumb mobile browsing (*Accueil*, *Formations*, *Simulateur*, *Lois B.O.*, *Contact*).
-- Full-screen animated mobile drawer with quick direct-call triggers (`+212 6 61 45 02 48`).
+### ☀️ 2. Light Mode First with Dark Mode Toggle & High Contrast
+- **Default Light Theme** : Clean, crisp white and light slate surfaces (`#f8fafc`), high-contrast ink-black typography (`#0f172a`), refined floating pill capsule header, vivid cyan and electric blue accents.
+- **Vibrant, Less Transparent Hero Images** : Re-calibrated hero headers with high saturation (+35%), enhanced contrast, and subtle text-backdrop gradient overlays ensuring 100% WCAG AAA readability.
+- **Dark Mode Support** : Seamless toggle via Sun/Moon button stored in `localStorage`, transforming into deep metallic oceanic navy curves.
+- **Zero FOUC** : Synchronous preloader script avoids any flash of unstyled theme on page transitions.
 
 ---
 
@@ -46,12 +31,20 @@
 
 ```text
 meplus-modern/
-├── index.html           # Main semantic HTML5 single-page application
-├── app.js               # Reactive state controller, search filters, modals & simulator
-├── data.js              # Consolidated JSON dataset (85 formations, 12 regulations, consultants)
-├── style.css            # 2026 design tokens, mesh animations & custom range sliders
-├── AUDIT_MEPLUS_FULL.md # Complete audit and extraction of the original meplus.ma site
-└── README.md            # Documentation & deployment guide
+├── index.html              # Accueil / Home page
+├── formations.html         # 85+ Course catalog with reference hero & pagination
+├── formation-detail.html   # Dedicated course page with return button & full syllabus
+├── services.html           # GPEC, TPM, Audits & Habilitations guide
+├── simulateur.html         # Interactive Moroccan CSF & GIAC reimbursement simulator
+├── reglementation.html     # Legal compliance library & Bulletins Officiels downloads
+├── consultants.html        # Senior consultants and industrial experts roster
+├── contact.html            # Express quote request, URL pre-fill & Casablanca HQ
+├── assets/                 # High-resolution generated photography (hero_engineers.jpg, hero_plant.jpg)
+├── app.js                  # Reactive multi-page state controller & theme manager
+├── data.js                 # Consolidated JSON dataset (85 formations, 12 regulations, consultants)
+├── style.css               # Light-mode-first tokens, floating capsule navbar & mesh curves
+├── AUDIT_MEPLUS_FULL.md    # Complete audit and extraction of the original meplus.ma site
+└── README.md               # Documentation & deployment guide
 ```
 
 ---

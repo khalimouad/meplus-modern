@@ -1,15 +1,156 @@
-/* MEPLUS 2026 Modern Industrial Design System */
+/* ME PLUS 2026 Modern Industrial Design System
+   Inspired by Minimalist High-Precision Industrial Tech ("Machine Discovery" Style)
+   Palette: Deep Oceanic Navy, Electric Blue, Vivid Cyan Accent, Clean Light Whites & Slates
+*/
 
 :root {
-  --primary-navy: #070e1b;
-  --secondary-navy: #0b172a;
-  --card-bg: rgba(15, 27, 49, 0.7);
-  --card-border: rgba(59, 130, 246, 0.15);
-  --accent-blue: #2563eb;
-  --electric-blue: #3b82f6;
-  --cyan-glow: #06b6d4;
-  --text-main: #f8fafc;
+  --color-brand-navy: #070e1b;
+  --color-brand-surface: #0f1b31;
+  --color-brand-blue: #2563eb;
+  --color-brand-electric: #3b82f6;
+  --color-brand-cyan: #06b6d4;
+  --color-brand-cyan-light: #22d3ee;
+  --color-brand-accent: #00d2ff;
+
+  /* Default Light Mode Tokens */
+  --bg-page: #f8fafc;
+  --bg-surface: rgba(255, 255, 255, 0.85);
+  --bg-surface-elevated: #ffffff;
+  --border-subtle: rgba(226, 232, 240, 0.9);
+  --border-focus: rgba(37, 99, 235, 0.4);
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #64748b;
+  --shadow-capsule: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.03);
+  --shadow-card: 0 4px 20px -2px rgba(0, 0, 0, 0.04), 0 2px 6px -1px rgba(0, 0, 0, 0.02);
+  --shadow-card-hover: 0 20px 35px -10px rgba(37, 99, 235, 0.12), 0 10px 15px -5px rgba(0, 0, 0, 0.04);
+}
+
+.dark {
+  /* Dark Mode Tokens */
+  --bg-page: #070e1b;
+  --bg-surface: rgba(15, 27, 49, 0.75);
+  --bg-surface-elevated: #0f172a;
+  --border-subtle: rgba(51, 65, 85, 0.6);
+  --border-focus: rgba(59, 130, 246, 0.5);
+  --text-primary: #f8fafc;
+  --text-secondary: #cbd5e1;
   --text-muted: #94a3b8;
+  --shadow-capsule: 0 20px 40px -10px rgba(0, 0, 0, 0.5);
+  --shadow-card: 0 8px 30px -4px rgba(0, 0, 0, 0.4);
+  --shadow-card-hover: 0 20px 45px -10px rgba(37, 99, 235, 0.25);
+}
+
+/* Base Body Styles */
+body {
+  background-color: var(--bg-page);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Background Sculpted Mesh Gradients (Light Mode Default) */
+.industrial-mesh-bg {
+  background-color: #f8fafc;
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(37, 99, 235, 0.06) 0px, transparent 50%),
+    radial-gradient(at 100% 10%, rgba(6, 182, 212, 0.08) 0px, transparent 45%),
+    radial-gradient(at 50% 60%, rgba(224, 231, 255, 0.4) 0px, transparent 60%),
+    radial-gradient(at 90% 90%, rgba(14, 165, 233, 0.05) 0px, transparent 50%);
+  background-attachment: fixed;
+}
+
+/* Background Sculpted Mesh Gradients (Dark Mode) */
+.dark .industrial-mesh-bg {
+  background-color: #070e1b;
+  background-image: 
+    radial-gradient(at 10% 10%, rgba(37, 99, 235, 0.2) 0px, transparent 55%),
+    radial-gradient(at 90% 15%, rgba(6, 182, 212, 0.16) 0px, transparent 50%),
+    radial-gradient(at 50% 75%, rgba(29, 78, 216, 0.18) 0px, transparent 60%),
+    radial-gradient(at 85% 95%, rgba(14, 165, 233, 0.14) 0px, transparent 50%);
+}
+
+/* Floating Capsule Pill Header (Machine Discovery Inspired) */
+.floating-pill-nav {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  box-shadow: var(--shadow-capsule);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dark .floating-pill-nav {
+  background: rgba(11, 23, 42, 0.88);
+  border-color: rgba(51, 65, 85, 0.7);
+  box-shadow: 0 15px 35px -5px rgba(0, 0, 0, 0.6);
+}
+
+/* Vibrant Action Capsule Button */
+.btn-pill-cyan {
+  background: #00d2ff;
+  background: linear-gradient(135deg, #00e5ff 0%, #06b6d4 100%);
+  color: #04101d;
+  font-weight: 700;
+  border-radius: 9999px;
+  box-shadow: 0 4px 16px -2px rgba(6, 182, 212, 0.4);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-pill-cyan:hover {
+  background: linear-gradient(135deg, #38bdf8 0%, #00e5ff 100%);
+  transform: translateY(-1px) scale(1.02);
+  box-shadow: 0 8px 24px -3px rgba(6, 182, 212, 0.55);
+}
+
+/* Cards & Bento Grid (Light Mode First) */
+.glass-card {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  box-shadow: var(--shadow-card);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card:hover {
+  border-color: rgba(37, 99, 235, 0.35);
+  box-shadow: var(--shadow-card-hover);
+  transform: translateY(-2px);
+}
+
+.dark .glass-card {
+  background: rgba(15, 27, 49, 0.7);
+  border-color: rgba(51, 65, 85, 0.6);
+  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.4);
+}
+
+.dark .glass-card:hover {
+  border-color: rgba(59, 130, 246, 0.5);
+  box-shadow: 0 16px 40px -10px rgba(37, 99, 235, 0.3);
+}
+
+/* Hero Background Waves Texture */
+.hero-curves-bg {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-curves-bg::before {
+  content: '';
+  position: absolute;
+  top: -10%;
+  right: -10%;
+  width: 70%;
+  height: 90%;
+  background: radial-gradient(ellipse at center, rgba(37, 99, 235, 0.08) 0%, rgba(6, 182, 212, 0.04) 40%, transparent 70%);
+  border-radius: 50%;
+  filter: blur(60px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.dark .hero-curves-bg::before {
+  background: radial-gradient(ellipse at center, rgba(37, 99, 235, 0.18) 0%, rgba(6, 182, 212, 0.12) 40%, transparent 70%);
 }
 
 /* Custom Scrollbar */
@@ -18,60 +159,20 @@
   height: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #070e1b;
+  background: var(--bg-page);
 }
 ::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+.dark ::-webkit-scrollbar-thumb {
   background: #1e293b;
-  border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
   background: #3b82f6;
 }
 
-/* Background Glowing Mesh Gradients */
-.mesh-gradient-bg {
-  background-color: #070e1b;
-  background-image: 
-    radial-gradient(at 10% 10%, rgba(37, 99, 235, 0.18) 0px, transparent 50%),
-    radial-gradient(at 90% 20%, rgba(6, 182, 212, 0.14) 0px, transparent 50%),
-    radial-gradient(at 50% 70%, rgba(29, 78, 216, 0.15) 0px, transparent 60%),
-    radial-gradient(at 80% 90%, rgba(14, 165, 233, 0.12) 0px, transparent 50%);
-  background-attachment: fixed;
-}
-
-/* Glassmorphism Cards */
-.glass-panel {
-  background: rgba(15, 27, 49, 0.65);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(59, 130, 246, 0.18);
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.glass-panel:hover {
-  border-color: rgba(59, 130, 246, 0.4);
-  box-shadow: 0 12px 40px -10px rgba(37, 99, 235, 0.25);
-  transform: translateY(-2px);
-}
-
-.glass-nav {
-  background: rgba(7, 14, 27, 0.85);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(59, 130, 246, 0.15);
-}
-
-/* Ambient glow pills */
-.badge-glow {
-  box-shadow: 0 0 15px rgba(59, 130, 246, 0.35);
-}
-
-.cyan-glow-text {
-  text-shadow: 0 0 20px rgba(6, 182, 212, 0.5);
-}
-
-/* Marquee Animation */
+/* Marquee infinite scroll */
 @keyframes marquee {
   0% { transform: translateX(0%); }
   100% { transform: translateX(-50%); }
@@ -80,67 +181,75 @@
 .animate-marquee {
   display: flex;
   width: 200%;
-  animation: marquee 28s linear infinite;
+  animation: marquee 30s linear infinite;
 }
 
 .animate-marquee:hover {
   animation-play-state: paused;
 }
 
-/* Modal Animations */
-@keyframes modalFadeIn {
-  from {
-    opacity: 0;
-    transform: scale(0.96) translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1) translateY(0);
-  }
-}
-
-.modal-animate {
-  animation: modalFadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-
-/* Pulse radar effect */
-@keyframes radarPing {
-  0% { transform: scale(0.9); opacity: 0.8; }
-  50% { transform: scale(1.4); opacity: 0; }
-  100% { transform: scale(0.9); opacity: 0; }
-}
-
-.radar-dot {
-  position: relative;
-}
-.radar-dot::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  border-radius: 9999px;
-  background-color: #38bdf8;
-  animation: radarPing 2s cubic-bezier(0, 0, 0.2, 1) infinite;
-}
-
 /* Custom range slider styling */
 input[type=range] {
   -webkit-appearance: none;
-  background: #1e293b;
-  border-radius: 8px;
+  background: #e2e8f0;
+  border-radius: 9999px;
   height: 8px;
+}
+.dark input[type=range] {
+  background: #1e293b;
 }
 input[type=range]::-webkit-slider-thumb {
   -webkit-appearance: none;
   height: 22px;
   width: 22px;
   border-radius: 50%;
-  background: #3b82f6;
+  background: #2563eb;
   cursor: pointer;
-  box-shadow: 0 0 10px rgba(59, 130, 246, 0.6);
+  box-shadow: 0 2px 10px rgba(37, 99, 235, 0.5);
   border: 2px solid #ffffff;
+  transition: transform 0.15s ease;
+}
+input[type=range]::-webkit-slider-thumb:hover {
+  transform: scale(1.15);
+}
+
+/* Modal animation */
+@keyframes modalScale {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+.modal-animate {
+  animation: modalScale 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Active Nav Link Styling */
+.nav-link-active {
+  color: #2563eb !important;
+  font-weight: 700;
+  position: relative;
+}
+.dark .nav-link-active {
+  color: #38bdf8 !important;
+}
+.nav-link-active::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 16px;
+  height: 2.5px;
+  background: #2563eb;
+  border-radius: 9999px;
+}
+.dark .nav-link-active::after {
+  background: #38bdf8;
 }
 
 /* Responsive Touch Target */
@@ -148,4 +257,233 @@ input[type=range]::-webkit-slider-thumb {
   .touch-btn {
     min-height: 48px;
   }
+}
+
+/* ==========================================================================
+   Header Faded Backgrounds & Seamless Image Gradient Masks
+   Inspired by Machine Discovery & Modern Corporate B2B
+   ========================================================================== */
+
+.header-fade-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.header-fade-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 25%;
+  opacity: 0.82;
+  filter: saturate(1.35) contrast(1.15) brightness(1.02);
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0.9) 45%, rgba(0,0,0,0.3) 85%, transparent 100%);
+  mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0.9) 45%, rgba(0,0,0,0.3) 85%, transparent 100%);
+  transform: scale(1.02);
+  transition: transform 12s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.5s ease;
+}
+
+/* Contrast enhancement backdrop overlay for maximum text legibility */
+.header-fade-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: radial-gradient(circle at 50% 35%, rgba(248, 250, 252, 0.72) 0%, rgba(248, 250, 252, 0.90) 65%, #f8fafc 100%);
+  pointer-events: none;
+}
+
+.dark .header-fade-bg img {
+  opacity: 0.72;
+  filter: saturate(1.4) contrast(1.2) brightness(0.95);
+}
+
+.dark .header-fade-bg::before {
+  background: radial-gradient(circle at 50% 35%, rgba(7, 14, 27, 0.68) 0%, rgba(7, 14, 27, 0.90) 65%, #070e1b 100%);
+}
+
+/* Fallback for browsers not supporting CSS mask-image */
+@supports (not (mask-image: linear-gradient(to bottom, black, transparent))) and (not (-webkit-mask-image: linear-gradient(to bottom, black, transparent))) {
+  .header-fade-bg::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, transparent 20%, var(--bg-page) 100%);
+    pointer-events: none;
+  }
+}
+
+/* Domain Category Pills with Counter Badges */
+.domain-pill-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.15rem;
+  border-radius: 9999px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  border: 1px solid var(--border-subtle);
+  background: var(--bg-surface-elevated);
+  color: var(--text-secondary);
+}
+
+.domain-pill-btn:hover {
+  border-color: rgba(37, 99, 235, 0.4);
+  color: var(--color-brand-blue);
+  transform: translateY(-1px);
+}
+
+.domain-pill-btn .pill-counter {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  padding: 0.15rem 0.55rem;
+  border-radius: 9999px;
+  background: rgba(100, 116, 139, 0.1);
+  color: var(--text-muted);
+}
+
+.domain-pill-btn.is-active {
+  background: #2563eb !important;
+  color: #ffffff !important;
+  border-color: #2563eb !important;
+  box-shadow: 0 4px 14px -2px rgba(37, 99, 235, 0.35);
+}
+
+.domain-pill-btn.is-active .pill-counter {
+  background: #ffffff !important;
+  color: #2563eb !important;
+}
+
+/* Pagination Pills */
+.pagination-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.page-number-btn {
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  background: transparent;
+  transition: all 0.15s ease;
+  cursor: pointer;
+}
+
+.page-number-btn:hover {
+  background: rgba(37, 99, 235, 0.08);
+  color: #2563eb;
+}
+
+.page-number-btn.is-active {
+  background: #2563eb !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 12px -2px rgba(37, 99, 235, 0.4);
+}
+
+.page-arrow-btn {
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+  background: var(--bg-surface-elevated);
+  border: 1px solid var(--border-subtle);
+  transition: all 0.15s ease;
+  cursor: pointer;
+}
+
+.page-arrow-btn:hover:not(:disabled) {
+  border-color: #2563eb;
+  color: #2563eb;
+  background: rgba(37, 99, 235, 0.05);
+}
+
+.page-arrow-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+/* Section Hero Container Curves */
+.curved-banner-container {
+  border-radius: 0 0 40px 40px;
+}
+@media (min-width: 768px) {
+  .curved-banner-container {
+    border-radius: 0 0 56px 56px;
+  }
+}
+
+/* Real Image Soft Gradient Edge Masks */
+.soft-mask-bottom {
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%);
+  mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%);
+}
+
+.soft-mask-right {
+  -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,1) 65%, rgba(0,0,0,0) 100%);
+  mask-image: linear-gradient(to right, rgba(0,0,0,1) 65%, rgba(0,0,0,0) 100%);
+}
+
+/* Micro-Animations & Floating Effects */
+@keyframes floatSubtle {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-float-slow {
+  animation: floatSubtle 6s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: floatSubtle 7s ease-in-out 2s infinite;
+}
+
+/* Scroll Reveal Elements */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Subtle Shimmer Sweep on Highlights */
+@keyframes shimmerSweep {
+  0% { transform: translateX(-150%); }
+  100% { transform: translateX(250%); }
+}
+
+.shimmer-badge {
+  position: relative;
+  overflow: hidden;
+}
+
+.shimmer-badge::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.4) 50%, transparent 100%);
+  transform: translateX(-150%);
+  animation: shimmerSweep 4s ease-in-out infinite;
 }

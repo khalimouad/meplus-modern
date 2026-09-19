@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Services & Audits Industriels | GPEC, TPM, Décrets Sécurité | ME PLUS Maroc</title>
+  <meta name="description" content="Découvrez les prestations de conseil et d'audit ME PLUS : Ingénierie GPEC, Audits Décrets 2.14.499 et 2.12.236, TPM maintenance autonome et habilitations électriques NM 06.1.225." />
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="https://meplus.ma/wp-content/uploads/2019/10/cropped-logo-meplus.png" />
+
+  <!-- Google Fonts: Plus Jakarta Sans & Space Grotesk -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            mono: ['"Space Grotesk"', 'monospace']
+          },
+          colors: {
+            brand: {
+              navy: '#070e1b',
+              surface: '#0f1b31',
+              blue: '#2563eb',
+              electric: '#3b82f6',
+              cyan: '#06b6d4',
+              accent: '#00d2ff'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Anti-FOUC Theme Preloader -->
+  <script>
+    (function() {
+      const theme = localStorage.getItem('meplus_theme');
+      if (theme === 'dark') {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    })();
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body class="industrial-mesh-bg font-sans antialiased min-h-screen text-slate-900 dark:text-slate-100 selection:bg-blue-600 selection:text-white pb-20 md:pb-0">
+
+  <!-- Toast Container -->
+  <div id="toast-container" class="fixed bottom-24 md:bottom-8 right-6 z-50 flex flex-col gap-3 max-w-sm pointer-events-none"></div>
+
+  <!-- FLOATING PILL HEADER -->
+  <header class="fixed top-0 left-0 right-0 z-40 px-4 sm:px-6 lg:px-8 pt-4 pb-2">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      
+      <!-- Brand Logo -->
+      <a href="index.html" class="flex items-center gap-3 group bg-white/90 dark:bg-slate-900/90 py-2 px-4 rounded-full shadow-md border border-slate-200/80 dark:border-slate-800 backdrop-blur-xl transition hover:scale-105">
+        <div class="w-9 h-9 rounded-full bg-gradient-to-tr from-blue-600 to-cyan-400 p-0.5 shadow-sm">
+          <div class="w-full h-full bg-[#070e1b] rounded-full flex items-center justify-center font-bold text-sm font-mono text-cyan-400 tracking-tighter">
+            ME<span class="text-blue-500">+</span>
+          </div>
+        </div>
+        <div class="flex flex-col">
+          <span class="text-base font-extrabold tracking-tight text-slate-900 dark:text-white flex items-center gap-1">
+            ME<span class="text-blue-600 dark:text-blue-400">PLUS</span>
+            <span class="w-1.5 h-1.5 rounded-full bg-cyan-500 animate-pulse"></span>
+          </span>
+          <span class="text-[9px] tracking-widest uppercase font-semibold text-slate-500 dark:text-slate-400">Maroc • Casablanca</span>
+        </div>
+      </a>
+
+      <!-- Desktop Floating Navigation Pill -->
+      <div class="hidden lg:flex items-center gap-6 floating-pill-nav py-2 px-6 rounded-full">
+        <nav class="flex items-center gap-6 text-sm font-medium text-slate-600 dark:text-slate-300">
+          <a href="index.html" class="hover:text-blue-600 dark:hover:text-cyan-400 transition">Accueil</a>
+          <a href="formations.html" class="hover:text-blue-600 dark:hover:text-cyan-400 transition flex items-center gap-1.5">
+            Formations
+            <span class="text-[10px] font-bold px-2 py-0.2 rounded-full bg-blue-500/10 text-blue-600 dark:text-blue-400 border border-blue-500/20">85+</span>
+          </a>
+          <a href="services.html" class="nav-link-active transition">Services & Audits</a>
+          <a href="simulateur.html" class="hover:text-blue-600 dark:hover:text-cyan-400 transition flex items-center gap-1 font-semibold text-blue-600 dark:text-cyan-300">
+            <i data-lucide="calculator" class="w-3.5 h-3.5"></i>
+            Simulateur CSF
+          </a>
+          <a href="reglementation.html" class="hover:text-blue-600 dark:hover:text-cyan-400 transition">Réglementation</a>
+          <a href="consultants.html" class="hover:text-blue-600 dark:hover:text-cyan-400 transition">Consultants</a>
+        </nav>
+
+        <div class="h-5 w-px bg-slate-200 dark:bg-slate-700"></div>
+
+        <!-- Theme Toggle Button -->
+        <button class="theme-toggle-btn p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-300 transition" title="Changer de thème">
+          <i data-lucide="sun" class="icon-sun w-4 h-4 hidden text-amber-400"></i>
+          <i data-lucide="moon" class="icon-moon w-4 h-4 text-slate-600"></i>
+        </button>
+
+        <a href="contact.html" class="btn-pill-cyan px-5 py-2 text-xs uppercase tracking-wider font-bold">
+          Devis & Formulaire F2
+        </a>
+      </div>
+
+      <!-- Mobile Controls -->
+      <div class="lg:hidden flex items-center gap-2">
+        <button class="theme-toggle-btn p-2.5 rounded-full bg-white/90 dark:bg-slate-800 text-slate-700 dark:text-slate-300 shadow-sm border border-slate-200 dark:border-slate-700 transition" aria-label="Thème">
+          <i data-lucide="sun" class="icon-sun w-4 h-4 hidden text-amber-400"></i>
+          <i data-lucide="moon" class="icon-moon w-4 h-4 text-slate-600"></i>
+        </button>
+        <button id="mobile-menu-btn" class="p-2.5 rounded-full bg-white/90 dark:bg-slate-800 text-slate-700 dark:text-slate-300 shadow-sm border border-slate-200 dark:border-slate-700 transition" aria-label="Menu">
+          <i data-lucide="menu" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- MOBILE MENU DRAWER -->
+  <div id="mobile-drawer" class="fixed inset-0 z-50 bg-black/70 backdrop-blur-xl hidden flex flex-col justify-between p-6">
+    <div>
+      <div class="flex items-center justify-between pb-6 border-b border-slate-200 dark:border-slate-800">
+        <div class="flex items-center gap-2">
+          <span class="text-xl font-extrabold text-slate-900 dark:text-white">ME<span class="text-blue-600 dark:text-blue-400">PLUS</span></span>
+          <span class="text-xs px-2.5 py-0.5 rounded-full bg-blue-500/10 text-blue-600 dark:text-blue-400 font-mono">2026 Edition</span>
+        </div>
+        <button id="close-drawer-btn" class="p-2 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300" aria-label="Fermer">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+      <nav class="flex flex-col gap-3 mt-6 text-base font-semibold text-slate-800 dark:text-slate-200">
+        <a href="index.html" class="drawer-link flex items-center justify-between py-2 hover:text-blue-600">
+          <span>Accueil</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-slate-400"></i>
+        </a>
+        <a href="formations.html" class="drawer-link flex items-center justify-between py-2 hover:text-blue-600">
+          <span>Catalogue Formations (85 Modules)</span>
+          <span class="text-xs bg-blue-600 text-white px-2 py-0.5 rounded-full">85+</span>
+        </a>
+        <a href="services.html" class="drawer-link flex items-center justify-between py-2 text-blue-600 dark:text-blue-400">
+          <span>Services & Audits Industriels</span>
+          <i data-lucide="chevron-right" class="w-4 h-4"></i>
+        </a>
+        <a href="simulateur.html" class="drawer-link flex items-center justify-between py-2 text-cyan-600 dark:text-cyan-300">
+          <span>Simulateur Remboursement CSF / GIAC</span>
+          <i data-lucide="calculator" class="w-4 h-4"></i>
+        </a>
+        <a href="reglementation.html" class="drawer-link flex items-center justify-between py-2 hover:text-blue-600">
+          <span>Réglementation Maroc (B.O.)</span>
+          <i data-lucide="download" class="w-4 h-4 text-cyan-500"></i>
+        </a>
+        <a href="consultants.html" class="drawer-link flex items-center justify-between py-2 hover:text-blue-600">
+          <span>Experts & Consultants Seniors</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-slate-400"></i>
+        </a>
+        <a href="contact.html" class="drawer-link flex items-center justify-between py-2 hover:text-blue-600">
+          <span>Contact & Localisation Casablanca</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-slate-400"></i>
+        </a>
+      </nav>
+    </div>
+    <div class="pt-6 border-t border-slate-200 dark:border-slate-800 flex flex-col gap-3">
+      <a href="tel:+212661450248" class="w-full py-3 rounded-xl bg-slate-100 dark:bg-slate-800 text-center font-bold text-sm text-slate-900 dark:text-white flex items-center justify-center gap-2">
+        <i data-lucide="phone" class="w-4 h-4 text-cyan-500"></i>
+        +212 6 61 45 02 48
+      </a>
+      <a href="contact.html" class="drawer-link w-full py-3 rounded-xl btn-pill-cyan text-center font-bold text-sm flex items-center justify-center gap-2">
+        Demande de Devis & Formulaire F2
+      </a>
+    </div>
+  </div>
+
+  <!-- MAIN SERVICES CONTENT -->
+  <main class="relative">
+    
+    <!-- Hero Banner with Faded Background Image -->
+    <section class="relative pt-32 pb-16 md:pt-36 md:pb-20 overflow-hidden bg-gradient-to-b from-blue-50/60 via-slate-50/40 to-transparent dark:from-slate-950 dark:via-[#070e1b] dark:to-transparent rounded-b-[40px] md:rounded-b-[50px] border-b border-slate-200/80 dark:border-slate-800/80 mb-12">
+      <div class="header-fade-bg">
+        <img src="https://images.unsplash.com/photo-1581092921461-eab62e97a780?w=1600&auto=format&fit=crop&q=80" alt="Audits Industriels et Ingénierie ME PLUS" />
+      </div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+        <span class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-blue-600 dark:text-cyan-400 bg-white/90 dark:bg-blue-500/10 px-3.5 py-1 rounded-full border border-slate-200 dark:border-blue-500/20 shadow-sm shimmer-badge">
+          <span class="w-2 h-2 rounded-full bg-cyan-500 animate-pulse"></span>
+          Pôles d'Expertise 360° • Agrément DFP & OFPPT
+        </span>
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 dark:text-white mt-4 mb-3 tracking-tight">
+          Services de Conseil, Audits Réglementaires & GPEC
+        </h1>
+        <p class="text-slate-600 dark:text-slate-400 text-sm sm:text-base leading-relaxed max-w-3xl mx-auto">
+          Une approche globale combinant diagnostic d'ingénierie, conformité légale marocaine stricte et accompagnement méthodologique terrain pour fiabiliser vos installations industrielles.
+        </p>
+      </div>
+    </section>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-24">
+
+    <!-- PÔLE 1: INGÉNIERIE GPEC & CSF -->
+    <section class="mb-16 glass-card p-8 sm:p-12 rounded-3xl border border-slate-200 dark:border-slate-800 relative overflow-hidden">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+        <div class="lg:col-span-7">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold bg-blue-500/10 text-blue-600 dark:text-blue-400 border border-blue-500/20 mb-4">
+            <i data-lucide="graduation-cap" class="w-4 h-4"></i>
+            Pôle 1 : Ingénierie de Compétences
+          </div>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white mb-4">
+            Ingénierie de Formation & Gestion Prévisionnelle (GPEC)
+          </h2>
+          <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-6">
+            Concevoir un plan de formation performant et financièrement optimisé nécessite une méthodologie rigoureuse. ME PLUS déploie une démarche en 3 étapes garantissant l'adéquation exacte entre vos besoins techniques et les barèmes de remboursement de l'État marocain (OFPPT / CSF).
+          </p>
+
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6 text-xs">
+            <div class="p-4 rounded-2xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800">
+              <span class="font-extrabold text-blue-600 dark:text-blue-400 block mb-1">Étape 1 : Diagnostic</span>
+              <span class="text-slate-600 dark:text-slate-400">Cartographie des emplois, analyse des postes de travail et identification des flux critiques.</span>
+            </div>
+            <div class="p-4 rounded-2xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800">
+              <span class="font-extrabold text-cyan-600 dark:text-cyan-400 block mb-1">Étape 2 : Écarts</span>
+              <span class="text-slate-600 dark:text-slate-400">Détection des manques de compétences, priorisation par niveau de criticité opérationnelle.</span>
+            </div>
+            <div class="p-4 rounded-2xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800">
+              <span class="font-extrabold text-emerald-600 dark:text-emerald-400 block mb-1">Étape 3 : Plan & CSF</span>
+              <span class="text-slate-600 dark:text-slate-400">Chiffrage, calendrier annuel et constitution du dossier officiel de remboursement F2.</span>
+            </div>
+          </div>
+
+          <a href="simulateur.html" class="inline-flex items-center gap-2 text-xs font-bold text-blue-600 dark:text-cyan-400 hover:underline">
+            Simuler la prise en charge CSF de votre entreprise <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </a>
+        </div>
+
+        <div class="lg:col-span-5 bg-gradient-to-tr from-blue-600 to-cyan-500 p-8 rounded-3xl text-white shadow-xl">
+          <div class="text-xs font-extrabold uppercase tracking-wider mb-2 text-cyan-100">Accréditation Étatique</div>
+          <h3 class="text-xl font-bold mb-4">Pourquoi confier votre ingénierie à ME PLUS ?</h3>
+          <ul class="space-y-3 text-xs leading-relaxed text-blue-50">
+            <li class="flex items-start gap-2">
+              <i data-lucide="check-circle" class="w-4 h-4 shrink-0 text-cyan-200 mt-0.5"></i>
+              <span>Cabinet homologué par le Département de la Formation Professionnelle (DFP).</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <i data-lucide="check-circle" class="w-4 h-4 shrink-0 text-cyan-200 mt-0.5"></i>
+              <span>Prise en charge financière des études diagnostiques par le GIAC (jusqu'à 70%).</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <i data-lucide="check-circle" class="w-4 h-4 shrink-0 text-cyan-200 mt-0.5"></i>
+              <span>Accompagnement administratif jusqu'au remboursement effectif par l'OFPPT.</span>
+            </li>
+          </ul>
+          <a href="contact.html?sujet=Audit+GPEC" class="mt-6 block text-center py-3 rounded-full bg-white text-slate-900 font-bold text-xs shadow-md hover:bg-slate-100 transition">
+            Demander un Diagnostic GPEC
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- PÔLE 2: AUDITS RÉGLEMENTAIRES & DÉCRETS MAROCAINS -->
+    <section class="mb-16 glass-card p-8 sm:p-12 rounded-3xl border border-slate-200 dark:border-slate-800">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold bg-cyan-500/10 text-cyan-700 dark:text-cyan-400 border border-cyan-500/20 mb-4">
+        <i data-lucide="shield-check" class="w-4 h-4"></i>
+        Pôle 2 : Sécurité Réglementaire SST
+      </div>
+      <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white mb-4">
+        Audits de Conformité aux Décrets Marocains & Normes ISO
+      </h2>
+      <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-8 max-w-4xl">
+        La législation marocaine impose aux chefs d'établissement industriel des obligations précises sous peine de responsabilité pénale. Nos auditeurs seniors réalisent des diagnostics exhaustifs sur site pour identifier les non-conformités et concevoir votre plan de mise à niveau prioritaire.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="p-6 rounded-3xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800">
+          <div class="w-10 h-10 rounded-2xl bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 flex items-center justify-center mb-4">
+            <i data-lucide="flame" class="w-5 h-5"></i>
+          </div>
+          <h3 class="text-base font-bold text-slate-900 dark:text-white mb-2">Décret n° 2.14.499 (Incendie)</h3>
+          <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed mb-4">
+            Règles de sécurité incendie dans les constructions : issues de secours, désenfumage, RIA, colonnes sèches, compartimentage et calcul d'évacuation.
+          </p>
+          <a href="reglementation.html" class="text-xs font-bold text-cyan-600 dark:text-cyan-400 flex items-center gap-1">
+            Télécharger le décret <i data-lucide="download" class="w-3.5 h-3.5"></i>
+          </a>
+        </div>
+
+        <div class="p-6 rounded-3xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800">
+          <div class="w-10 h-10 rounded-2xl bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 flex items-center justify-center mb-4">
+            <i data-lucide="cpu" class="w-5 h-5"></i>
+          </div>
+          <h3 class="text-base font-bold text-slate-900 dark:text-white mb-2">Décret n° 2.12.236 (Machines)</h3>
+          <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed mb-4">
+            Prescriptions de sécurité pour les machines, appareils et carterage : protection des zones d'écrasement, barrières immatérielles, arrêts d'urgence et LOTO.
+          </p>
+          <a href="reglementation.html" class="text-xs font-bold text-cyan-600 dark:text-cyan-400 flex items-center gap-1">
+            Télécharger le décret <i data-lucide="download" class="w-3.5 h-3.5"></i>
+          </a>
+        </div>
+
+        <div class="p-6 rounded-3xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800">
+          <div class="w-10 h-10 rounded-2xl bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 flex items-center justify-center mb-4">
+            <i data-lucide="file-badge" class="w-5 h-5"></i>
+          </div>
+          <h3 class="text-base font-bold text-slate-900 dark:text-white mb-2">Audits ISO 45001 & IATF 16949</h3>
+          <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed mb-4">
+            Préparation complète et audits blancs pour vos certifications internationales de santé et sécurité au travail (ISO 45001, 14001, 9001 et automobile IATF).
+          </p>
+          <a href="contact.html?sujet=Audit+ISO" class="text-xs font-bold text-cyan-600 dark:text-cyan-400 flex items-center gap-1">
+            Demander un audit blanc <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- PÔLE 3: ACCOMPAGNEMENT TPM & MAINTENANCE AUTONOME -->
+    <section class="mb-16 glass-card p-8 sm:p-12 rounded-3xl border border-slate-200 dark:border-slate-800">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border border-emerald-500/20 mb-4">
+        <i data-lucide="wrench" class="w-4 h-4"></i>
+        Pôle 3 : Performance & Productivité
+      </div>
+      <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white mb-4">
+        Accompagnement Terrain TPM (Total Productive Maintenance)
+      </h2>
+      <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-8 max-w-4xl">
+        La démarche ME PLUS d'accompagnement terrain en maintenance s'étale sur un processus éprouvé en 6 étapes pour transformer les opérateurs de ligne en acteurs de premier niveau et fiabiliser durablement l'outil productif.
+      </p>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+        <div class="p-5 rounded-2xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800">
+          <span class="w-7 h-7 rounded-full bg-emerald-600/10 text-emerald-600 dark:text-emerald-400 text-xs font-extrabold flex items-center justify-center mb-3">1</span>
+          <h3 class="text-sm font-bold text-slate-900 dark:text-white mb-1">Organisation du Service Maintenance</h3>
+          <p class="text-xs text-slate-600 dark:text-slate-400">Structuration hiérarchique, fiches de postes et gestion optimisée du magasin de pièces de rechange.</p>
+        </div>
+
+        <div class="p-5 rounded-2xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800">
+          <span class="w-7 h-7 rounded-full bg-emerald-600/10 text-emerald-600 dark:text-emerald-400 text-xs font-extrabold flex items-center justify-center mb-3">2</span>
+          <h3 class="text-sm font-bold text-slate-900 dark:text-white mb-1">Maintenance Autonome</h3>
+          <p class="text-xs text-slate-600 dark:text-slate-400">Nettoyage, inspection, graissage et resserrage assurés directement par les opérateurs de conduite.</p>
+        </div>
+
+        <div class="p-5 rounded-2xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800">
+          <span class="w-7 h-7 rounded-full bg-emerald-600/10 text-emerald-600 dark:text-emerald-400 text-xs font-extrabold flex items-center justify-center mb-3">3</span>
+          <h3 class="text-sm font-bold text-slate-900 dark:text-white mb-1">Gammes de Prévention Standard</h3>
+          <p class="text-xs text-slate-600 dark:text-slate-400">Création de protocoles opératoires visuels et checklists de contrôle pour chaque organe machine.</p>
+        </div>
+
+        <div class="p-5 rounded-2xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800">
+          <span class="w-7 h-7 rounded-full bg-emerald-600/10 text-emerald-600 dark:text-emerald-400 text-xs font-extrabold flex items-center justify-center mb-3">4</span>
+          <h3 class="text-sm font-bold text-slate-900 dark:text-white mb-1">Méthodologie AMDEC Process</h3>
+          <p class="text-xs text-slate-600 dark:text-slate-400">Analyse des modes de défaillance, de leurs effets et de leur criticité pour éradiquer les pannes récurrentes.</p>
+        </div>
+
+        <div class="p-5 rounded-2xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800">
+          <span class="w-7 h-7 rounded-full bg-emerald-600/10 text-emerald-600 dark:text-emerald-400 text-xs font-extrabold flex items-center justify-center mb-3">5</span>
+          <h3 class="text-sm font-bold text-slate-900 dark:text-white mb-1">Ateliers 5S & SMED</h3>
+          <p class="text-xs text-slate-600 dark:text-slate-400">Réduction drastique des temps de changement de séries et mise en ordre rigoureuse des ateliers.</p>
+        </div>
+
+        <div class="p-5 rounded-2xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800">
+          <span class="w-7 h-7 rounded-full bg-emerald-600/10 text-emerald-600 dark:text-emerald-400 text-xs font-extrabold flex items-center justify-center mb-3">6</span>
+          <h3 class="text-sm font-bold text-slate-900 dark:text-white mb-1">Pilotage du TRS & GMAO</h3>
+          <p class="text-xs text-slate-600 dark:text-slate-400">Mise en place de tableaux de bord en temps réel du Taux de Rendement Synthétique et paramétrage GMAO.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PÔLE 4: HABILITATIONS ÉLECTRIQUES & RISQUES SPÉCIFIQUES -->
+    <section class="glass-card p-8 sm:p-12 rounded-3xl border border-slate-200 dark:border-slate-800">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold bg-purple-500/10 text-purple-700 dark:text-purple-400 border border-purple-500/20 mb-4">
+        <i data-lucide="zap" class="w-4 h-4"></i>
+        Pôle 4 : Habilitations & Autorisations Spécifiques
+      </div>
+      <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white mb-4">
+        Habilitations Réglementaires (Norme Marocaine NM 06.1.225)
+      </h2>
+      <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-8 max-w-4xl">
+        Conformément à la Norme NM 06.1.225 et à l'UTE C 18-510, tout intervenant sur un ouvrage électrique (électricien ou non-électricien) doit détenir un titre d'habilitation officiel délivré par son employeur. ME PLUS assure la formation théorique, les simulations pratiques et les épreuves éliminatoires.
+      </p>
+
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8 text-center">
+        <div class="p-4 rounded-2xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800">
+          <div class="text-xl font-mono font-extrabold text-purple-600 dark:text-purple-400 mb-1">B0 - H0 - H0V</div>
+          <div class="text-xs text-slate-600 dark:text-slate-400">Non-électriciens en voisinage de zones électriques</div>
+        </div>
+
+        <div class="p-4 rounded-2xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800">
+          <div class="text-xl font-mono font-extrabold text-blue-600 dark:text-blue-400 mb-1">B1V - B2V - BR</div>
+          <div class="text-xs text-slate-600 dark:text-slate-400">Électriciens exécutants, chargés de travaux et dépannage</div>
+        </div>
+
+        <div class="p-4 rounded-2xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800">
+          <div class="text-xl font-mono font-extrabold text-cyan-600 dark:text-cyan-400 mb-1">BC - HC</div>
+          <div class="text-xs text-slate-600 dark:text-slate-400">Chargés de consignation et déconsignation LOTO</div>
+        </div>
+
+        <div class="p-4 rounded-2xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800">
+          <div class="text-xl font-mono font-extrabold text-emerald-600 dark:text-emerald-400 mb-1">CACES & Engins</div>
+          <div class="text-xs text-slate-600 dark:text-slate-400">Caristes Cat. 3, Ponts roulants et Travaux en hauteur</div>
+        </div>
+      </div>
+
+      <div class="text-center pt-4">
+        <a href="contact.html?sujet=Habilitation+Electrique" class="btn-pill-cyan px-8 py-3.5 text-xs uppercase font-bold tracking-wider inline-block">
+          Programmer une session d'habilitation intra-entreprise
+        </a>
+      </div>
+    </section>
+
+    </div>
+  </main>
+
+  <!-- UNIFIED FOOTER -->
+  <footer class="border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-[#050b15] py-16 text-slate-600 dark:text-slate-400 text-xs transition">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+        <div>
+          <div class="flex items-center gap-2 mb-4">
+            <span class="text-xl font-extrabold text-slate-900 dark:text-white">ME<span class="text-blue-600 dark:text-blue-400">PLUS</span></span>
+          </div>
+          <p class="leading-relaxed mb-4">
+            Cabinet de formation continue et de conseil industriel agréé par l'État marocain. Plus de 350 usines et multinationales accompagnées depuis 2004.
+          </p>
+          <div class="text-[11px] font-semibold text-blue-600 dark:text-blue-400">
+            Homologué DFP • OFPPT • GIAC • AFOM • Maroc PME
+          </div>
+        </div>
+
+        <div>
+          <h4 class="text-slate-900 dark:text-white font-bold text-sm mb-4">Navigation Rapide</h4>
+          <ul class="space-y-2">
+            <li><a href="index.html" class="hover:text-blue-600 dark:hover:text-white transition">Accueil</a></li>
+            <li><a href="formations.html" class="hover:text-blue-600 dark:hover:text-white transition">Catalogue Formations (85+)</a></li>
+            <li><a href="services.html" class="hover:text-blue-600 dark:hover:text-white transition font-bold text-blue-600 dark:text-cyan-400">Services & Audits GPEC / TPM</a></li>
+            <li><a href="simulateur.html" class="hover:text-cyan-600 dark:hover:text-cyan-400 transition font-medium">Simulateur Remboursement CSF</a></li>
+            <li><a href="reglementation.html" class="hover:text-blue-600 dark:hover:text-white transition">Réglementation Maroc (B.O.)</a></li>
+            <li><a href="consultants.html" class="hover:text-blue-600 dark:hover:text-white transition">Consultants & Experts</a></li>
+            <li><a href="contact.html" class="hover:text-blue-600 dark:hover:text-white transition">Contact & Devis Express</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-slate-900 dark:text-white font-bold text-sm mb-4">Audits & Habilitations</h4>
+          <ul class="space-y-2">
+            <li>Audits Décret n° 2.14.499 Sécurité Incendie</li>
+            <li>Audits Décret n° 2.12.236 Sécurité Machines</li>
+            <li>Habilitation Électrique NM 06.1.225</li>
+            <li>Diagnostics GPEC remboursés GIAC</li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-slate-900 dark:text-white font-bold text-sm mb-4">Coordonnées</h4>
+          <div class="space-y-2.5">
+            <p>Rue Moussa Al Kadim, Imm. Le Lys N° 21, Bourgogne, Casablanca</p>
+            <p class="font-mono text-slate-800 dark:text-slate-200 font-semibold">+212 6 61 45 02 48</p>
+            <p class="font-mono text-blue-600 dark:text-cyan-400">formation@meplus.ma</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="pt-8 border-t border-slate-200 dark:border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-slate-500">
+        <div>© 2026 ME PLUS Maroc. Tous droits réservés.</div>
+        <div class="flex items-center gap-6">
+          <a href="https://meplus.ma/" target="_blank" class="hover:text-blue-600 dark:hover:text-white transition">Site meplus.ma</a>
+          <a href="#" class="hover:text-blue-600 dark:hover:text-white transition">Haut de page ↑</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MOBILE BOTTOM FLOATING DOCK -->
+  <div class="md:hidden fixed bottom-3 left-4 right-4 z-40 floating-pill-nav rounded-full p-2 px-5 flex items-center justify-between shadow-2xl">
+    <a href="index.html" class="flex flex-col items-center gap-0.5 text-[10px] text-slate-500 dark:text-slate-400 hover:text-blue-600">
+      <i data-lucide="home" class="w-4 h-4"></i>
+      <span>Accueil</span>
+    </a>
+    <a href="formations.html" class="flex flex-col items-center gap-0.5 text-[10px] text-slate-500 dark:text-slate-400 hover:text-blue-600">
+      <i data-lucide="book-open" class="w-4 h-4"></i>
+      <span>Formations</span>
+    </a>
+    <a href="simulateur.html" class="flex flex-col items-center gap-0.5 text-[10px] text-slate-500 dark:text-slate-400">
+      <div class="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center text-white shadow-md">
+        <i data-lucide="calculator" class="w-4 h-4"></i>
+      </div>
+      <span>CSF</span>
+    </a>
+    <a href="reglementation.html" class="flex flex-col items-center gap-0.5 text-[10px] text-slate-500 dark:text-slate-400 hover:text-blue-600">
+      <i data-lucide="file-check-2" class="w-4 h-4"></i>
+      <span>Lois BO</span>
+    </a>
+    <a href="contact.html" class="flex flex-col items-center gap-0.5 text-[10px] text-slate-500 dark:text-slate-400 hover:text-blue-600">
+      <i data-lucide="phone" class="w-4 h-4"></i>
+      <span>Contact</span>
+    </a>
+  </div>
+
+  <!-- Scripts -->
+  <script src="./data.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>
