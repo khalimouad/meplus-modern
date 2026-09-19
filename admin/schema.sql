@@ -81,12 +81,13 @@ CREATE TABLE IF NOT EXISTS `documents` (
 
 CREATE TABLE IF NOT EXISTS `leads` (
   `id` INT AUTO_INCREMENT PRIMARY KEY,
-  `full_name` VARCHAR(128) NOT NULL,
+  `name` VARCHAR(128) NOT NULL,
   `company` VARCHAR(128) DEFAULT '',
   `phone` VARCHAR(64) DEFAULT '',
   `email` VARCHAR(128) DEFAULT '',
-  `subject` VARCHAR(255) DEFAULT '',
+  `source` VARCHAR(64) DEFAULT 'Contact Web',
+  `formation_title` VARCHAR(255) DEFAULT '',
   `message` TEXT,
-  `is_read` TINYINT(1) DEFAULT 0,
+  `status` VARCHAR(32) DEFAULT 'Nouveau',
   `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;

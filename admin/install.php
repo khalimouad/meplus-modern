@@ -99,13 +99,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
                 );
                 CREATE TABLE IF NOT EXISTS leads (
                     id INTEGER PRIMARY KEY AUTOINCREMENT,
-                    full_name TEXT NOT NULL,
+                    name TEXT NOT NULL,
                     company TEXT DEFAULT '',
                     phone TEXT DEFAULT '',
                     email TEXT DEFAULT '',
-                    subject TEXT DEFAULT '',
+                    source TEXT DEFAULT 'Contact Web',
+                    formation_title TEXT DEFAULT '',
                     message TEXT,
-                    is_read INTEGER DEFAULT 0,
+                    status TEXT DEFAULT 'Nouveau',
                     created_at DATETIME DEFAULT CURRENT_TIMESTAMP
                 );
             ");
@@ -120,6 +121,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
         $admin_email = trim($_POST['admin_email'] ?? 'direction@meplus.ma');
         $pass_hash = password_hash($admin_pass, PASSWORD_BCRYPT);
 
+        $db->beginTransaction();
+
         $stmt = $db->prepare("DELETE FROM admins WHERE username = :u");
         $stmt->execute([':u' => $admin_user]);
 
@@ -130,12 +133,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
             ':p' => $pass_hash
         ]);
 
-        // 3. Import des données depuis data.js
-        $js_data = file_get_contents(DATA_JS_PATH);
-        // Nettoie l'assignation JS pour extraire le JSON
-        $json_str = preg_replace('/^.*?window\.MEPLUS_DATA\s*=\s*/s', '', $js_data);
-        $json_str = preg_replace('/;\s*$/s', '', $json_str);
-        $data = json_decode($json_str, true);
+        // 3. Import des données depuis data.json ou data.js
+        $data = null;
+        if (file_exists(DATA_JSON_PATH)) {
+            $data = json_decode(file_get_contents(DATA_JSON_PATH), true);
+        }
+        if (!$data && file_exists(DATA_JS_PATH)) {
+            $js_data = file_get_contents(DATA_JS_PATH);
+            $json_str = preg_replace('/^.*?window\.MEPLUS_DATA\s*=\s*/s', '', $js_data);
+            $json_str = preg_replace('/;\s*$/s', '', $json_str);
+            $data = json_decode($json_str, true);
+        }
 
         if ($data && !empty($data['formations'])) {
             // Import Formations
@@ -249,28 +257,78 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
                 'point2' => 'Habilitations électriques certifiantes sous NM 06.1.225',
                 'point3' => 'Accompagnement administratif complet dossiers CSF et F2'
             ]],
+            ['index', 'cta', 'Une Question sur Vos Droits au Financement GIAC / CSF ?', 'Nos experts analysent gratuitement l\'éligibilité de votre plan de formation sous 24h ouvrées.', [
+                'desc' => 'Prise en charge jusqu’à 80% de vos coûts pédagogiques pour les entreprises assujetties à la TFP.',
+                'phone' => '+212 6 61 45 02 48',
+                'btn_text' => 'Demander une Étude d\'Éligibilité Gratuite'
+            ]],
+
+            // Formations
+            ['formations', 'hero', 'Catalogue Complet des Formations 2026', '85+ programmes certifiants conçus pour l\'industrie marocaine', [
+                'intro' => 'Sécurité au travail, maintenance industrielle, habilitations électriques, qualité et management. Toutes nos formations sont dispensées en présentiel (intra-entreprise ou inter-entreprises) ou sur site opérationnel avec équipements réels.'
+            ]],
+            ['formations', 'giac_banner', 'Financement de Vos Formations jusqu\'à 80%', 'Optimisez vos budgets grâce aux contrats spéciaux de formation (OFPPT / CSF)', [
+                'details' => 'Toutes nos actions de formation sont éligibles aux remboursements par les Contrats Spéciaux de Formation (CSF) via l\'OFPPT. Notre équipe vous assiste dans la constitution et le dépôt de vos dossiers techniques et financiers.',
+                'highlight' => '80% de remboursement'
+            ]],
+
             // Services
+            ['services', 'hero', 'Conseil, Ingénierie & Audits Réglementaires', 'De l\'évaluation des risques à la conformité totale de vos installations', [
+                'tag' => 'Accompagnement de A à Z'
+            ]],
             ['services', 'header', 'Services d’Audit & Ingénierie Pédagogique', 'Diagnostics GPEC, TPM, et Audits de Conformité Réglementaire sur site', [
                 'badge' => 'Audit & Conseil Terrain',
                 'cta_text' => 'Demander un Diagnostic'
             ]],
+            ['services', 'ingenierie', 'Ingénierie de Formation & Plans Annuels', 'Alignez les compétences de vos équipes sur vos objectifs de productivité', [
+                'desc' => 'Analyse des besoins, cartographie des écarts de compétences, ingénierie pédagogique sur mesure et mesure de l\'efficacité post-formation.'
+            ]],
+            ['services', 'giac_support', 'Accompagnement Administratif & Financier', 'Gestion complète de vos dossiers de remboursement CSF & GIAC', [
+                'desc' => 'Préparation des fiches techniques F2, conventionnement, constitution des pièces justificatives et suivi jusqu\'au déblocage effectif des fonds.'
+            ]],
+
             // Simulateur
             ['simulateur', 'header', 'Simulateur de Remboursement CSF / OFPPT', 'Estimez votre prise en charge par la Taxe de Formation Professionnelle', [
                 'default_rate' => '80%',
                 'disclaimer' => 'Simulation indicative basée sur la réglementation marocaine des Contrats Spéciaux de Formation (CSF).'
             ]],
+            ['simulateur', 'hero', 'Simulateur d\'Aides & Remboursements GIAC / CSF', 'Évaluez instantanément le montant des prises en charge pour votre entreprise', [
+                'instructions' => 'Renseignez votre masse salariale brute, vos cotisations TFP et la taille de vos effectifs pour obtenir une estimation précise.'
+            ]],
+            ['simulateur', 'notes', 'Dispositions Réglementaires & Plafonds', 'Rappels sur les règles d\'éligibilité aux financements publics', [
+                'rule_giac' => 'Les études de diagnostic et ingénierie de formation sont financées à hauteur de 70% pour les grandes entreprises et 80% pour les PME/PMI.',
+                'rule_csf' => 'Les actions de formation planifiées et non planifiées bénéficient de remboursements calculés sur les barèmes de l\'OFPPT selon la taille de l\'entreprise.'
+            ]],
+
             // Réglementation
             ['reglementation', 'header', 'Veille Réglementaire & Textes Juridiques Marocains', 'Bulletins Officiels et décrets de référence applicables aux sites industriels', [
                 'badge' => 'Bulletins Officiels Téléchargeables',
                 'cta_text' => 'Audit de Conformité'
             ]],
+            ['reglementation', 'hero', 'Textes de Loi & Décrets du Bulletin Officiel', 'Téléchargez les textes officiels régissant la sécurité et les installations au Maroc', [
+                'disclaimer' => 'Les textes présentés ci-dessous sont issus du Bulletin Officiel du Royaume du Maroc et constituent les références réglementaires applicables dans l\'industrie.'
+            ]],
+            ['reglementation', 'framework', 'Cadre Réglementaire Marocain', 'Principales obligations légales pour les établissements industriels', [
+                'summary' => 'Le Code du Travail (Loi n° 65-99) et les décrets d\'application imposent à l\'employeur de veiller à l\'hygiène et la sécurité des salariés, notamment à travers les formations à la sécurité et les habilitations périodiques.'
+            ]],
+
             // Consultants
             ['consultants', 'header', 'Notre Équipe d’Experts & Consultants Seniors', 'Des praticiens du terrain, anciens directeurs d’usines et ingénieurs d’État', [
                 'badge' => 'Pratique Terrain • Capital Humain',
                 'charter_title' => 'La Charte Pédagogique ME PLUS',
                 'charter_desc' => '70% de pratique en atelier et 30% d\'apports méthodologiques structurés.'
             ]],
+            ['consultants', 'hero', 'Notre Équipe de Consultants Formateurs Seniors', 'Des praticiens de l\'industrie cumulant plus de 20 ans d\'expérience terrain', [
+                'charter' => 'Chacun de nos intervenants est certifié et dispose d\'une expertise opérationnelle avérée dans son domaine (anciennes directions d\'usines, experts techniques reconnus, auditeurs certifiés).'
+            ]],
+
             // Contact
+            ['contact', 'hero', 'Contactez Nos Conseillers Formation', 'Une question, un devis ou une demande d\'ingénierie ? Nous vous répondons sous 24h.', [
+                'phone' => '+212 6 61 45 02 48',
+                'email' => 'formation@meplus.ma',
+                'address' => 'Rue Moussa Al Kadim, Imm. Le Lys N° 21, Bourgogne, Casablanca, Maroc',
+                'hours' => 'Du lundi au vendredi de 08h30 à 18h00'
+            ]],
             ['contact', 'info', 'Siège Social Casablanca & Contact Direct', 'Nos conseillers formation sont à votre disposition du lundi au vendredi', [
                 'address' => 'Rue Moussa Al Kadim, Imm. Le Lys N° 21, Bourgogne, Casablanca, Maroc',
                 'phone1' => '+212 6 61 45 02 48',
@@ -281,8 +339,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
         ];
 
         foreach ($default_sections as $sec) {
-            save_page_section($sec[0], $sec[1], $sec[2], $sec[3], $sec[4]);
+            save_page_section($sec[0], $sec[1], $sec[2], $sec[3], $sec[4], false);
         }
+
+        $db->commit();
 
         // Synchronise data.json et data.js
         sync_cache_files();
@@ -291,6 +351,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
         $is_installed = true;
 
     } catch (Exception $e) {
+        if ($db->inTransaction()) {
+            $db->rollBack();
+        }
         $error = "Erreur lors de l'installation : " . $e->getMessage();
     }
 }

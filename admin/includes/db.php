@@ -70,7 +70,7 @@ function get_page_sections($page_key) {
 /**
  * Met à jour ou insère une section de page
  */
-function save_page_section($page_key, $section_key, $title, $subtitle = '', $content = []) {
+function save_page_section($page_key, $section_key, $title, $subtitle = '', $content = [], $auto_sync = true) {
     $db = get_db_connection();
     $content_json = is_string($content) ? $content : json_encode($content, JSON_UNESCAPED_UNICODE);
 
@@ -97,7 +97,9 @@ function save_page_section($page_key, $section_key, $title, $subtitle = '', $con
             ':content_json' => $content_json
         ]);
     }
-    sync_cache_files();
+    if ($auto_sync) {
+        sync_cache_files();
+    }
 }
 
 /**
