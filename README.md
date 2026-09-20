@@ -85,3 +85,17 @@ To host this website for free on GitHub Pages:
 
 ---
 *Developed with pair programming assistance from Antigravity.*
+# Shared public-page components
+
+The eight public pages use static components from `components/`: the document
+head, header and mobile menu, footer, mobile shortcuts, and homepage hero.
+Edit these source files, then run `npm run build` to update every page.
+`npm run check:components` detects pages with outdated generated markup.
+The development and start commands rebuild components automatically.
+
+Page-specific content remains in each HTML file, outside the
+`<!-- component:... -->` blocks. Shared visual tokens, buttons, navigation,
+cards, responsive layouts, and reduced-motion styles live in
+`design-system.css`; existing page-specific styles remain in `style.css`.
+Pages are generated as complete HTML, so navigation and content do not depend
+on client-side component loading. The PHP admin retains its separate layout.

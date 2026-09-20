@@ -9,12 +9,13 @@
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="https://meplus.ma/wp-content/uploads/2019/10/cropped-logo-meplus.png" />
 
-  <!-- Google Fonts: Plus Jakarta Sans & Space Grotesk -->
+<!-- component:head -->
+<!-- Google Fonts: Plus Jakarta Sans & Space Grotesk -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet" />
 
-  <!-- Tailwind CSS CDN -->
+  <!-- Tailwind CSS CDN with dark mode class configuration -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -40,7 +41,7 @@
     }
   </script>
 
-  <!-- Anti-FOUC Theme Preloader -->
+  <!-- Anti-FOUC Theme Preloader (Light Mode Default) -->
   <script>
     (function() {
       const theme = localStorage.getItem('meplus_theme');
@@ -57,213 +58,52 @@
 
   <!-- Custom Styles -->
   <link rel="stylesheet" href="./style.css" />
+<link rel="stylesheet" href="./design-system.css" />
+<!-- /component:head -->
 </head>
 <body class="industrial-mesh-bg font-sans antialiased min-h-screen text-slate-900 dark:text-slate-100 selection:bg-blue-600 selection:text-white pb-20 md:pb-0">
 
   <!-- Toast Container -->
   <div id="toast-container" class="fixed bottom-24 md:bottom-8 right-6 z-50 flex flex-col gap-3 max-w-sm pointer-events-none"></div>
 
-  <!-- FLOATING PILL HEADER -->
-  <header class="fixed top-0 left-0 right-0 z-40 px-4 sm:px-6 lg:px-8 pt-4 pb-2">
-    <div class="max-w-7xl mx-auto flex items-center justify-between">
-      
-      <!-- Brand Logo -->
-      <a href="index.html" class="flex items-center gap-3 group bg-white/90 dark:bg-slate-900/90 py-2 px-4 rounded-full shadow-md border border-slate-200/80 dark:border-slate-800 backdrop-blur-xl transition hover:scale-105">
-        <div class="w-9 h-9 rounded-full bg-gradient-to-tr from-blue-600 to-cyan-400 p-0.5 shadow-sm">
-          <div class="w-full h-full bg-[#070e1b] rounded-full flex items-center justify-center font-bold text-sm font-mono text-cyan-400 tracking-tighter">
-            ME<span class="text-blue-500">+</span>
-          </div>
-        </div>
-        <div class="flex flex-col">
-          <span class="text-base font-extrabold tracking-tight text-slate-900 dark:text-white flex items-center gap-1">
-            ME<span class="text-blue-600 dark:text-blue-400">PLUS</span>
-            <span class="w-1.5 h-1.5 rounded-full bg-cyan-500 animate-pulse"></span>
-          </span>
-          <span class="text-[9px] tracking-widest uppercase font-semibold text-slate-500 dark:text-slate-400">Maroc • Casablanca</span>
-        </div>
-      </a>
-
-      <!-- Desktop Floating Navigation Pill -->
-      <div class="hidden lg:flex items-center gap-6 floating-pill-nav py-2 px-6 rounded-full">
-        <nav class="flex items-center gap-6 text-sm font-medium text-slate-600 dark:text-slate-300">
-          <a href="index.html" class="hover:text-blue-600 dark:hover:text-cyan-400 transition">Accueil</a>
-          <a href="formations.html" class="nav-link-active transition flex items-center gap-1.5">
-            Formations
-            <span class="text-[10px] font-bold px-2 py-0.2 rounded-full bg-blue-500/10 text-blue-600 dark:text-blue-400 border border-blue-500/20">85+</span>
-          </a>
-          <a href="services.html" class="hover:text-blue-600 dark:hover:text-cyan-400 transition">Services & Audits</a>
-          <a href="simulateur.html" class="hover:text-blue-600 dark:hover:text-cyan-400 transition flex items-center gap-1 font-semibold text-blue-600 dark:text-cyan-300">
-            <i data-lucide="calculator" class="w-3.5 h-3.5"></i>
-            Simulateur CSF
-          </a>
-          <a href="reglementation.html" class="hover:text-blue-600 dark:hover:text-cyan-400 transition">Réglementation</a>
-          <a href="consultants.html" class="hover:text-blue-600 dark:hover:text-cyan-400 transition">Consultants</a>
-        </nav>
-
-        <div class="h-5 w-px bg-slate-200 dark:bg-slate-700"></div>
-
-        <!-- Theme Toggle Button -->
-        <button class="theme-toggle-btn p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-300 transition" title="Changer de thème">
-          <i data-lucide="sun" class="icon-sun w-4 h-4 hidden text-amber-400"></i>
-          <i data-lucide="moon" class="icon-moon w-4 h-4 text-slate-600"></i>
-        </button>
-
-        <a href="contact.html" class="btn-pill-cyan px-5 py-2 text-xs uppercase tracking-wider font-bold">
-          Devis & Formulaire F2
-        </a>
-      </div>
-
-      <!-- Mobile Controls -->
-      <div class="lg:hidden flex items-center gap-2">
-        <button class="theme-toggle-btn p-2.5 rounded-full bg-white/90 dark:bg-slate-800 text-slate-700 dark:text-slate-300 shadow-sm border border-slate-200 dark:border-slate-700 transition" aria-label="Thème">
-          <i data-lucide="sun" class="icon-sun w-4 h-4 hidden text-amber-400"></i>
-          <i data-lucide="moon" class="icon-moon w-4 h-4 text-slate-600"></i>
-        </button>
-        <button id="mobile-menu-btn" class="p-2.5 rounded-full bg-white/90 dark:bg-slate-800 text-slate-700 dark:text-slate-300 shadow-sm border border-slate-200 dark:border-slate-700 transition" aria-label="Menu">
-          <i data-lucide="menu" class="w-5 h-5"></i>
-        </button>
-      </div>
-
+<!-- component:header -->
+<a class="skip-link" href="#main-content">Aller au contenu</a>
+<header class="site-header">
+  <div class="site-header-inner">
+    <a class="site-brand" href="index.html" aria-label="ME PLUS — Accueil"><span class="brand-symbol">ME<span>+</span></span><span>ME<span class="brand-plus">PLUS</span><small>MAROC · CASABLANCA</small></span></a>
+    <div class="navigation-capsule">
+    <nav class="desktop-nav" aria-label="Navigation principale"><a href="index.html">Accueil</a>
+<a href="formations.html" aria-current="page">Formations <span class="nav-count">85+</span></a>
+<a href="services.html">Services & Audits</a>
+<a href="simulateur.html">Simulateur CSF</a>
+<a href="reglementation.html">Réglementation</a>
+<a href="consultants.html">Consultants</a></nav>
+    <div class="header-actions">
+      <button class="theme-toggle-btn icon-button" aria-label="Changer le thème"><i data-lucide="sun" class="icon-sun hidden"></i><i data-lucide="moon" class="icon-moon"></i></button>
+      <a href="contact.html" class="ui-button ui-button-primary header-cta">Devis & Formulaire F2 <i data-lucide="arrow-up-right"></i></a>
+      <button id="mobile-menu-btn" class="icon-button mobile-menu-toggle" aria-label="Ouvrir le menu" aria-controls="mobile-drawer" aria-expanded="false"><i data-lucide="menu"></i></button>
     </div>
-  </header>
-
-  <!-- MOBILE MENU DRAWER (Off-Canvas Sheet) -->
-  <div id="mobile-drawer" class="fixed inset-0 z-50 hidden">
-    <!-- Backdrop Click to Close -->
-    <div id="close-drawer-backdrop" class="absolute inset-0 bg-slate-950/60 backdrop-blur-sm transition-opacity"></div>
-    
-    <!-- Sliding Panel Content -->
-    <div class="relative ml-auto w-full sm:w-[380px] max-w-[88vw] h-full bg-white dark:bg-slate-900 shadow-2xl flex flex-col justify-between p-5 sm:p-6 overflow-y-auto drawer-panel-animate border-l border-slate-200/80 dark:border-slate-800">
-      
-      <!-- Top Bar inside drawer -->
-      <div>
-        <div class="flex items-center justify-between pb-4 border-b border-slate-200/80 dark:border-slate-800">
-          <div class="flex items-center gap-2.5">
-            <div class="w-8 h-8 rounded-full bg-gradient-to-tr from-blue-600 to-cyan-400 p-0.5">
-              <div class="w-full h-full bg-[#070e1b] rounded-full flex items-center justify-center font-bold text-xs font-mono text-cyan-400">
-                ME+
-              </div>
-            </div>
-            <div>
-              <span class="text-base font-extrabold text-slate-900 dark:text-white">ME<span class="text-blue-600 dark:text-blue-400">PLUS</span></span>
-              <span class="block text-[9px] uppercase tracking-wider text-slate-400 font-semibold">Maroc • Formation</span>
-            </div>
-          </div>
-          
-          <div class="flex items-center gap-2">
-            <button class="theme-toggle-btn p-2 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition" aria-label="Changer le thème">
-              <i data-lucide="sun" class="icon-sun w-4 h-4 hidden text-amber-400"></i>
-              <i data-lucide="moon" class="icon-moon w-4 h-4 text-slate-600"></i>
-            </button>
-            <button id="close-drawer-btn" class="p-2 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition" aria-label="Fermer le menu">
-              <i data-lucide="x" class="w-5 h-5"></i>
-            </button>
-          </div>
-        </div>
-
-        <!-- Navigation Links with Rich Cards & Badges -->
-        <nav class="flex flex-col gap-1.5 mt-5">
-          <a href="index.html" class="drawer-link flex items-center justify-between p-3 rounded-2xl hover:bg-slate-50 dark:hover:bg-slate-800/60 text-slate-800 dark:text-slate-200 font-semibold text-sm transition">
-            <div class="flex items-center gap-3">
-              <div class="w-8 h-8 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 flex items-center justify-center">
-                <i data-lucide="home" class="w-4 h-4"></i>
-              </div>
-              <span>Accueil</span>
-            </div>
-            <i data-lucide="chevron-right" class="w-4 h-4 text-slate-400"></i>
-          </a>
-
-          <a href="formations.html" class="drawer-link flex items-center justify-between p-3 rounded-2xl bg-blue-50/70 dark:bg-blue-500/10 text-blue-600 dark:text-cyan-400 font-bold text-sm border border-blue-500/25">
-            <div class="flex items-center gap-3">
-              <div class="w-8 h-8 rounded-xl bg-blue-600 text-white flex items-center justify-center">
-                <i data-lucide="book-open" class="w-4 h-4"></i>
-              </div>
-              <span>Catalogue Formations</span>
-            </div>
-            <span class="text-[10px] font-bold bg-blue-600 text-white px-2 py-0.5 rounded-full">85+</span>
-          </a>
-
-          <a href="services.html" class="drawer-link flex items-center justify-between p-3 rounded-2xl hover:bg-slate-50 dark:hover:bg-slate-800/60 text-slate-800 dark:text-slate-200 font-semibold text-sm transition">
-            <div class="flex items-center gap-3">
-              <div class="w-8 h-8 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 flex items-center justify-center">
-                <i data-lucide="cpu" class="w-4 h-4"></i>
-              </div>
-              <span>Services & Audits GPEC</span>
-            </div>
-            <i data-lucide="chevron-right" class="w-4 h-4 text-slate-400"></i>
-          </a>
-
-          <a href="simulateur.html" class="drawer-link flex items-center justify-between p-3 rounded-2xl hover:bg-cyan-50/50 dark:hover:bg-cyan-500/10 text-cyan-700 dark:text-cyan-300 font-semibold text-sm border border-cyan-500/20 transition">
-            <div class="flex items-center gap-3">
-              <div class="w-8 h-8 rounded-xl bg-cyan-500/15 text-cyan-600 dark:text-cyan-400 flex items-center justify-center">
-                <i data-lucide="calculator" class="w-4 h-4"></i>
-              </div>
-              <span>Simulateur Remboursement</span>
-            </div>
-            <span class="text-[10px] font-bold bg-cyan-500/20 text-cyan-700 dark:text-cyan-300 px-2 py-0.5 rounded-full">80% CSF</span>
-          </a>
-
-          <a href="reglementation.html" class="drawer-link flex items-center justify-between p-3 rounded-2xl hover:bg-slate-50 dark:hover:bg-slate-800/60 text-slate-800 dark:text-slate-200 font-semibold text-sm transition">
-            <div class="flex items-center gap-3">
-              <div class="w-8 h-8 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 flex items-center justify-center">
-                <i data-lucide="file-check-2" class="w-4 h-4"></i>
-              </div>
-              <span>Réglementation & Bulletins</span>
-            </div>
-            <span class="text-[10px] font-semibold text-slate-500 dark:text-slate-400">B.O.</span>
-          </a>
-
-          <a href="consultants.html" class="drawer-link flex items-center justify-between p-3 rounded-2xl hover:bg-slate-50 dark:hover:bg-slate-800/60 text-slate-800 dark:text-slate-200 font-semibold text-sm transition">
-            <div class="flex items-center gap-3">
-              <div class="w-8 h-8 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 flex items-center justify-center">
-                <i data-lucide="users" class="w-4 h-4"></i>
-              </div>
-              <span>Experts & Consultants</span>
-            </div>
-            <span class="text-[10px] font-semibold text-emerald-600 dark:text-emerald-400">7 Seniors</span>
-          </a>
-
-          <a href="contact.html" class="drawer-link flex items-center justify-between p-3 rounded-2xl hover:bg-slate-50 dark:hover:bg-slate-800/60 text-slate-800 dark:text-slate-200 font-semibold text-sm transition">
-            <div class="flex items-center gap-3">
-              <div class="w-8 h-8 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 flex items-center justify-center">
-                <i data-lucide="phone-call" class="w-4 h-4"></i>
-              </div>
-              <span>Contact & Devis F2</span>
-            </div>
-            <i data-lucide="chevron-right" class="w-4 h-4 text-slate-400"></i>
-          </a>
-        </nav>
-      </div>
-
-      <!-- Drawer Bottom Quick Action Center -->
-      <div class="pt-4 mt-6 border-t border-slate-200/80 dark:border-slate-800 flex flex-col gap-2.5">
-        <div class="grid grid-cols-2 gap-2">
-          <a href="tel:+212661450248" class="py-2.5 px-3 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-white font-bold text-xs flex items-center justify-center gap-1.5 hover:bg-slate-200 dark:hover:bg-slate-700 transition">
-            <i data-lucide="phone" class="w-3.5 h-3.5 text-blue-600 dark:text-cyan-400"></i>
-            <span>Appeler</span>
-          </a>
-          <a href="https://wa.me/212661450248?text=Bonjour%20ME%20PLUS,%20je%20souhaite%20des%20informations%20sur%20vos%20formations" target="_blank" class="py-2.5 px-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs flex items-center justify-center gap-1.5 shadow-sm transition">
-            <i data-lucide="message-circle" class="w-3.5 h-3.5"></i>
-            <span>WhatsApp</span>
-          </a>
-        </div>
-        
-        <a href="contact.html" class="drawer-link w-full py-3 rounded-xl btn-pill-cyan text-center font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2">
-          <i data-lucide="file-text" class="w-4 h-4"></i>
-          Demande Devis & F2 Express
-        </a>
-
-        <div class="text-center pt-2 text-[10px] text-slate-400 flex items-center justify-center gap-1.5">
-          <i data-lucide="map-pin" class="w-3 h-3 text-cyan-500"></i>
-          <span>Bourgogne, Casablanca • DFP & GIAC</span>
-        </div>
-      </div>
-
     </div>
   </div>
-
+</header>
+<div id="mobile-drawer" class="fixed inset-0 z-50 hidden" role="dialog" aria-modal="true" aria-label="Menu principal">
+  <div id="close-drawer-backdrop" class="absolute inset-0 bg-slate-950/60 backdrop-blur-sm"></div>
+  <div class="site-drawer">
+    <div class="drawer-heading"><span class="site-brand">ME PLUS</span><button id="close-drawer-btn" class="icon-button" aria-label="Fermer le menu"><i data-lucide="x"></i></button></div>
+    <nav aria-label="Navigation mobile"><a href="index.html" class="drawer-link">Accueil</a>
+<a href="formations.html" class="drawer-link" aria-current="page">Formations <span class="nav-count">85+</span></a>
+<a href="services.html" class="drawer-link">Services & Audits</a>
+<a href="simulateur.html" class="drawer-link">Simulateur CSF</a>
+<a href="reglementation.html" class="drawer-link">Réglementation</a>
+<a href="consultants.html" class="drawer-link">Consultants</a>
+<a href="contact.html" class="drawer-link">Contact</a></nav>
+    <a href="contact.html" class="ui-button ui-button-primary drawer-link">Demander un devis <i data-lucide="arrow-up-right"></i></a>
+    <a class="drawer-phone" href="tel:+212661450248">+212 6 61 45 02 48</a>
+  </div>
+</div>
+<!-- /component:header -->
   <!-- MAIN DETAIL CONTAINER -->
-  <main class="relative pt-28 md:pt-32 pb-24">
+  <main id="main-content" tabindex="-1" class="relative pt-28 md:pt-32 pb-24">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <!-- TOP ACTION BAR: RETURN BUTTON & BREADCRUMBS -->
@@ -288,7 +128,8 @@
       </div>
 
       <!-- COURSE HERO BANNER -->
-      <section class="glass-card rounded-3xl p-6 sm:p-10 mb-10 border border-slate-200/90 dark:border-slate-800 relative overflow-hidden bg-gradient-to-r from-blue-50/70 via-indigo-50/30 to-transparent dark:from-slate-900/90 dark:via-[#0c182c] dark:to-slate-950">
+      <section class="page-intro glass-card rounded-3xl p-6 sm:p-10 mb-10 border border-slate-200/90 dark:border-slate-800 relative overflow-hidden bg-gradient-to-r from-blue-50/70 via-indigo-50/30 to-transparent dark:from-slate-900/90 dark:via-[#0c182c] dark:to-slate-950">
+        <img class="detail-hero-image" src="./assets/generated/training-safety.png" alt="Session de formation pratique en sécurité industrielle" />
         
         <!-- Category & Homologation Badges -->
         <div class="flex flex-wrap items-center gap-3 mb-4">
@@ -554,140 +395,26 @@
   </main>
 
   <!-- UNIFIED INDUSTRIAL FOOTER (Optimized for Mobile & Desktop) -->
-  <footer class="border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-[#050b15] pt-12 pb-24 md:pb-14 text-slate-600 dark:text-slate-400 text-xs transition">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <!-- Mobile Quick Contact Card (Prominent on small screens) -->
-      <div class="mb-10 p-5 rounded-3xl bg-gradient-to-br from-blue-50/80 to-cyan-50/50 dark:from-slate-900/90 dark:to-slate-800/80 border border-blue-200 dark:border-slate-700 shadow-sm flex flex-col sm:flex-row items-center justify-between gap-4">
-        <div class="flex items-center gap-3.5 text-center sm:text-left">
-          <div class="w-12 h-12 rounded-2xl bg-blue-600 text-white flex items-center justify-center shrink-0 shadow-md">
-            <i data-lucide="headphones" class="w-6 h-6"></i>
-          </div>
-          <div>
-            <h4 class="text-sm font-bold text-slate-900 dark:text-white">Besoin d'un Conseil Formation ou d'un Devis F2 ?</h4>
-            <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">Nos ingénieurs pédagogiques vous répondent sous 24h ouvrées.</p>
-          </div>
-        </div>
-        <div class="flex items-center gap-2.5 w-full sm:w-auto">
-          <a href="tel:+212661450248" class="flex-1 sm:flex-none px-4 py-2.5 rounded-xl bg-white dark:bg-slate-800 text-slate-900 dark:text-white border border-slate-200 dark:border-slate-700 font-bold text-xs flex items-center justify-center gap-2 shadow-sm hover:border-blue-500 transition">
-            <i data-lucide="phone" class="w-3.5 h-3.5 text-blue-600 dark:text-cyan-400"></i>
-            <span>+212 6 61 45 02 48</span>
-          </a>
-          <a href="https://wa.me/212661450248?text=Bonjour%20ME%20PLUS,%20je%20souhaite%20un%20devis%20de%20formation" target="_blank" class="flex-1 sm:flex-none px-4 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs flex items-center justify-center gap-2 shadow-sm transition">
-            <i data-lucide="message-circle" class="w-3.5 h-3.5"></i>
-            <span>WhatsApp</span>
-          </a>
-        </div>
-      </div>
+<!-- component:footer -->
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div><a href="index.html" class="site-brand"><span class="brand-symbol">M<span>+</span></span><span>ME PLUS<small>INGÉNIERIE & FORMATION</small></span></a><p>Des compétences durables.<br>Une industrie plus sûre.</p><span class="footer-caption">À vos côtés au Maroc depuis 2004.</span></div>
+    <div><h2>Nos expertises</h2><a href="formations.html">Catalogue des formations</a><a href="services.html">Conseil & audits</a><a href="consultants.html">Nos experts</a></div>
+    <div><h2>Vos ressources</h2><a href="simulateur.html">Simulateur de financement</a><a href="reglementation.html">Bibliothèque réglementaire</a><a href="contact.html">Demander un devis</a></div>
+    <div><h2>Rencontrons-nous</h2><a href="mailto:formation@meplus.ma">formation@meplus.ma</a><a href="tel:+212661450248">+212 6 61 45 02 48</a><p>Rue Moussa Al Kadim, Imm. Le Lys N° 21<br>Bourgogne, Casablanca, Maroc</p></div>
+  </div>
+  <div class="footer-bottom"><span>© 2026 ME PLUS. Tous droits réservés.</span><span>Ingénierie. Compétences. Confiance.</span><a href="#main-content">Haut de page ↑</a></div>
+</footer>
+<!-- /component:footer -->
 
-      <!-- Main Footer Grid: 2 columns on mobile, 4 columns on desktop -->
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-10">
-        
-        <!-- Col 1: About ME PLUS (Spans full width on mobile) -->
-        <div class="col-span-2 md:col-span-1">
-          <a href="index.html" class="inline-flex items-center gap-2.5 mb-4 group">
-            <div class="w-8 h-8 rounded-full bg-gradient-to-tr from-blue-600 to-cyan-400 p-0.5 shadow-sm">
-              <div class="w-full h-full bg-[#070e1b] rounded-full flex items-center justify-center font-bold text-xs font-mono text-cyan-400">
-                ME+
-              </div>
-            </div>
-            <span class="text-lg font-extrabold text-slate-900 dark:text-white">ME<span class="text-blue-600 dark:text-blue-400">PLUS</span></span>
-          </a>
-          <p class="leading-relaxed mb-4 text-xs text-slate-500 dark:text-slate-400">
-            Cabinet d'ingénierie de formation continue et de conseil industriel agréé par l'État marocain. Plus de 350 usines et multinationales accompagnées depuis 2004.
-          </p>
-          <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-blue-500/10 text-blue-700 dark:text-cyan-300 font-semibold text-[11px] border border-blue-500/20">
-            <span>🇲🇦 Homologué DFP • OFPPT • GIAC • Maroc PME</span>
-          </div>
-        </div>
-
-        <!-- Col 2: Navigation Rapide -->
-        <div class="col-span-1">
-          <h4 class="text-slate-900 dark:text-white font-bold text-xs uppercase tracking-wider mb-4 flex items-center gap-1.5">
-            <span class="w-1.5 h-1.5 rounded-full bg-blue-600"></span>
-            Navigation
-          </h4>
-          <ul class="space-y-2.5 text-xs">
-            <li><a href="index.html" class="hover:text-blue-600 dark:hover:text-white transition">Accueil</a></li>
-            <li><a href="formations.html" class="hover:text-blue-600 dark:hover:text-white transition font-bold text-blue-600 dark:text-cyan-400 flex items-center gap-1.5">Formations <span class="text-[10px] bg-blue-600/10 text-blue-600 dark:text-cyan-400 font-bold px-1.5 py-0.2 rounded">85+</span></a></li>
-            <li><a href="services.html" class="hover:text-blue-600 dark:hover:text-white transition">Services & Audits</a></li>
-            <li><a href="simulateur.html" class="hover:text-cyan-600 dark:hover:text-cyan-400 transition font-medium text-cyan-600 dark:text-cyan-400">Simulateur CSF</a></li>
-            <li><a href="reglementation.html" class="hover:text-blue-600 dark:hover:text-white transition">Lois & B.O.</a></li>
-            <li><a href="consultants.html" class="hover:text-blue-600 dark:hover:text-white transition">Consultants Seniors</a></li>
-            <li><a href="contact.html" class="hover:text-blue-600 dark:hover:text-white transition">Contact & Devis</a></li>
-          </ul>
-        </div>
-
-        <!-- Col 3: Pôles Pédagogiques -->
-        <div class="col-span-1">
-          <h4 class="text-slate-900 dark:text-white font-bold text-xs uppercase tracking-wider mb-4 flex items-center gap-1.5">
-            <span class="w-1.5 h-1.5 rounded-full bg-cyan-500"></span>
-            Pôles Clés
-          </h4>
-          <ul class="space-y-2.5 text-xs">
-            <li><span class="font-semibold text-slate-800 dark:text-slate-200">Sécurité :</span> NM 06.1.225, ATEX</li>
-            <li><span class="font-semibold text-slate-800 dark:text-slate-200">Technique :</span> Automates, Chaudières</li>
-            <li><span class="font-semibold text-slate-800 dark:text-slate-200">Management :</span> TPM, 5S, SMED</li>
-            <li><span class="font-semibold text-slate-800 dark:text-slate-200">Qualité :</span> ISO 45001, IATF</li>
-            <li><a href="reglementation.html" class="hover:text-blue-600 dark:hover:text-white transition">Conformité Décrets B.O.</a></li>
-          </ul>
-        </div>
-
-        <!-- Col 4: Siège & Contact (Spans full width on mobile) -->
-        <div class="col-span-2 md:col-span-1">
-          <h4 class="text-slate-900 dark:text-white font-bold text-xs uppercase tracking-wider mb-4 flex items-center gap-1.5">
-            <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
-            Siège Casablanca
-          </h4>
-          <div class="space-y-2.5 text-xs">
-            <p class="flex items-start gap-2">
-              <i data-lucide="map-pin" class="w-3.5 h-3.5 text-slate-400 shrink-0 mt-0.5"></i>
-              <span>Rue Moussa Al Kadim, Imm. Le Lys N° 21, Bourgogne, Casablanca, Maroc</span>
-            </p>
-            <p class="flex items-center gap-2 font-mono font-semibold text-slate-800 dark:text-slate-200">
-              <i data-lucide="phone" class="w-3.5 h-3.5 text-blue-600 dark:text-cyan-400 shrink-0"></i>
-              <a href="tel:+212661450248" class="hover:underline">+212 6 61 45 02 48</a>
-            </p>
-            <p class="flex items-center gap-2 font-mono text-blue-600 dark:text-cyan-400">
-              <i data-lucide="mail" class="w-3.5 h-3.5 shrink-0"></i>
-              <a href="mailto:formation@meplus.ma" class="hover:underline">formation@meplus.ma</a>
-            </p>
-            <div class="pt-2 text-[11px] text-emerald-600 dark:text-emerald-400 flex items-center gap-1.5">
-              <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-              <span>Lundi - Vendredi : 08h30 - 18h00</span>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- Bottom Bar -->
-      <div class="pt-6 border-t border-slate-200 dark:border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-slate-500">
-        <div>
-          © 2026 ME PLUS Maroc. Tous droits réservés. Cabinet Agréé par le Ministère de la Formation Professionnelle.
-        </div>
-        <div class="flex items-center gap-5">
-          <a href="https://meplus.ma/" target="_blank" rel="noopener noreferrer" class="hover:text-blue-600 dark:hover:text-white transition flex items-center gap-1">
-            <span>Site Original (meplus.ma)</span>
-            <i data-lucide="external-link" class="w-3 h-3"></i>
-          </a>
-          <a href="#" class="hover:text-blue-600 dark:hover:text-white transition flex items-center gap-1">
-            <span>Haut de page</span>
-            <i data-lucide="arrow-up" class="w-3 h-3"></i>
-          </a>
-        </div>
-      </div>
-
-    </div>
-  </footer>
-
-  <!-- MOBILE BOTTOM FLOATING DOCK -->
-  <div class="md:hidden fixed bottom-3 left-4 right-4 z-40 floating-pill-nav rounded-full p-2 px-5 flex items-center justify-between shadow-2xl">
-    <a href="index.html" class="flex flex-col items-center gap-0.5 text-[10px] text-slate-500 dark:text-slate-400 hover:text-blue-600">
+<!-- component:mobile-dock -->
+<!-- MOBILE BOTTOM FLOATING DOCK (One-Thumb Quick Access) -->
+  <nav aria-label="Accès rapide" class="mobile-dock md:hidden fixed bottom-3 left-4 right-4 z-40 floating-pill-nav rounded-full p-2 px-5 flex items-center justify-between shadow-2xl">
+    <a href="index.html" class="flex flex-col items-center gap-0.5 text-[10px] text-slate-500 dark:text-slate-400">
       <i data-lucide="home" class="w-4 h-4"></i>
       <span>Accueil</span>
     </a>
-    <a href="formations.html" class="flex flex-col items-center gap-0.5 text-[10px] text-blue-600 dark:text-cyan-400 font-bold">
+    <a href="formations.html" aria-current="page" class="flex flex-col items-center gap-0.5 text-[10px] text-slate-500 dark:text-slate-400 hover:text-blue-600">
       <i data-lucide="book-open" class="w-4 h-4"></i>
       <span>Formations</span>
     </a>
@@ -705,10 +432,11 @@
       <i data-lucide="phone" class="w-4 h-4"></i>
       <span>Contact</span>
     </a>
-  </div>
-
+  </nav>
+<!-- /component:mobile-dock -->
   <!-- Scripts -->
   <script src="./data.js"></script>
   <script src="./app.js"></script>
 </body>
 </html>
+

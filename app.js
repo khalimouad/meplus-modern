@@ -60,17 +60,34 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function openDrawer() {
     mobileDrawer?.classList.remove('hidden');
+    mobileMenuBtn?.setAttribute('aria-expanded', 'true');
     document.body.style.overflow = 'hidden';
+    closeDrawerBtn?.focus();
   }
 
   function closeDrawer() {
     mobileDrawer?.classList.add('hidden');
-    document.body.style.overflow = 'auto';
+    mobileMenuBtn?.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+    mobileMenuBtn?.focus();
   }
 
   mobileMenuBtn?.addEventListener('click', openDrawer);
   closeDrawerBtn?.addEventListener('click', closeDrawer);
   closeDrawerBackdrop?.addEventListener('click', closeDrawer);
+  document.addEventListener('keydown', (event) => {
+    if (!mobileDrawer || mobileDrawer.classList.contains('hidden')) return;
+    if (event.key === 'Escape') closeDrawer();
+    if (event.key !== 'Tab') return;
+    const controls = [...mobileDrawer.querySelectorAll('a[href], button:not([disabled])')];
+    const first = controls[0];
+    const last = controls[controls.length - 1];
+    if (event.shiftKey && document.activeElement === first) {
+      event.preventDefault(); last?.focus();
+    } else if (!event.shiftKey && document.activeElement === last) {
+      event.preventDefault(); first?.focus();
+    }
+  });
 
   document.querySelectorAll('.drawer-link').forEach(link => {
     link.addEventListener('click', closeDrawer);
@@ -211,6 +228,7 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
+    const escapeAttribute = value => String(value || '').replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;');
     // Build Cards matching user's reference screenshot
     formationsContainer.innerHTML = displayedFormations.map(f => {
       let badgeBg = 'bg-blue-50 dark:bg-blue-950/60 text-blue-700 dark:text-blue-300';
@@ -237,6 +255,7 @@ document.addEventListener('DOMContentLoaded', () => {
       return `
         <div class="glass-card p-6 md:p-7 rounded-2xl flex flex-col justify-between group border border-slate-200/90 dark:border-slate-800 hover:border-blue-500/40 transition duration-300 shadow-sm hover:shadow-md">
           <div>
+            ${f.image ? `<img src="${escapeAttribute(f.image)}" alt="${escapeAttribute(f.image_alt || f.title)}" loading="lazy" class="w-full h-40 object-cover rounded-xl mb-4" />` : ''}
             <!-- Header Badges: Domain Icon Pill (Left) + Certifiante Pill (Right) -->
             <div class="flex items-center justify-between gap-2 mb-3">
               <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold ${badgeBg}">
@@ -428,6 +447,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Populate Hero elements
     detailTitleEl.textContent = formation.title;
+    const courseImage = document.querySelector('.detail-hero-image');
+    if (courseImage && formation.image) {
+      courseImage.src = formation.image;
+      courseImage.alt = formation.image_alt || formation.title;
+    }
 
     const domainCrumb = document.getElementById('detail-domain-crumb');
     if (domainCrumb) domainCrumb.textContent = formation.domain;

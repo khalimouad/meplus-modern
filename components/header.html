@@ -1,0 +1,23 @@
+<a class="skip-link" href="#main-content">Aller au contenu</a>
+<header class="site-header">
+  <div class="site-header-inner">
+    <a class="site-brand" href="index.html" aria-label="ME PLUS — Accueil"><span class="brand-symbol">ME<span>+</span></span><span>ME<span class="brand-plus">PLUS</span><small>MAROC · CASABLANCA</small></span></a>
+    <div class="navigation-capsule">
+    <nav class="desktop-nav" aria-label="Navigation principale">{{navigation}}</nav>
+    <div class="header-actions">
+      <button class="theme-toggle-btn icon-button" aria-label="Changer le thème"><i data-lucide="sun" class="icon-sun hidden"></i><i data-lucide="moon" class="icon-moon"></i></button>
+      <a href="contact.html" class="ui-button ui-button-primary header-cta">Devis & Formulaire F2 <i data-lucide="arrow-up-right"></i></a>
+      <button id="mobile-menu-btn" class="icon-button mobile-menu-toggle" aria-label="Ouvrir le menu" aria-controls="mobile-drawer" aria-expanded="false"><i data-lucide="menu"></i></button>
+    </div>
+    </div>
+  </div>
+</header>
+<div id="mobile-drawer" class="fixed inset-0 z-50 hidden" role="dialog" aria-modal="true" aria-label="Menu principal">
+  <div id="close-drawer-backdrop" class="absolute inset-0 bg-slate-950/60 backdrop-blur-sm"></div>
+  <div class="site-drawer">
+    <div class="drawer-heading"><span class="site-brand">ME PLUS</span><button id="close-drawer-btn" class="icon-button" aria-label="Fermer le menu"><i data-lucide="x"></i></button></div>
+    <nav aria-label="Navigation mobile">{{mobileNavigation}}</nav>
+    <a href="contact.html" class="ui-button ui-button-primary drawer-link">Demander un devis <i data-lucide="arrow-up-right"></i></a>
+    <a class="drawer-phone" href="tel:+212661450248">+212 6 61 45 02 48</a>
+  </div>
+</div>

@@ -3,3 +3,4 @@ node_modules/
 *.log
 .cache/
 admin/data/*.sqlite
+admin/data/leads.json

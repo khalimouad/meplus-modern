@@ -1,0 +1,22 @@
+{
+  "name": "meplus-modern",
+  "version": "1.0.0",
+  "description": "ME PLUS Industrial Training, Safety & Engineering Platform",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "build": "node scripts/build-components.cjs",
+    "check:components": "node scripts/build-components.cjs --check",
+    "prestart": "npm run build",
+    "predev": "npm run build"
+  },
+  "keywords": [
+    "meplus",
+    "formation",
+    "maroc",
+    "securite-industrielle"
+  ],
+  "author": "ME PLUS",
+  "license": "ISC"
+}
