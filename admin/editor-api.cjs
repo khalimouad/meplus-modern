@@ -12,10 +12,12 @@ function createEditorAPI(root) {
   return async function(req,res,url) {
     if (!url.pathname.startsWith('/api/editor/')) return false;
     try {
+      const hosted = process.env.VERCEL === '1' || process.env.VERCEL === 'true';
       const address = req.socket.remoteAddress;
-      if (!['127.0.0.1','::1','::ffff:127.0.0.1'].includes(address)) throw Object.assign(new Error('Administration locale uniquement.'),{status:403});
-      if (!/^(localhost|127\.0\.0\.1|\[::1\])(?::\d+)?$/.test(req.headers.host || '')) throw Object.assign(new Error('Hôte non autorisé.'),{status:403});
-      if (req.headers.origin && req.headers.origin !== `http://${req.headers.host}`) throw Object.assign(new Error('Origine non autorisée.'),{status:403});
+      if (!hosted && !['127.0.0.1','::1','::ffff:127.0.0.1'].includes(address)) throw Object.assign(new Error('Administration locale uniquement.'),{status:403});
+      if (!hosted && !/^(localhost|127\.0\.0\.1|\[::1\])(?::\d+)?$/.test(req.headers.host || '')) throw Object.assign(new Error('Hôte non autorisé.'),{status:403});
+      if (!hosted && req.headers.origin && req.headers.origin !== `http://${req.headers.host}`) throw Object.assign(new Error('Origine non autorisée.'),{status:403});
+      if (hosted && req.method === 'POST') throw Object.assign(new Error('Le studio Vercel est en lecture seule : connectez un stockage persistant pour enregistrer les modifications.'),{status:501});
       let payload;
       if (req.method === 'POST') {
         if (!req.headers['content-type']?.startsWith('application/json')) throw Object.assign(new Error('JSON requis.'),{status:415});
