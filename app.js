@@ -153,6 +153,18 @@ document.addEventListener('DOMContentLoaded', () => {
   let currentPage = 1;
   const itemsPerPage = 9; // 3 columns x 3 rows = 9 cards per page -> 10 pages for 85 courses
 
+  // Keep the catalogue visually rich even before an editor assigns a custom image.
+  // Editors can override these defaults from Admin Studio for any individual module.
+  const defaultFormationImage = domain => {
+    const value = String(domain || '').toLowerCase();
+    if (value.includes('technique')) return './assets/generated/tpm-maintenance.png';
+    if (value.includes('management')) return './assets/generated/consultants-casablanca.png';
+    if (value.includes('qualité') || value.includes('qualite') || value.includes('dmo') || value.includes('bmo')) {
+      return './assets/generated/audit-safety.png';
+    }
+    return './assets/generated/training-safety.png';
+  };
+
   function renderFormations(limit = null) {
     if (!formationsContainer) return;
 
@@ -251,11 +263,12 @@ document.addEventListener('DOMContentLoaded', () => {
         : 'Formation certifiante et pratique pour les techniciens et ingénieurs industriels.';
 
       const detailUrl = `formation-detail.html?id=${encodeURIComponent(f.id)}`;
+      const cardImage = f.image || defaultFormationImage(f.domain);
 
       return `
         <div class="glass-card p-6 md:p-7 rounded-2xl flex flex-col justify-between group border border-slate-200/90 dark:border-slate-800 hover:border-blue-500/40 transition duration-300 shadow-sm hover:shadow-md">
           <div>
-            ${f.image ? `<img src="${escapeAttribute(f.image)}" alt="${escapeAttribute(f.image_alt || f.title)}" loading="lazy" class="w-full h-40 object-cover rounded-xl mb-4" />` : ''}
+            <img src="${escapeAttribute(cardImage)}" alt="${escapeAttribute(f.image_alt || f.title)}" loading="lazy" class="w-full h-40 object-cover rounded-xl mb-4" />
             <!-- Header Badges: Domain Icon Pill (Left) + Certifiante Pill (Right) -->
             <div class="flex items-center justify-between gap-2 mb-3">
               <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold ${badgeBg}">
@@ -448,8 +461,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // Populate Hero elements
     detailTitleEl.textContent = formation.title;
     const courseImage = document.querySelector('.detail-hero-image');
-    if (courseImage && formation.image) {
-      courseImage.src = formation.image;
+    if (courseImage) {
+      courseImage.src = formation.image || defaultFormationImage(formation.domain);
       courseImage.alt = formation.image_alt || formation.title;
     }
 
