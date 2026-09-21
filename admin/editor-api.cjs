@@ -59,6 +59,31 @@ function createEditorAPI(root) {
         function walk(dir) { for(const entry of fs.readdirSync(dir,{withFileTypes:true})) { const full=path.join(dir,entry.name); if(entry.isDirectory()) walk(full); else if(/\.(png|jpe?g|webp|gif)$/i.test(entry.name)) images.push({url:'/'+path.relative(root,full).split(path.sep).join('/'),name:entry.name,size:fs.statSync(full).size}); } }
         walk(path.join(root,'assets')); json(res,200,{images}); return true;
       }
+      if(route==='media-delete' && req.method==='POST') {
+        if(typeof payload.url !== 'string' || !payload.url.startsWith('/assets/')) throw new Error('Image non autorisée.');
+        const target=path.resolve(root, payload.url.slice(1));
+        const assetsRoot=path.resolve(root,'assets');
+        if(target!==assetsRoot && !target.startsWith(assetsRoot+path.sep)) throw new Error('Image non autorisée.');
+        if(!fs.existsSync(target) || !fs.statSync(target).isFile()) throw new Error('Image introuvable.');
+        fs.unlinkSync(target);
+        json(res,200,{deleted:payload.url}); return true;
+      }
+      if(route==='data-delete' && req.method==='POST') {
+        const source=read('data.json');
+        if(payload.revision!==revision(source)) throw Object.assign(new Error('Les données ont changé. Rechargez avant de supprimer.'),{status:409});
+        const key=payload.collection;
+        if(!['formations','consultants','regulations','clients'].includes(key)) throw new Error('Collection invalide.');
+        const current=JSON.parse(source);
+        if(!Array.isArray(current[key])) throw new Error('Collection invalide.');
+        const index=Number(payload.index);
+        if(!Number.isInteger(index) || index<0 || index>=current[key].length) throw new Error('Élément introuvable.');
+        current[key].splice(index,1);
+        const content=JSON.stringify(current,null,2)+'\n';
+        const oldJS=read('data.js');
+        try { fs.writeFileSync(path.join(root,'data.json'),content); fs.writeFileSync(path.join(root,'data.js'),'window.MEPLUS_DATA = '+JSON.stringify(current).replace(/</g,'\\u003c')+';\n'); }
+        catch(error) { fs.writeFileSync(path.join(root,'data.json'),source); fs.writeFileSync(path.join(root,'data.js'),oldJS); throw error; }
+        json(res,200,{data:current,revision:revision(content)}); return true;
+      }
       if(route==='upload' && req.method==='POST') {
         if(typeof payload.base64!=='string' || !/^[A-Za-z0-9+/]*={0,2}$/.test(payload.base64)) throw new Error('Image invalide.');
         const buffer=Buffer.from(payload.base64,'base64');

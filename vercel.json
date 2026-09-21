@@ -2,5 +2,10 @@
   "framework": null,
   "buildCommand": null,
   "outputDirectory": ".",
-  "cleanUrls": true
+  "cleanUrls": true,
+  "rewrites": [
+    { "source": "/admin", "destination": "/admin/studio.html" },
+    { "source": "/admin/", "destination": "/admin/studio.html" },
+    { "source": "/admin.html", "destination": "/admin/studio.html" }
+  ]
 }
