@@ -3,6 +3,19 @@
   "buildCommand": null,
   "outputDirectory": ".",
   "cleanUrls": true,
+  "functions": {
+    "api/editor/[...path].js": {
+      "runtime": "nodejs22.x",
+      "includeFiles": [
+        "data.json",
+        "data.js",
+        "*.html",
+        "components/**",
+        "scripts/**",
+        "assets/**"
+      ]
+    }
+  },
   "rewrites": [
     { "source": "/admin", "destination": "/admin/studio.html" },
     { "source": "/admin/", "destination": "/admin/studio.html" },
