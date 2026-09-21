@@ -6,14 +6,7 @@
   "functions": {
     "api/editor/[...path].js": {
       "runtime": "nodejs22.x",
-      "includeFiles": [
-        "data.json",
-        "data.js",
-        "*.html",
-        "components/**",
-        "scripts/**",
-        "assets/**"
-      ]
+      "includeFiles": "{data.json,data.js,*.html,components/**,scripts/**,assets/**}"
     }
   },
   "rewrites": [
