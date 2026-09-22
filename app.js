@@ -546,7 +546,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const f2Btn = document.getElementById('f2-download-btn');
     if (f2Btn) {
-      f2Btn.href = `contact.html?formation=${encodeURIComponent(formation.title)}&sujet=Fiche+F2+OFPPT`;
+      f2Btn.href = formation.attached_file || `contact.html?formation=${encodeURIComponent(formation.title)}&sujet=Fiche+F2+OFPPT`;
     }
 
     const simBtn = document.getElementById('simulate-course-btn');

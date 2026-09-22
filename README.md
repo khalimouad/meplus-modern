@@ -65,7 +65,7 @@ npx serve .
 ```
 
 ### Admin Studio
-Run `npm start` and open `/admin/` to use the light-first content studio. It edits pages, shared components, collections and media through the local Node API. Collection records and media can be deleted with confirmation and revision checks. Static hosting can display the studio through the `/admin` rewrite. Vercel exposes a read-only serverless API so the dashboard loads correctly; edits and deletes require persistent storage, so deploy `server.js` with a database or object store for production editing.
+Run `npm start` and open `/admin/` to use the light-first content studio. It edits pages, shared components, collections, images and PDF documents through the local Node API. Use **Documents** for a searchable, sortable library with section filters, usage tracking, upload, replace-in-place and safe deletion of unused files. Content records can link to PDFs from their own section editors. Static hosting can display the studio, but editing requires the Node API. Vercel currently serves the studio read-only; document uploads, replacements and deletes need an authenticated API backed by persistent storage before they can be enabled in production.
 
 ---
 

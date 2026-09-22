@@ -21,7 +21,7 @@
                 "C) Outils",
                 "D) Exercice pratique"
             ],
-            "certification": "Certifiante \/ Homologuée",
+            "certification": "Certifiante / Homologuée",
             "attached_file": "",
             "is_featured": false
         },
@@ -45,7 +45,7 @@
                 "E) Les 5S",
                 "F) Atelier automaintenance"
             ],
-            "certification": "Certifiante \/ Homologuée",
+            "certification": "Certifiante / Homologuée",
             "attached_file": "",
             "is_featured": false
         },
@@ -70,13 +70,13 @@
                 "E) Les systèmes numériques de contrôle et de commande",
                 "F) Les applications industrielles de l’instrumentation et la régulation"
             ],
-            "certification": "Certifiante \/ Homologuée",
+            "certification": "Certifiante / Homologuée",
             "attached_file": "",
             "is_featured": false
         },
         {
             "id": "f-4",
-            "title": "Automatisme S5\/S7 : notions de base",
+            "title": "Automatisme S5/S7 : notions de base",
             "domain": "Technique",
             "duration_days": "2-3 jours",
             "duration_hours": "14-21 heures",
@@ -94,7 +94,7 @@
                 "3) Maintenance des systèmes automatisés Simatic S7",
                 "Présentation de la famille Simatic S7"
             ],
-            "certification": "Certifiante \/ Homologuée",
+            "certification": "Certifiante / Homologuée",
             "attached_file": "",
             "is_featured": false
         },
@@ -108,7 +108,7 @@
             "prerequis": "Prérequis de base selon le module choisi.",
             "objectives": [
                 "Être capable d’analyser une situation à risques,",
-                "Identifier et évaluer les risques du poste de travail\/activité,",
+                "Identifier et évaluer les risques du poste de travail/activité,",
                 "Prendre les décisions appropriées et mettre en œuvre les moyens adaptés pour maîtriser le risque"
             ],
             "content": [
@@ -119,7 +119,7 @@
                 "Sur quels indicateurs s’appuyer pour lister les risques professionnels existant au sein de l’entreprise",
                 "B) Etude de cas pratiques"
             ],
-            "certification": "Certifiante \/ Homologuée",
+            "certification": "Certifiante / Homologuée",
             "attached_file": "",
             "is_featured": false
         },
@@ -142,7 +142,7 @@
                 "D) Réussir chaque étape de mise en œuvre du 5S",
                 "E) Développer l’état d’esprit 5S pour pérenniser les résultats obtenus"
             ],
-            "certification": "Certifiante \/ Homologuée",
+            "certification": "Certifiante / Homologuée",
             "attached_file": "",
             "is_featured": false
         },
@@ -167,7 +167,7 @@
                 "E) Les plastiques industriels",
                 "F) Les traitements thermiques"
             ],
-            "certification": "Certifiante \/ Homologuée",
+            "certification": "Certifiante / Homologuée",
             "attached_file": "",
             "is_featured": false
         },
@@ -191,7 +191,7 @@
                 "D) Animer la causerie",
                 "E) Exercice pratique"
             ],
-            "certification": "Certifiante \/ Homologuée",
+            "certification": "Certifiante / Homologuée",
             "attached_file": "",
             "is_featured": false
         },
@@ -216,7 +216,7 @@
                 "E) La vitesse : distance d’arrêt, force centrifuge, distance de sécurité et Le téléphone portable au volant",
                 "F) Comportement en cas d’accident"
             ],
-            "certification": "Certifiante \/ Homologuée",
+            "certification": "Certifiante / Homologuée",
             "attached_file": "",
             "is_featured": false
         },
@@ -240,7 +240,7 @@
                 "5) Entretien périodique d’une chaudière",
                 "6) Actions de maintenance de chaudières et de bruleurs"
             ],
-            "certification": "Certifiante \/ Homologuée",
+            "certification": "Certifiante / Homologuée",
             "attached_file": "",
             "is_featured": false
         },
@@ -262,7 +262,7 @@
                 "D) Les indicateurs techniques",
                 "E) Elaborer le système de mesure"
             ],
-            "certification": "Certifiante \/ Homologuée",
+            "certification": "Certifiante / Homologuée",
             "attached_file": "",
             "is_featured": false
         },
@@ -285,7 +285,7 @@
                 "D) Démarche de prévention active",
                 "E) Exercices d’application"
             ],
-            "certification": "Certifiante \/ Homologuée",
+            "certification": "Certifiante / Homologuée",
             "attached_file": "",
             "is_featured": false
         },
@@ -310,7 +310,7 @@
                 "E) Maitriser les délais",
                 "F) Tableaux de bord d’un projet"
             ],
-            "certification": "Certifiante \/ Homologuée",
+            "certification": "Certifiante / Homologuée",
             "attached_file": "",
             "is_featured": false
         },
@@ -335,7 +335,7 @@
                 "E) Connaître les outils informatiques  »GMAO »",
                 "F) Développer la maintenance préventive"
             ],
-            "certification": "Certifiante \/ Homologuée",
+            "certification": "Certifiante / Homologuée",
             "attached_file": "",
             "is_featured": false
         },
@@ -358,7 +358,7 @@
                 "D) Applications sur Excel et sur une GMAO",
                 "E) L’organisation du magasin"
             ],
-            "certification": "Certifiante \/ Homologuée",
+            "certification": "Certifiante / Homologuée",
             "attached_file": "",
             "is_featured": false
         },
@@ -383,7 +383,7 @@
                 "E) Les clauses de gestion des risques autour de la maintenance",
                 "F) La responsabilité de chacune des parties"
             ],
-            "certification": "Certifiante \/ Homologuée",
+            "certification": "Certifiante / Homologuée",
             "attached_file": "",
             "is_featured": false
         },
@@ -408,7 +408,7 @@
                 "E) Récepteurs hydrauliques",
                 "F). Etude de quelques montages Hydrauliques"
             ],
-            "certification": "Certifiante \/ Homologuée",
+            "certification": "Certifiante / Homologuée",
             "attached_file": "",
             "is_featured": false
         },
@@ -433,7 +433,7 @@
                 "5) Réaliser la mission d’audit",
                 "6) Réaliser la synthèse de l’audit et Conslusion"
             ],
-            "certification": "Certifiante \/ Homologuée",
+            "certification": "Certifiante / Homologuée",
             "attached_file": "",
             "is_featured": false
         },
@@ -458,7 +458,7 @@
                 "H) Le principe de réglage PI",
                 "F) La maintenance"
             ],
-            "certification": "Certifiante \/ Homologuée",
+            "certification": "Certifiante / Homologuée",
             "attached_file": "",
             "is_featured": false
         },
@@ -482,7 +482,7 @@
                 "3) Piloter les missions de coordination de sécurité",
                 "Déterminer la catégorie des opérations"
             ],
-            "certification": "Certifiante \/ Homologuée",
+            "certification": "Certifiante / Homologuée",
             "attached_file": "",
             "is_featured": false
         },
@@ -507,7 +507,7 @@
                 "E) Différents facteurs déterminants du risque routier",
                 "F) Les impacts de la charge mentale et émotionnelle sur le risque routier"
             ],
-            "certification": "Certifiante \/ Homologuée",
+            "certification": "Certifiante / Homologuée",
             "attached_file": "",
             "is_featured": false
         },
@@ -530,7 +530,7 @@
                 "D) Les principaux outils et techniques du Lean",
                 "E) Etude de cas pratiques"
             ],
-            "certification": "Certifiante \/ Homologuée",
+            "certification": "Certifiante / Homologuée",
             "attached_file": "",
             "is_featured": false
         },
@@ -552,7 +552,7 @@
                 "C) Les aciers réfractaires",
                 "D) Procédure de choix d’un acier réfractaire"
             ],
-            "certification": "Certifiante \/ Homologuée",
+            "certification": "Certifiante / Homologuée",
             "attached_file": "",
             "is_featured": false
         },
@@ -577,7 +577,7 @@
                 "E) Les atmosphères et les gaz toxiques",
                 "F) Démonstration sur feu de gaz"
             ],
-            "certification": "Certifiante \/ Homologuée",
+            "certification": "Certifiante / Homologuée",
             "attached_file": "",
             "is_featured": false
         },
@@ -602,7 +602,7 @@
                 "E) Les schemas électriques",
                 "F) le dimensionnement des cables élctriques"
             ],
-            "certification": "Certifiante \/ Homologuée",
+            "certification": "Certifiante / Homologuée",
             "attached_file": "",
             "is_featured": false
         },
@@ -626,7 +626,7 @@
                 "H) Méthodologie de diagnostique de pannes",
                 "F) Etude de cas pratique dans les ateliers de maintenances de l’entreprise"
             ],
-            "certification": "Certifiante \/ Homologuée",
+            "certification": "Certifiante / Homologuée",
             "attached_file": "",
             "is_featured": false
         },
@@ -651,7 +651,7 @@
                 "C) Pratique",
                 "Passage en revue des équipements de protection Individuels et collectifs"
             ],
-            "certification": "Certifiante \/ Homologuée",
+            "certification": "Certifiante / Homologuée",
             "attached_file": "",
             "is_featured": false
         },
@@ -671,12 +671,12 @@
             "content": [
                 "Les causes d’incendie",
                 "Les effets de l’incendie sur l’homme",
-                "Le triangle du feu \/ Les classes de feu",
+                "Le triangle du feu / Les classes de feu",
                 "Les modes de Propagation",
-                "Les principes d’extinction \/ Les moyens d’extinction",
+                "Les principes d’extinction / Les moyens d’extinction",
                 "L’évacuation"
             ],
-            "certification": "Certifiante \/ Homologuée",
+            "certification": "Certifiante / Homologuée",
             "attached_file": "",
             "is_featured": true
         },
@@ -700,7 +700,7 @@
                 "5) Chap. 7 et 8 : support et réalisation des activités opérationnelles",
                 "6) Chap. 9 et 10 : Évaluation et amélioration des performances SST"
             ],
-            "certification": "Certifiante \/ Homologuée",
+            "certification": "Certifiante / Homologuée",
             "attached_file": "",
             "is_featured": false
         },
@@ -725,7 +725,7 @@
                 "E) Logiciels de commande numeriques",
                 "F) Assistance aux clients et service apres vente"
             ],
-            "certification": "Certifiante \/ Homologuée",
+            "certification": "Certifiante / Homologuée",
             "attached_file": "",
             "is_featured": false
         },
@@ -750,7 +750,7 @@
                 "E) Exercices pratiques",
                 "Analyse d’une situation de travail en hauteur"
             ],
-            "certification": "Certifiante \/ Homologuée",
+            "certification": "Certifiante / Homologuée",
             "attached_file": "",
             "is_featured": false
         },
@@ -774,7 +774,7 @@
                 "Profiter du passage à la V2015 pour faire le bilan de son système de management de la qualité V2008",
                 "Planifier son plan d’actions."
             ],
-            "certification": "Certifiante \/ Homologuée",
+            "certification": "Certifiante / Homologuée",
             "attached_file": "",
             "is_featured": false
         },
@@ -796,7 +796,7 @@
                 "4) Préparation des standards provisoires pour la Maintenance Autonome des équipements",
                 "5) Les 7 étapes de la maintenance autonome"
             ],
-            "certification": "Certifiante \/ Homologuée",
+            "certification": "Certifiante / Homologuée",
             "attached_file": "",
             "is_featured": false
         },
@@ -820,7 +820,7 @@
                 "E) Analyses des défaillances sur les moules",
                 "F) Les matériaux"
             ],
-            "certification": "Certifiante \/ Homologuée",
+            "certification": "Certifiante / Homologuée",
             "attached_file": "",
             "is_featured": false
         },
@@ -843,7 +843,7 @@
                 "E) Les différents niveaux de maintenance d’une MO.",
                 "F) La maintenance préventive d’une machine outil"
             ],
-            "certification": "Certifiante \/ Homologuée",
+            "certification": "Certifiante / Homologuée",
             "attached_file": "",
             "is_featured": false
         },
@@ -867,7 +867,7 @@
                 "E) Chapitre 7 : Support",
                 "F) Chapitre 8 : Production et prestation de service"
             ],
-            "certification": "Certifiante \/ Homologuée",
+            "certification": "Certifiante / Homologuée",
             "attached_file": "",
             "is_featured": false
         },
@@ -890,7 +890,7 @@
                 "E) Etude, exploitation et conception des fiches techniques",
                 "F) TRAVAUX PRATIQUES (1 JOUR)"
             ],
-            "certification": "Certifiante \/ Homologuée",
+            "certification": "Certifiante / Homologuée",
             "attached_file": "",
             "is_featured": false
         },
@@ -915,7 +915,7 @@
                 "D) Le risque potentiel, quelles sources et quels outils ?",
                 "Les outils d’analyse de risques"
             ],
-            "certification": "Certifiante \/ Homologuée",
+            "certification": "Certifiante / Homologuée",
             "attached_file": "",
             "is_featured": false
         },
@@ -940,7 +940,7 @@
                 "E) Logiciels de commande numeriques",
                 "F) Langages de programmation"
             ],
-            "certification": "Certifiante \/ Homologuée",
+            "certification": "Certifiante / Homologuée",
             "attached_file": "",
             "is_featured": false
         },
@@ -967,7 +967,7 @@
                 "C) Animer un groupe de progrès",
                 "D) Animer le progrès au quotidien"
             ],
-            "certification": "Certifiante \/ Homologuée",
+            "certification": "Certifiante / Homologuée",
             "attached_file": "",
             "is_featured": false
         },
@@ -991,7 +991,7 @@
                 "Apprendre à accéder aux fonctions d’un automate",
                 "Apprendre à déceler des problèmes de fonctionnement d’un automatisme"
             ],
-            "certification": "Certifiante \/ Homologuée",
+            "certification": "Certifiante / Homologuée",
             "attached_file": "",
             "is_featured": false
         },
@@ -1016,7 +1016,7 @@
                 "B) Méthode de construction du plan de surveillance",
                 "Déroulement du processus d’élaboration du plan de surveillance en 8 étapes"
             ],
-            "certification": "Certifiante \/ Homologuée",
+            "certification": "Certifiante / Homologuée",
             "attached_file": "",
             "is_featured": false
         },
@@ -1112,20 +1112,20 @@
                 "E) Introduction à la régulation industrielle",
                 "F) Pratique des vannes de régulation"
             ],
-            "certification": "Certifiante \/ Homologuée",
+            "certification": "Certifiante / Homologuée",
             "attached_file": "",
             "is_featured": false
         },
         {
             "id": "f-47",
-            "title": "Préparation à l’habilitation électrique B0\/H0",
+            "title": "Préparation à l’habilitation électrique B0/H0",
             "domain": "Sécurité – hygiène",
             "duration_days": "2-3 jours",
             "duration_hours": "14-21 heures",
             "public_cible": "Ingénieurs, Responsables Maintenance, Techniciens et Opérateurs industriels.",
             "prerequis": "Prérequis de base selon le module choisi.",
             "objectives": [
-                "Permettre aux non électriciens de mettre en application les prescriptions de sécurité de la norme NM-06.1.225 \/ UTE C 18-510 lors de l’exécution des travaux d’ordre non électriques."
+                "Permettre aux non électriciens de mettre en application les prescriptions de sécurité de la norme NM-06.1.225 / UTE C 18-510 lors de l’exécution des travaux d’ordre non électriques."
             ],
             "content": [
                 "A) La procédure d’habilitation selon la norme NM 06.1.225 en relation avec les domaines de tension",
@@ -1159,7 +1159,7 @@
                 "D) Exigences relatives à l’homologation des pièces",
                 "E) Comparaison des pratiques de l’entreprise et les exigences du stands"
             ],
-            "certification": "Certifiante \/ Homologuée",
+            "certification": "Certifiante / Homologuée",
             "attached_file": "",
             "is_featured": false
         },
@@ -1187,7 +1187,7 @@
                 "4) les mesures de prévention",
                 "5) Exercices d’application : La sécurité dans un atelier de production"
             ],
-            "certification": "Certifiante \/ Homologuée",
+            "certification": "Certifiante / Homologuée",
             "attached_file": "",
             "is_featured": false
         },
@@ -1209,7 +1209,7 @@
                 "D) Echanges de pratiques",
                 "E) Evaluer la démarche de prévention mise en place"
             ],
-            "certification": "Certifiante \/ Homologuée",
+            "certification": "Certifiante / Homologuée",
             "attached_file": "",
             "is_featured": false
         },
@@ -1231,7 +1231,7 @@
                 "Découvrir les étapes de mise en œuvre dans une entreprise.",
                 "Identifier les outils qualité utilisés dans la méthode"
             ],
-            "certification": "Certifiante \/ Homologuée",
+            "certification": "Certifiante / Homologuée",
             "attached_file": "",
             "is_featured": false
         },
@@ -1255,7 +1255,7 @@
                 "D) Vérification des conformités",
                 "Des niveaux de travail, des accès et des protections collectives contre les chutes, etc"
             ],
-            "certification": "Certifiante \/ Homologuée",
+            "certification": "Certifiante / Homologuée",
             "attached_file": "",
             "is_featured": false
         },
@@ -1277,7 +1277,7 @@
                 "Secourir",
                 "Agir face à une victime qui saigne abondamment, qui s’étouffe, qui présente un malaise, qui présente une brûlure thermique, chimique ou électrique"
             ],
-            "certification": "Certifiante \/ Homologuée",
+            "certification": "Certifiante / Homologuée",
             "attached_file": "",
             "is_featured": true
         },
@@ -1301,7 +1301,7 @@
                 "Récupération et exploitation du balancement de la charge",
                 "Déplacement à vide et en charge"
             ],
-            "certification": "Certifiante \/ Homologuée",
+            "certification": "Certifiante / Homologuée",
             "attached_file": "",
             "is_featured": true
         },
@@ -1324,7 +1324,7 @@
                 "B) Les modes de transport et le conditionnement des matières dangereuses",
                 "C) Transport des Matières Dangereuses (Pratique)"
             ],
-            "certification": "Certifiante \/ Homologuée",
+            "certification": "Certifiante / Homologuée",
             "attached_file": "",
             "is_featured": false
         },
@@ -1348,7 +1348,7 @@
                 "D) L’approche statistique",
                 "E) La mise en œuvre du six sigma dans l’entreprise"
             ],
-            "certification": "Certifiante \/ Homologuée",
+            "certification": "Certifiante / Homologuée",
             "attached_file": "",
             "is_featured": false
         },
@@ -1371,7 +1371,7 @@
                 "D) Etude des différents types de moules suivant leurs particularités de fonctionnement",
                 "E) Maintenance des machines de soufflage"
             ],
-            "certification": "Certifiante \/ Homologuée",
+            "certification": "Certifiante / Homologuée",
             "attached_file": "",
             "is_featured": false
         },
@@ -1394,7 +1394,7 @@
                 "4. Émission d’un permis de travail",
                 "5. Étude de cas  »PERMIS FEU »"
             ],
-            "certification": "Certifiante \/ Homologuée",
+            "certification": "Certifiante / Homologuée",
             "attached_file": "",
             "is_featured": false
         },
@@ -1442,7 +1442,7 @@
                 "5) Entretien périodique d’une chaudière",
                 "6) Les mesures de sécurité à prendre lors des travaux d’entretiens d’une chaudière"
             ],
-            "certification": "Certifiante \/ Homologuée",
+            "certification": "Certifiante / Homologuée",
             "attached_file": "",
             "is_featured": false
         },
@@ -1467,7 +1467,7 @@
                 "5) Paramètres d’analyses et titres de l’eau",
                 "6) Technologie des purgeurs"
             ],
-            "certification": "Certifiante \/ Homologuée",
+            "certification": "Certifiante / Homologuée",
             "attached_file": "",
             "is_featured": false
         },
@@ -1492,7 +1492,7 @@
                 "5) La régulation de charge",
                 "6) La régulation PID"
             ],
-            "certification": "Certifiante \/ Homologuée",
+            "certification": "Certifiante / Homologuée",
             "attached_file": "",
             "is_featured": false
         },
@@ -1517,7 +1517,7 @@
                 "Commande de plusieurs contacteurs (ex. marche AV et AR).",
                 "Démarrage en étoile triangle d’un moteur."
             ],
-            "certification": "Certifiante \/ Homologuée",
+            "certification": "Certifiante / Homologuée",
             "attached_file": "",
             "is_featured": false
         },
@@ -1540,7 +1540,7 @@
                 "5) Chaudière à circulation forcée.",
                 "6) Chaudière à fluide caloporteur"
             ],
-            "certification": "Certifiante \/ Homologuée",
+            "certification": "Certifiante / Homologuée",
             "attached_file": "",
             "is_featured": false
         },
@@ -1563,7 +1563,7 @@
                 "5. Évolution des SLT",
                 "6. Choix du SLT"
             ],
-            "certification": "Certifiante \/ Homologuée",
+            "certification": "Certifiante / Homologuée",
             "attached_file": "",
             "is_featured": false
         },
@@ -1583,7 +1583,7 @@
                 "Être capables d’effectuer des alignements de machines tournantes",
                 "Réaliser des actions de maintenance préventive et corrective concernant  l’alignement d’ensembles mécaniques tournants."
             ],
-            "certification": "Certifiante \/ Homologuée",
+            "certification": "Certifiante / Homologuée",
             "attached_file": "",
             "is_featured": false
         },
@@ -1608,7 +1608,7 @@
                 "E) Le réglage du couple conique",
                 "F) Les consignes de sécurité au travail"
             ],
-            "certification": "Certifiante \/ Homologuée",
+            "certification": "Certifiante / Homologuée",
             "attached_file": "",
             "is_featured": false
         },
@@ -1633,7 +1633,7 @@
                 "Par Poulies et Courroies",
                 "Par roulement"
             ],
-            "certification": "Certifiante \/ Homologuée",
+            "certification": "Certifiante / Homologuée",
             "attached_file": "",
             "is_featured": false
         },
@@ -1656,7 +1656,7 @@
                 "D) Anomalies et remèdes des réducteurs",
                 "E) Réglages du couple conique"
             ],
-            "certification": "Certifiante \/ Homologuée",
+            "certification": "Certifiante / Homologuée",
             "attached_file": "",
             "is_featured": false
         },
@@ -1679,7 +1679,7 @@
                 "E) La sécurité en lubrification",
                 "F) Environnement et lubrification"
             ],
-            "certification": "Certifiante \/ Homologuée",
+            "certification": "Certifiante / Homologuée",
             "attached_file": "",
             "is_featured": false
         },
@@ -1702,7 +1702,7 @@
                 "D) Montage des roulements",
                 "E) Détérioration des roulements"
             ],
-            "certification": "Certifiante \/ Homologuée",
+            "certification": "Certifiante / Homologuée",
             "attached_file": "",
             "is_featured": false
         },
@@ -1726,7 +1726,7 @@
                 "4) Comprendre et réaliser des circuits électriques",
                 "5) Travaux pratiques : Schémas, montages, mesures, essais, diagnostics et dépannages"
             ],
-            "certification": "Certifiante \/ Homologuée",
+            "certification": "Certifiante / Homologuée",
             "attached_file": "",
             "is_featured": false
         },
@@ -1749,7 +1749,7 @@
                 "4. Contrôles et correction des défauts d’alignement",
                 "5. Entretient des accouplements"
             ],
-            "certification": "Certifiante \/ Homologuée",
+            "certification": "Certifiante / Homologuée",
             "attached_file": "",
             "is_featured": false
         },
@@ -1772,7 +1772,7 @@
                 "3) Ensemble à engrenage",
                 "4) Étude de cas"
             ],
-            "certification": "Certifiante \/ Homologuée",
+            "certification": "Certifiante / Homologuée",
             "attached_file": "",
             "is_featured": false
         },
@@ -1796,7 +1796,7 @@
                 "E) Les fonctions de l’appareillage, l’usage des plans et des schémas",
                 "F) Incidence de la conception des équipements sur la sécurité du personnel"
             ],
-            "certification": "Certifiante \/ Homologuée",
+            "certification": "Certifiante / Homologuée",
             "attached_file": "",
             "is_featured": false
         },
@@ -1820,7 +1820,7 @@
                 "5) Maintenance des poulies et courroies",
                 "6) Alignement des courroies"
             ],
-            "certification": "Certifiante \/ Homologuée",
+            "certification": "Certifiante / Homologuée",
             "attached_file": "",
             "is_featured": false
         },
@@ -1845,7 +1845,7 @@
                 "5) Établir un plan d’actions de suppression et de réduction des risques chimiques (substitution, EPC, EPI,",
                 "Mesures d’exposition des salariés, etc)."
             ],
-            "certification": "Certifiante \/ Homologuée",
+            "certification": "Certifiante / Homologuée",
             "attached_file": "",
             "is_featured": false
         },
@@ -1868,7 +1868,7 @@
                 "5) Acquérir et maintenir l’esprit de prévention",
                 "6) Étude de cas"
             ],
-            "certification": "Certifiante \/ Homologuée",
+            "certification": "Certifiante / Homologuée",
             "attached_file": "",
             "is_featured": false
         },
@@ -1893,7 +1893,7 @@
                 "5. Cadenassage",
                 "6. Documents applicables (procédure, attestation…)"
             ],
-            "certification": "Certifiante \/ Homologuée",
+            "certification": "Certifiante / Homologuée",
             "attached_file": "",
             "is_featured": false
         },
@@ -1915,7 +1915,7 @@
                 "C) Travailler sur la conception des espaces de travail",
                 "D) Pratiquer l’analyse ergonomique d’un poste de travail"
             ],
-            "certification": "Certifiante \/ Homologuée",
+            "certification": "Certifiante / Homologuée",
             "attached_file": "",
             "is_featured": false
         },
@@ -1940,7 +1940,7 @@
                 "5) Exercices pratiques : (Les Risques Atelier de maintenance Mécanique, Les Risques Hall de Livraison,",
                 "Les Risques sur Chantier, etc)"
             ],
-            "certification": "Certifiante \/ Homologuée",
+            "certification": "Certifiante / Homologuée",
             "attached_file": "",
             "is_featured": false
         },
@@ -1963,7 +1963,7 @@
                 "D) Mise en place d’un plan d’actions correctives",
                 "E) Cas pratique en groupe de travail"
             ],
-            "certification": "Certifiante \/ Homologuée",
+            "certification": "Certifiante / Homologuée",
             "attached_file": "",
             "is_featured": false
         },
@@ -1988,7 +1988,7 @@
                 "Les différents phénomènes de fatigue",
                 "4) La corrosion"
             ],
-            "certification": "Certifiante \/ Homologuée",
+            "certification": "Certifiante / Homologuée",
             "attached_file": "",
             "is_featured": false
         },
@@ -2013,7 +2013,7 @@
                 "Rechercher les causes potentielles",
                 "E) Cas pratique en groupe de travail"
             ],
-            "certification": "Certifiante \/ Homologuée",
+            "certification": "Certifiante / Homologuée",
             "attached_file": "",
             "is_featured": false
         },
@@ -2031,13 +2031,13 @@
             ],
             "content": [
                 "A) Qu’est ce que l’AMDEC ?",
-                "B) Les différents types d’AMDE\/AMDEC",
+                "B) Les différents types d’AMDE/AMDEC",
                 "C) Initialisation de l’étude",
                 "D) Déroulement d’une Analyse AMDEC",
                 "E) Evaluation des résultats d’une étude AMDEC",
                 "F) Exploitations des résultats d’AMDEC"
             ],
-            "certification": "Certifiante \/ Homologuée",
+            "certification": "Certifiante / Homologuée",
             "attached_file": "",
             "is_featured": false
         }
@@ -2050,25 +2050,25 @@
             "date": "Février 2026",
             "bo": "BO n° 6700",
             "description": "Arrêté n° 1281-18 du 15 mars 2018 fixant les périodicités et procédures d’inspection des installations et machines à risques.",
-            "pdf": "https:\/\/meplus.ma\/wp-content\/uploads\/2026\/02\/BO-6700-Arrete-1281-18-du-15-mars-2018-Controles-reglementaires-page-1565.pdf"
+            "pdf": "/assets/documents/BO-6700-Controles-reglementaires-arrete-1281-18.pdf"
         },
         {
             "id": "reg-2",
             "title": "Installations Électriques & Habilitation NM 06.1.225",
             "category": "Électricité & Habilitation",
-            "date": "Juin 2025 \/ Déc 1951",
+            "date": "Juin 2025 / Déc 1951",
             "bo": "BO n° 7157 & 2049",
             "description": "Norme Marocaine NM 06.1.225 et arrêtés ministériels relatifs aux prescriptions de sécurité pour l’exécution de travaux sous et hors tension.",
-            "pdf": "https:\/\/meplus.ma\/wp-content\/uploads\/2025\/06\/BO-7157-Mesures-speciales-pour-les-installations-electriques-en-Arabe-page-11.pdf"
+            "pdf": "/assets/documents/BO-7157-Installations-electriques-maroc.pdf"
         },
         {
             "id": "reg-3",
             "title": "Sécurité des Machines & Dispositifs d’Arrêt",
             "category": "Machines & Outillage",
-            "date": "Juin 2025 \/ Nov 2013",
+            "date": "Juin 2025 / Nov 2013",
             "bo": "BO n° 7157 & 6214",
             "description": "Décret n° 2.12.236 fixant les règles de sécurité, de carterage et de protection collective sur les machines et équipements de travail.",
-            "pdf": "https:\/\/meplus.ma\/wp-content\/uploads\/2025\/06\/BO-7157-Securite-machine-en-Arabe-Page-5.pdf"
+            "pdf": "/assets/documents/BO-7157-Securite-machines-arabe.pdf"
         },
         {
             "id": "reg-4",
@@ -2077,7 +2077,7 @@
             "date": "Décembre 2023",
             "bo": "BO n° 2207 & 2623",
             "description": "Réglementation sur l’emploi et l’épreuve hydraulique des générateurs de vapeur, chaudières et réservoirs de gaz comprimés.",
-            "pdf": "https:\/\/meplus.ma\/wp-content\/uploads\/2023\/12\/2-BO-2207-portant-reglement-sur-lemploi-des-appareil-a-pression-de-gaz-page-187-.pdf"
+            "pdf": "/assets/documents/BO-2207-Appareils-pression-gaz.pdf"
         },
         {
             "id": "reg-5",
@@ -2086,7 +2086,7 @@
             "date": "Décembre 2023",
             "bo": "BO n° 2066",
             "description": "Arrêtés régissant la vérification périodique semestrielle et annuelle des apparaux de levage, câbles, crochets et élingues.",
-            "pdf": "https:\/\/meplus.ma\/wp-content\/uploads\/2023\/12\/1-Arrete-viziriel-du-3-novembre-1953.pdf"
+            "pdf": "/assets/documents/1-Arrete-viziriel-du-3-novembre-1953.pdf"
         },
         {
             "id": "reg-6",
@@ -2095,7 +2095,7 @@
             "date": "Décembre 2023",
             "bo": "BO n° 6306 & 4788",
             "description": "Liste officielle actualisée des maladies professionnelles reconnues par la législation marocaine et formalités de déclaration CSH.",
-            "pdf": "https:\/\/meplus.ma\/wp-content\/uploads\/2023\/12\/BO-6306-BO-4788-tableau-des-MP-2014.pdf"
+            "pdf": "/assets/documents/BO-6306-Tableau-maladies-professionnelles.pdf"
         },
         {
             "id": "reg-7",
@@ -2104,7 +2104,7 @@
             "date": "Novembre 2014",
             "bo": "BO n° 6306",
             "description": "Décret n° 2.14.499 relatif aux normes de prévention contre l’incendie et de désenfumage dans les bâtiments d’activités et industriels.",
-            "pdf": "https:\/\/meplus.ma\/wp-content\/uploads\/2023\/12\/BO-6306-du-6-11-2014-SECURITE-INCENDIE-page-4270.pdf"
+            "pdf": "/assets/documents/BO-6306-Securite-incendie-decret-2-14-499.pdf"
         },
         {
             "id": "reg-8",
@@ -2113,7 +2113,7 @@
             "date": "Décembre 2023",
             "bo": "BO n° 6454 & 6214",
             "description": "Valeurs seuils de concentration dans l’air des ateliers pour les solvants, poussières et produits chimiques dangereux.",
-            "pdf": "https:\/\/meplus.ma\/wp-content\/uploads\/2023\/12\/BO-6454-Valeurs-limites-dexpositions-professionnelles-page-478.pdf"
+            "pdf": "/assets/documents/BO-6454-Valeurs-limites-exposition-chimique.pdf"
         },
         {
             "id": "reg-9",
@@ -2122,7 +2122,7 @@
             "date": "Décembre 2023",
             "bo": "BO n° 5680",
             "description": "Dispositions impératives des articles 281 à 293 du Code du Travail relatives à l’hygiène, la sécurité et la responsabilité de l’employeur.",
-            "pdf": "https:\/\/meplus.ma\/wp-content\/uploads\/2023\/12\/BO-5680-mesures-application-art-281-eu-293-CT-page-1410.pdf"
+            "pdf": "/assets/documents/BO-5680-Code-du-travail-mesures-hygiene-securite.pdf"
         },
         {
             "id": "reg-10",
@@ -2131,7 +2131,7 @@
             "date": "Décembre 2023",
             "bo": "BO n° 5956 bis",
             "description": "Réglementation relative au transport par voie routière de produits inflammables, explosifs, corrosifs et gaz comprimés.",
-            "pdf": "https:\/\/meplus.ma\/wp-content\/uploads\/2023\/12\/BO-5956bis-transport-par-route-de-marchandises-dangereuses-page-1765.pdf"
+            "pdf": "/assets/documents/BO-5956bis-Transport-marchandises-dangereuses.pdf"
         },
         {
             "id": "reg-11",
@@ -2140,7 +2140,7 @@
             "date": "Décembre 2023",
             "bo": "BO n° 2066",
             "description": "Prescriptions techniques de montage, réception et vérification de conformité des échafaudages de pied et roulants.",
-            "pdf": "https:\/\/meplus.ma\/wp-content\/uploads\/2023\/12\/BO-2066-Appareils-de-levage-et-manutention-Travaus-sous-terrain-Echaffaudages-echelles-travaux-de-toiture.pdf"
+            "pdf": "/assets/documents/BO-2066-Appareils-levage-echafaudages.pdf"
         },
         {
             "id": "reg-12",
@@ -2149,7 +2149,7 @@
             "date": "Décembre 2023",
             "bo": "BO n° 6700",
             "description": "Exigences réglementaires sur les commandes bi-manuelles, rideaux optiques et dispositifs de retenue mécanique des presses.",
-            "pdf": "https:\/\/meplus.ma\/wp-content\/uploads\/2023\/12\/BO-6700-Controles-reglementaires-Presses-et-appareils-de-levage.pdf"
+            "pdf": "/assets/documents/BO-6700-Presses-et-appareils-levage.pdf"
         }
     ],
     "consultants": [
@@ -2158,8 +2158,8 @@
             "name": "Mohammed EL MESKINI",
             "role": "Fondateur & Directeur Associé | Consultant Senior",
             "tag": "Direction & Stratégie",
-            "avatar": ".\/assets\/consultants\/meskini.png",
-            "credentials": "Master en Risque Industriel et Maintenance. Auditeur OHSAS 18001 \/ ISO 45001 certifié IRCA. Ancien Directeur Technico-Commercial auprès de FAMAB et SOMADU. Spécialiste de la conformité marocaine et des habilitations.",
+            "avatar": "./assets/consultants/meskini.png",
+            "credentials": "Master en Risque Industriel et Maintenance. Auditeur OHSAS 18001 / ISO 45001 certifié IRCA. Ancien Directeur Technico-Commercial auprès de FAMAB et SOMADU. Spécialiste de la conformité marocaine et des habilitations.",
             "specialties": [
                 "Ingénierie de Formation",
                 "Habilitation Électrique NM 06.1.225",
@@ -2172,7 +2172,7 @@
             "name": "Sidi Mohamed KADIRI",
             "role": "Expert Maintenance & Excellence Opérationnelle",
             "tag": "Ex-OCP & Siemens",
-            "avatar": ".\/assets\/consultants\/kadiri.png",
+            "avatar": "./assets/consultants/kadiri.png",
             "credentials": "Master en Management de la Maintenance, Formateur certifié APICS. Expérience industrielle de premier plan chez OCP, STMicroelectronics, Olivetti et Siemens Maroc.",
             "specialties": [
                 "GMAO",
@@ -2186,13 +2186,13 @@
             "name": "Hicham BATIOUA",
             "role": "Auditeur Tierce Partie IRCA & Automobile IATF 16949",
             "tag": "Certifié IATF n° 4-ADP6",
-            "avatar": ".\/assets\/consultants\/batioua.png",
+            "avatar": "./assets/consultants/batioua.png",
             "credentials": "Diplômé INSA Lyon et EHESIM Casablanca (Master QSE). Auditeur IRCA depuis 2014, certifié auditeur automobile IATF n° 4-ADP6-18-07-2815. Carrière en direction Qualité & Kaizen.",
             "specialties": [
                 "Norme IATF 16949",
                 "Systèmes Qualité ISO 9001",
                 "Kaizen & Industrialisation",
-                "Audits Process \/ PPAP"
+                "Audits Process / PPAP"
             ]
         },
         {
@@ -2200,7 +2200,7 @@
             "name": "Mustapha MERSOUL",
             "role": "Consultant Senior Fluides, Mécanique & Levage",
             "tag": "Ex-OCP Maîtrise",
-            "avatar": ".\/assets\/consultants\/mersoul.png",
+            "avatar": "./assets/consultants/mersoul.png",
             "credentials": "Ancien formateur des agents de maîtrise auprès de l’OCP. Expert renommé en mécanique industrielle lourde, réseaux hydrauliques proportionnels et réseaux d’air comprimé.",
             "specialties": [
                 "Hydraulique Industrielle",
@@ -2214,7 +2214,7 @@
             "name": "Mohamed KHOUIL",
             "role": "Expert Sécurité Gaz, ATEX & Risques Chimiques",
             "tag": "Ex-Air Liquide Chef d’Usine",
-            "avatar": ".\/assets\/consultants\/khouil.png",
+            "avatar": "./assets/consultants/khouil.png",
             "credentials": "Ancien Responsable Sécurité et Chef d’Usine chez Air Liquide. Spécialiste de la sécurité des installations de gaz industriels et médicaux, de l’analyse des risques ATEX et de l’incendie.",
             "specialties": [
                 "Atmosphères Explosives (ATEX)",
@@ -2228,10 +2228,10 @@
             "name": "Mohamed QASTAOUI",
             "role": "Maître-Formateur Soudage & Métallurgie",
             "tag": "Ex-Air Liquide Soudage",
-            "avatar": ".\/assets\/consultants\/qastaoui.png",
-            "credentials": "Ancien Responsable du département soudage chez Air Liquide. Formation et qualification de soudeurs industriels sur tous procédés (TIG, MIG\/MAG, arc électrode, chalumeau).",
+            "avatar": "./assets/consultants/qastaoui.png",
+            "credentials": "Ancien Responsable du département soudage chez Air Liquide. Formation et qualification de soudeurs industriels sur tous procédés (TIG, MIG/MAG, arc électrode, chalumeau).",
             "specialties": [
-                "Soudage TIG & MIG\/MAG",
+                "Soudage TIG & MIG/MAG",
                 "Arc Électrique & Chalumeau",
                 "Brasage Haute Température",
                 "Contrôles Non Destructifs"
@@ -2242,7 +2242,7 @@
             "name": "Abdelhamid SERGHINI",
             "role": "Consultant Management Industriel & Gestion de Production",
             "tag": "Physique & Ingénierie",
-            "avatar": ".\/assets\/consultants\/serghini.png",
+            "avatar": "./assets/consultants/serghini.png",
             "credentials": "Maîtrise ès Sciences en Physique Nucléaire et Mastère en Ingénierie Industrielle. Spécialiste des pratiques modernes de management industriel, de gestion de production et d'organisation des ateliers.",
             "specialties": [
                 "Gestion de Production",
@@ -2257,109 +2257,109 @@
             "name": "OCP Group",
             "sector": "Mines & Chimie",
             "badge": "Partenaire Majeur",
-            "logo": ".\/assets\/logos\/ocp.png"
+            "logo": "./assets/logos/ocp.png"
         },
         {
             "name": "SONASID",
             "sector": "Sidérurgie & Métallurgie",
             "badge": "Industrie Lourde",
-            "logo": ".\/assets\/logos\/sonasid.jpg"
+            "logo": "./assets/logos/sonasid.jpg"
         },
         {
             "name": "Nexans Maroc",
             "sector": "Câblage & Énergie",
             "badge": "Électrotechnique",
-            "logo": ".\/assets\/logos\/nexans.jpg"
+            "logo": "./assets/logos/nexans.jpg"
         },
         {
             "name": "Aïcha (Conserves de Meknès)",
             "sector": "Agroalimentaire",
             "badge": "Agro-Industrie",
-            "logo": ".\/assets\/logos\/aicha.jpg"
+            "logo": "./assets/logos/aicha.jpg"
         },
         {
             "name": "Centrale Danone",
             "sector": "Agroalimentaire",
             "badge": "Fleuron National",
-            "logo": ".\/assets\/logos\/danone.png"
+            "logo": "./assets/logos/danone.png"
         },
         {
             "name": "CIMAT (Ciments de l'Atlas)",
             "sector": "Ciment & Matériaux",
             "badge": "Cimenteries",
-            "logo": ".\/assets\/logos\/cimat.png"
+            "logo": "./assets/logos/cimat.png"
         },
         {
             "name": "Ciments du Maroc",
             "sector": "Ciment & BTP",
             "badge": "Heidelberg Materials",
-            "logo": ".\/assets\/logos\/ciments-maroc.png"
+            "logo": "./assets/logos/ciments-maroc.png"
         },
         {
             "name": "Dolidol",
             "sector": "Mousse & Ameublement",
             "badge": "Industrie",
-            "logo": ".\/assets\/logos\/dolidol.jpg"
+            "logo": "./assets/logos/dolidol.jpg"
         },
         {
             "name": "Richbond",
             "sector": "Ameublement & Mousse",
             "badge": "Groupe Berrada",
-            "logo": ".\/assets\/logos\/richbond.jpg"
+            "logo": "./assets/logos/richbond.jpg"
         },
         {
             "name": "Somadir",
             "sector": "Levures & Biotechnologie",
             "badge": "Agroalimentaire",
-            "logo": ".\/assets\/logos\/somadir.png"
+            "logo": "./assets/logos/somadir.png"
         },
         {
             "name": "Alstom Maroc",
             "sector": "Ferroviaire & Mobilité",
             "badge": "Multinationale",
-            "logo": ".\/assets\/logos\/alstom.png"
+            "logo": "./assets/logos/alstom.png"
         },
         {
             "name": "Yazaki Maroc",
             "sector": "Automobile & Faisceaux",
             "badge": "Automotive",
-            "logo": ".\/assets\/logos\/yazaki.jpg"
+            "logo": "./assets/logos/yazaki.jpg"
         },
         {
             "name": "Sothema",
             "sector": "Pharmaceutique",
             "badge": "Laboratoires",
-            "logo": ".\/assets\/logos\/sothema.jpeg"
+            "logo": "./assets/logos/sothema.jpeg"
         },
         {
             "name": "RATP Dev",
             "sector": "Transport Public",
             "badge": "Mobilité",
-            "logo": ".\/assets\/logos\/ratpdev.png"
+            "logo": "./assets/logos/ratpdev.png"
         },
         {
             "name": "Ménara Préfa",
             "sector": "BTP & Préfabrication",
             "badge": "Groupe Ménara",
-            "logo": ".\/assets\/logos\/menara.png"
+            "logo": "./assets/logos/menara.png"
         },
         {
             "name": "Faurecia",
             "sector": "Équipementier Automobile",
             "badge": "FORVIA",
-            "logo": ".\/assets\/logos\/faurecia.png"
+            "logo": "./assets/logos/faurecia.png"
         },
         {
             "name": "JLEC (Jorf Lasfar Energy)",
             "sector": "Énergie & Thermique",
             "badge": "Centrale Électrique",
-            "logo": ".\/assets\/logos\/jlec.jpg"
+            "logo": "./assets/logos/jlec.jpg"
         },
         {
             "name": "FAMAB",
             "sector": "Fabrication Métallique",
             "badge": "Chaudronnerie",
-            "logo": ".\/assets\/logos\/famab.jpg"
+            "logo": "./assets/logos/famab.jpg"
         }
     ],
     "pages": {
@@ -2407,7 +2407,7 @@
         "formations": {
             "giac_banner": {
                 "title": "Financement de Vos Formations jusqu'à 80%",
-                "subtitle": "Optimisez vos budgets grâce aux contrats spéciaux de formation (OFPPT \/ CSF)",
+                "subtitle": "Optimisez vos budgets grâce aux contrats spéciaux de formation (OFPPT / CSF)",
                 "data": {
                     "details": "Toutes nos actions de formation sont éligibles aux remboursements par les Contrats Spéciaux de Formation (CSF) via l'OFPPT. Notre équipe vous assiste dans la constitution et le dépôt de vos dossiers techniques et financiers.",
                     "highlight": "80% de remboursement"
@@ -2433,7 +2433,7 @@
                 }
             },
             "cta": {
-                "title": "Une Question sur Vos Droits au Financement GIAC \/ CSF ?",
+                "title": "Une Question sur Vos Droits au Financement GIAC / CSF ?",
                 "subtitle": "Nos experts analysent gratuitement l'éligibilité de votre plan de formation sous 24h ouvrées.",
                 "data": {
                     "desc": "Prise en charge jusqu’à 80% de vos coûts pédagogiques pour les entreprises assujetties à la TFP.",
@@ -2525,7 +2525,7 @@
         },
         "simulateur": {
             "header": {
-                "title": "Simulateur de Remboursement CSF \/ OFPPT",
+                "title": "Simulateur de Remboursement CSF / OFPPT",
                 "subtitle": "Estimez votre prise en charge par la Taxe de Formation Professionnelle",
                 "data": {
                     "default_rate": "80%",
@@ -2533,7 +2533,7 @@
                 }
             },
             "hero": {
-                "title": "Simulateur d'Aides & Remboursements GIAC \/ CSF",
+                "title": "Simulateur d'Aides & Remboursements GIAC / CSF",
                 "subtitle": "Évaluez instantanément le montant des prises en charge pour votre entreprise",
                 "data": {
                     "instructions": "Renseignez votre masse salariale brute, vos cotisations TFP et la taille de vos effectifs pour obtenir une estimation précise."
@@ -2543,7 +2543,7 @@
                 "title": "Dispositions Réglementaires & Plafonds",
                 "subtitle": "Rappels sur les règles d'éligibilité aux financements publics",
                 "data": {
-                    "rule_giac": "Les études de diagnostic et ingénierie de formation sont financées à hauteur de 70% pour les grandes entreprises et 80% pour les PME\/PMI.",
+                    "rule_giac": "Les études de diagnostic et ingénierie de formation sont financées à hauteur de 70% pour les grandes entreprises et 80% pour les PME/PMI.",
                     "rule_csf": "Les actions de formation planifiées et non planifiées bénéficient de remboursements calculés sur les barèmes de l'OFPPT selon la taille de l'entreprise."
                 }
             }

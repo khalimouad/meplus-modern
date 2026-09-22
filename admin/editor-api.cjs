@@ -25,6 +25,8 @@ function createEditorAPI(root) {
         payload=JSON.parse(body);
       }
       const route=url.pathname.slice('/api/editor/'.length);
+      const documentResult=require('./documents-api.cjs')(root,route,req.method,payload);
+      if(documentResult){json(res,200,documentResult);return true;}
       if (route === 'inventory' && req.method === 'GET') { json(res,200,{pages,components}); return true; }
       if (route === 'document') {
         const name=req.method === 'GET' ? url.searchParams.get('name') : payload.name;
