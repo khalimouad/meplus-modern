@@ -16,7 +16,7 @@ async function documentLibrary(host,pick){
  const notice=el('p',{role:'status'});
  const tools=el('div',{class:'toolbar'}),search=el('input',{type:'search',placeholder:'Rechercher un document…','aria-label':'Rechercher un document'});
  const filter=el('select',{'aria-label':'Section du document'}),sort=el('select',{'aria-label':'Trier les documents'});
- for(const [key,label] of [['','Toutes les sections'],['unused','Non utilisés'],...Object.entries(labels).filter(([k])=>!['dashboard','media','documents'].includes(k))])filter.append(el('option',{value:key},label));
+ for(const [key,label] of [['','Toutes les sections'],['unused','Non utilisés'],...Object.entries(labels).filter(([k])=>!['dashboard','media','documents','settings','seo'].includes(k))])filter.append(el('option',{value:key},label));
  for(const [value,label] of [['name','Nom A–Z'],['size','Plus volumineux']])sort.append(el('option',{value},label));
  const upload=el('input',{type:'file',accept:'application/pdf,.pdf','aria-label':'Importer un PDF'});
  const counter=el('p',{'aria-live':'polite'}),list=el('div',{class:'document-list'});
