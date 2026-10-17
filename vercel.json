@@ -11,6 +11,10 @@
   "rewrites": [
     { "source": "/admin", "destination": "/admin/studio.html" },
     { "source": "/admin/", "destination": "/admin/studio.html" },
-    { "source": "/admin.html", "destination": "/admin/studio.html" }
+    { "source": "/admin.html", "destination": "/admin/studio.html" },
+    { "source": "/sujet-du-mois/lhabilitation-electrique", "destination": "/sujet-du-mois.html" },
+    { "source": "/sujet-du-mois/lhabilitation-electrique/", "destination": "/sujet-du-mois.html" },
+    { "source": "/sujet-du-mois", "destination": "/sujet-du-mois.html" },
+    { "source": "/sujet-du-mois/", "destination": "/sujet-du-mois.html" }
   ]
 }

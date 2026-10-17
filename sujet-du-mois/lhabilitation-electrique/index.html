@@ -1,0 +1,468 @@
+<!-- Physical fallback for /sujet-du-mois/lhabilitation-electrique/ -->
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>L'Habilitation Électrique selon la Norme Marocaine NM 06.1.225 | ME PLUS Maroc</title>
+  <meta name="description" content="Guide technique complet par Mohamed EL MESKINI : obligations de l'employeur, comité d'habilitation, audits préalables, dotation EPI/EPC et contrôle des connaissances selon la Norme NM 06.1.225." />
+  
+  <link rel="icon" type="image/png" href="https://meplus.ma/wp-content/uploads/2019/10/cropped-logo-meplus.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            mono: ['"Space Grotesk"', 'monospace']
+          },
+          colors: {
+            brand: {
+              navy: '#070e1b',
+              surface: '#0f1b31',
+              blue: '#2563eb',
+              electric: '#3b82f6',
+              cyan: '#06b6d4',
+              accent: '#00d2ff'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <script>
+    (function() {
+      const theme = localStorage.getItem('meplus_theme');
+      if (theme === 'dark') {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    })();
+  </script>
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="stylesheet" href="/design-system.css" />
+</head>
+<body class="industrial-mesh-bg font-sans antialiased min-h-screen text-slate-900 dark:text-slate-100 selection:bg-blue-600 selection:text-white pb-20 md:pb-0">
+
+  <div id="toast-container" class="fixed bottom-24 md:bottom-8 right-6 z-50 flex flex-col gap-3 max-w-sm pointer-events-none"></div>
+
+<a class="skip-link" href="#main-content">Aller au contenu</a>
+<header class="site-header">
+  <div class="site-header-inner">
+    <a class="site-brand" href="/index.html" aria-label="ME PLUS — Accueil"><span class="brand-symbol">ME<span>+</span></span><span>ME<span class="brand-plus">PLUS</span><small>MAROC · CASABLANCA</small></span></a>
+    <div class="navigation-capsule">
+    <nav class="desktop-nav" aria-label="Navigation principale"><a href="/index.html">Accueil</a>
+<a href="/formations.html">Formations <span class="nav-count">85+</span></a>
+<a href="/services.html">Services & Audits</a>
+<a href="/simulateur.html">Simulateur CSF</a>
+<a href="/reglementation.html">Réglementation</a>
+<a href="/consultants.html">Consultants</a></nav>
+    <div class="header-actions">
+      <button class="theme-toggle-btn icon-button" aria-label="Changer le thème"><i data-lucide="sun" class="icon-sun hidden"></i><i data-lucide="moon" class="icon-moon"></i></button>
+      <a href="/contact.html" class="ui-button ui-button-primary header-cta">Devis & Formulaire F2 <i data-lucide="arrow-up-right"></i></a>
+      <button id="mobile-menu-btn" class="icon-button mobile-menu-toggle" aria-label="Ouvrir le menu" aria-controls="mobile-drawer" aria-expanded="false"><i data-lucide="menu"></i></button>
+    </div>
+    </div>
+  </div>
+</header>
+<div id="mobile-drawer" class="fixed inset-0 z-50 hidden" role="dialog" aria-modal="true" aria-label="Menu principal">
+  <div id="close-drawer-backdrop" class="absolute inset-0 bg-slate-950/60 backdrop-blur-sm"></div>
+  <div class="site-drawer">
+    <div class="drawer-heading"><span class="site-brand">ME PLUS</span><button id="close-drawer-btn" class="icon-button" aria-label="Fermer le menu"><i data-lucide="x"></i></button></div>
+    <nav aria-label="Navigation mobile"><a href="/index.html" class="drawer-link">Accueil</a>
+<a href="/formations.html" class="drawer-link">Formations <span class="nav-count">85+</span></a>
+<a href="/services.html" class="drawer-link">Services & Audits</a>
+<a href="/simulateur.html" class="drawer-link">Simulateur CSF</a>
+<a href="/reglementation.html" class="drawer-link">Réglementation</a>
+<a href="/consultants.html" class="drawer-link">Consultants</a>
+<a href="/contact.html" class="drawer-link">Contact</a></nav>
+    <a href="/contact.html" class="ui-button ui-button-primary drawer-link">Demander un devis <i data-lucide="arrow-up-right"></i></a>
+  </div>
+</div>
+
+  <main id="main-content" class="pt-28 md:pt-32">
+    <!-- Breadcrumb -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-6">
+      <nav aria-label="Fil d'Ariane" class="flex items-center gap-2 text-xs text-slate-500 dark:text-slate-400">
+        <a href="/index.html" class="hover:text-blue-600 dark:hover:text-cyan-400 transition">Accueil</a>
+        <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+        <a href="/index.html#sujet-du-mois" class="hover:text-blue-600 dark:hover:text-cyan-400 transition">Sujet du Mois</a>
+        <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+        <span class="text-slate-800 dark:text-slate-200 font-semibold truncate">L’habilitation électrique</span>
+      </nav>
+    </div>
+
+    <!-- Article Hero Header -->
+    <header class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
+      <div class="relative rounded-3xl p-8 sm:p-12 overflow-hidden border border-amber-500/25 bg-gradient-to-br from-amber-500/10 via-slate-50 to-blue-600/5 dark:from-amber-500/15 dark:via-slate-900 dark:to-slate-800 shadow-xl">
+        <div class="absolute -top-24 -right-24 w-96 h-96 bg-amber-400/20 dark:bg-amber-400/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute -bottom-24 -left-24 w-96 h-96 bg-blue-500/20 dark:bg-blue-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="relative z-10 max-w-4xl">
+          <div class="flex flex-wrap items-center gap-3 mb-5">
+            <span class="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-amber-700 dark:text-amber-300 bg-amber-400/20 px-3.5 py-1 rounded-full border border-amber-400/30">
+              <i data-lucide="zap" class="w-3.5 h-3.5 text-amber-500 fill-amber-500"></i>
+              Sujet du Mois
+            </span>
+            <span class="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1 rounded-full bg-blue-500/10 text-blue-600 dark:text-cyan-400 border border-blue-500/20">
+              <i data-lucide="scale" class="w-3.5 h-3.5"></i>
+              Norme Marocaine NM 06.1.225
+            </span>
+            <span class="text-xs text-slate-500 dark:text-slate-400 flex items-center gap-1">
+              <i data-lucide="clock" class="w-3.5 h-3.5"></i>
+              Temps de lecture : 6 min
+            </span>
+          </div>
+
+          <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight leading-tight mb-4">
+            L’Habilitation Électrique en Milieu Industriel Marocain
+          </h1>
+          <p class="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed max-w-3xl mb-8">
+            Comprendre la législation marocaine, les responsabilités de l’employeur, la constitution du comité interne, les exigences d'audit préalable des armoires et le protocole d'évaluation des collaborateurs.
+          </p>
+
+          <!-- Author Byline -->
+          <div class="flex items-center gap-4 pt-6 border-t border-slate-200/80 dark:border-slate-800">
+            <div class="w-12 h-12 rounded-2xl bg-blue-600 text-white flex items-center justify-center font-bold text-lg shadow-md">
+              ME
+            </div>
+            <div>
+              <div class="font-bold text-slate-900 dark:text-white text-sm">Mohamed EL MESKINI</div>
+              <div class="text-xs text-slate-500 dark:text-slate-400">Master Risques Industriels & Maintenance · Consultant Senior ME PLUS · Auditeur IRCA</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content & Sidebar Grid -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-24">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+
+        <!-- Article Body Column (8 cols) -->
+        <article class="lg:col-span-8 space-y-10 text-slate-700 dark:text-slate-300 leading-relaxed">
+
+          <!-- Section 1 : Définition Normative -->
+          <section class="glass-card p-8 rounded-3xl border border-slate-200/80 dark:border-slate-800">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-10 h-10 rounded-xl bg-blue-500/10 text-blue-600 dark:text-blue-400 flex items-center justify-center shrink-0">
+                <i data-lucide="book-open" class="w-5 h-5"></i>
+              </div>
+              <h2 class="text-xl sm:text-2xl font-extrabold text-slate-900 dark:text-white">
+                1. Définition Juridique selon la Norme NM 06.1.225
+              </h2>
+            </div>
+            <p class="text-sm sm:text-base leading-relaxed mb-4">
+              La <strong>Norme Marocaine 06.1.225</strong> définit l’habilitation comme :
+            </p>
+            <blockquote class="p-5 rounded-2xl bg-blue-50/80 dark:bg-blue-950/40 border-l-4 border-blue-600 text-slate-800 dark:text-slate-200 text-sm sm:text-base font-medium italic my-4">
+              « La reconnaissance par l’employeur de la capacité d’une personne à accomplir en sécurité les tâches fixées. Elle n’est pas directement liée à la classification professionnelle ou hiérarchique et, elle est matérialisée par un document établi par l’employeur et signé par celui-ci et par la personne habilitée. »
+            </blockquote>
+            <p class="text-sm leading-relaxed">
+              Pour sa mise en place, la démarche suivante doit être rigoureusement suivie par l’entreprise. Elle concerne aussi bien les électriciens opérant en basse ou haute tension que les non-électriciens opérant dans les zones où existe un risque électrique résiduel ou de voisinage (opérateurs de production, chefs d'équipe, caristes, équipes de nettoyage).
+            </p>
+          </section>
+
+          <!-- Section 2 : Le Comité d'Habilitation -->
+          <section class="glass-card p-8 rounded-3xl border border-slate-200/80 dark:border-slate-800">
+            <div class="flex items-center gap-3 mb-6">
+              <div class="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-600 dark:text-amber-400 flex items-center justify-center shrink-0">
+                <i data-lucide="users" class="w-5 h-5"></i>
+              </div>
+              <h2 class="text-xl sm:text-2xl font-extrabold text-slate-900 dark:text-white">
+                2. Le Comité d’Habilitation Interne
+              </h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+              <div class="p-5 rounded-2xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200/60 dark:border-slate-800">
+                <h3 class="text-sm font-bold text-slate-900 dark:text-white mb-2 flex items-center gap-2">
+                  <i data-lucide="target" class="w-4 h-4 text-blue-600"></i>
+                  Ses Missions Principales
+                </h3>
+                <ul class="text-xs space-y-2 text-slate-600 dark:text-slate-400">
+                  <li class="flex items-start gap-2">
+                    <i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500 mt-0.5 shrink-0"></i>
+                    <span>Présenter à l’employeur la liste officielle des personnes à habiliter ayant passé avec succès les différentes étapes.</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500 mt-0.5 shrink-0"></i>
+                    <span>Assurer la pérennité et la conformité continue du système de gestion des habilitations.</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="p-5 rounded-2xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200/60 dark:border-slate-800">
+                <h3 class="text-sm font-bold text-slate-900 dark:text-white mb-2 flex items-center gap-2">
+                  <i data-lucide="list-checks" class="w-4 h-4 text-amber-600"></i>
+                  Ses Tâches Opérationnelles
+                </h3>
+                <ul class="text-xs space-y-2 text-slate-600 dark:text-slate-400">
+                  <li class="flex items-start gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500 mt-0.5 shrink-0"></i><span>Rédiger et mettre à jour la procédure d’habilitation.</span></li>
+                  <li class="flex items-start gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500 mt-0.5 shrink-0"></i><span>Organiser les sessions initiales et le recyclage périodique.</span></li>
+                  <li class="flex items-start gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500 mt-0.5 shrink-0"></i><span>Superviser le déroulement des tests théoriques et pratiques.</span></li>
+                  <li class="flex items-start gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500 mt-0.5 shrink-0"></i><span>Veiller aux conditions de sécurité et prendre les mesures disciplinaires si nécessaire.</span></li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="p-5 rounded-2xl bg-blue-50/50 dark:bg-blue-950/20 border border-blue-200/60 dark:border-blue-900/50">
+              <h3 class="text-sm font-bold text-slate-900 dark:text-white mb-3 flex items-center gap-2">
+                <i data-lucide="user-check" class="w-4 h-4 text-blue-600"></i>
+                Composition Recommandée des Membres
+              </h3>
+              <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 text-xs">
+                <div class="p-2.5 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 font-semibold">Le Responsable HSE</div>
+                <div class="p-2.5 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 font-semibold">Représentant Employeur</div>
+                <div class="p-2.5 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 font-semibold">Le Responsable RH</div>
+                <div class="p-2.5 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 font-semibold">Médecin du Travail</div>
+                <div class="p-2.5 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 font-semibold">Responsable Hiérarchique</div>
+                <div class="p-2.5 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 font-semibold">Représentant Personnel</div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Section 3 : Conformité & Audits -->
+          <section class="glass-card p-8 rounded-3xl border border-slate-200/80 dark:border-slate-800">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-10 h-10 rounded-xl bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 flex items-center justify-center shrink-0">
+                <i data-lucide="shield-alert" class="w-5 h-5"></i>
+              </div>
+              <h2 class="text-xl sm:text-2xl font-extrabold text-slate-900 dark:text-white">
+                3. Conformité et Audit Préalable des Installations
+              </h2>
+            </div>
+            <p class="text-sm sm:text-base leading-relaxed mb-4">
+              Avant de lancer le processus d’habilitation, il est <strong>strictement obligatoire</strong> qu’un audit de conformité des installations électriques aux normes marocaines soit réalisé afin de :
+            </p>
+            <div class="space-y-3 mb-4">
+              <div class="flex items-start gap-3 p-3.5 rounded-xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200/70 dark:border-slate-800">
+                <i data-lucide="alert-triangle" class="w-5 h-5 text-amber-500 mt-0.5 shrink-0"></i>
+                <div class="text-xs sm:text-sm">
+                  <strong>Éliminer les risques matériels :</strong> S’assurer de l’absence totale de risque d’accident qui serait dû au mauvais état des installations, dénudations, défauts d'isolement ou vétusté des armoires.
+                </div>
+              </div>
+              <div class="flex items-start gap-3 p-3.5 rounded-xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200/70 dark:border-slate-800">
+                <i data-lucide="wrench" class="w-5 h-5 text-blue-500 mt-0.5 shrink-0"></i>
+                <div class="text-xs sm:text-sm">
+                  <strong>Plan d'action de mise à niveau :</strong> Déployer immédiatement un plan d'actions correctives avant toute intervention humaine sous tension ou au voisinage.
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Section 4 : Dotation EPI / EPC -->
+          <section class="glass-card p-8 rounded-3xl border border-slate-200/80 dark:border-slate-800">
+            <div class="flex items-center gap-3 mb-6">
+              <div class="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 flex items-center justify-center shrink-0">
+                <i data-lucide="hard-hat" class="w-5 h-5"></i>
+              </div>
+              <h2 class="text-xl sm:text-2xl font-extrabold text-slate-900 dark:text-white">
+                4. Dotation Obligatoire en EPI et EPC Certifiés
+              </h2>
+            </div>
+            <p class="text-sm leading-relaxed mb-6">
+              En fonction des risques encourus et des indices visés, le personnel (électricien et non électricien) doit être équipé d'équipements certifiés conformes aux normes en vigueur pour garantir la protection diélectrique et thermique.
+            </p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div class="p-5 rounded-2xl bg-emerald-50/50 dark:bg-emerald-950/20 border border-emerald-200/60 dark:border-emerald-900/40">
+                <h3 class="text-sm font-bold text-emerald-800 dark:text-emerald-300 mb-3 flex items-center gap-2">
+                  <i data-lucide="user" class="w-4 h-4"></i>
+                  Équipements Individuels (EPI)
+                </h3>
+                <ul class="text-xs space-y-2 text-slate-700 dark:text-slate-300">
+                  <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-emerald-500"></i><span>Casque isolant avec écran facial anti-arc (NF EN 166)</span></li>
+                  <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-emerald-500"></i><span>Gants isolants composites adaptés à la tension (NF EN 60903)</span></li>
+                  <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-emerald-500"></i><span>Chaussures de sécurité diélectriques</span></li>
+                  <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-emerald-500"></i><span>Vêtement de travail ininflammable 100% coton sans métal</span></li>
+                </ul>
+              </div>
+
+              <div class="p-5 rounded-2xl bg-blue-50/50 dark:bg-blue-950/20 border border-blue-200/60 dark:border-blue-900/40">
+                <h3 class="text-sm font-bold text-blue-800 dark:text-blue-300 mb-3 flex items-center gap-2">
+                  <i data-lucide="shield" class="w-4 h-4"></i>
+                  Équipements Collectifs (EPC)
+                </h3>
+                <ul class="text-xs space-y-2 text-slate-700 dark:text-slate-300">
+                  <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-blue-500"></i><span>Perches télescopiques de manœuvre et de sauvetage</span></li>
+                  <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-blue-500"></i><span>Tapis et tabourets isolants conformes</span></li>
+                  <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-blue-500"></i><span>Escabeaux isolants en fibre de verre</span></li>
+                  <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-blue-500"></i><span>Kits de condamnation et consignation LOTO (cadenas, moraillons)</span></li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <!-- Section 5 : Visite Médicale & Seuil 70/100 -->
+          <section class="glass-card p-8 rounded-3xl border border-slate-200/80 dark:border-slate-800">
+            <div class="flex items-center gap-3 mb-6">
+              <div class="w-10 h-10 rounded-xl bg-rose-500/10 text-rose-600 dark:text-rose-400 flex items-center justify-center shrink-0">
+                <i data-lucide="heart-pulse" class="w-5 h-5"></i>
+              </div>
+              <h2 class="text-xl sm:text-2xl font-extrabold text-slate-900 dark:text-white">
+                5. Visite Médicale et Seuil Éliminatoire de 70/100
+              </h2>
+            </div>
+
+            <div class="space-y-4 text-sm sm:text-base leading-relaxed mb-6">
+              <p>
+                Tout salarié doit être titulaire d’un <strong>avis d’aptitude médicale</strong> à effectuer les travaux confiés, délivré par le médecin du travail dans le cadre des visites médicales annuelles. Le médecin est préalablement informé des tâches d’ordre électrique afin d'adapter les examens :
+              </p>
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
+                <div class="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800">
+                  <strong class="block text-slate-900 dark:text-white mb-1">Dépistage Daltonisme :</strong>
+                  <span>Détection des anomalies de la vision des couleurs (repérage vital des phases et conducteurs).</span>
+                </div>
+                <div class="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800">
+                  <strong class="block text-slate-900 dark:text-white mb-1">Coordination Motrice :</strong>
+                  <span>Coordination des mouvements pour les indices R, V, N ou T.</span>
+                </div>
+                <div class="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800">
+                  <strong class="block text-slate-900 dark:text-white mb-1">Électrocardiogramme :</strong>
+                  <span>Vérification de la santé cardiovasculaire face au stress et aux risques électriques.</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="p-5 rounded-2xl bg-amber-500/10 border border-amber-500/30">
+              <div class="flex items-center gap-2 text-amber-700 dark:text-amber-400 font-bold text-sm mb-2">
+                <i data-lucide="alert-octagon" class="w-4 h-4"></i>
+                Le Contrôle des Connaissances & le Seuil Éliminatoire
+              </div>
+              <p class="text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed mb-3">
+                Chaque module de formation comporte une double évaluation (théorique et pratique). Le passage des tests pratiques est conditionné par la réussite aux tests théoriques.
+              </p>
+              <div class="p-3 rounded-xl bg-white/90 dark:bg-slate-900/80 border border-amber-500/30 text-xs font-semibold text-rose-600 dark:text-rose-400">
+                ⚠️ Règle absolue de sécurité : Toute personne ayant une note inférieure à 70/100 ne peut effectuer de travaux ou interventions qu'en présence permanente d’un surveillant de sécurité électrique. Elle ne peut en aucun cas être habilitée de façon autonome sans avoir suivi avec succès une nouvelle formation.
+              </div>
+            </div>
+          </section>
+
+          <!-- Signature & Author Footer -->
+          <div class="p-6 rounded-2xl bg-slate-100 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div>
+              <div class="text-xs text-slate-500">Auteur de l'article technique :</div>
+              <div class="font-bold text-slate-900 dark:text-white text-base">Mohamed EL MESKINI</div>
+              <div class="text-xs text-blue-600 dark:text-cyan-400">Master Risques Industriels et Maintenance · Consultant ME PLUS</div>
+            </div>
+            <a href="/contact.html?sujet=Audit+Habilitation+Electrique" class="px-5 py-2.5 rounded-full bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs shadow-md transition inline-flex items-center gap-2">
+              Contacter le consultant
+              <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+            </a>
+          </div>
+
+        </article>
+
+        <!-- Sidebar Column (4 cols) -->
+        <aside class="lg:col-span-4 space-y-6">
+
+          <!-- Sticky Box 1: Formations Habilitation -->
+          <div class="glass-card p-6 rounded-3xl border border-blue-500/20 shadow-lg sticky top-28">
+            <span class="text-[11px] font-bold uppercase tracking-wider text-blue-600 dark:text-cyan-400 bg-blue-500/10 px-3 py-1 rounded-full border border-blue-500/20 inline-block mb-3">
+              Formations Associées
+            </span>
+            <h3 class="text-lg font-extrabold text-slate-900 dark:text-white mb-2">
+              Préparez Vos Équipes à l'Habilitation Électrique
+            </h3>
+            <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed mb-4">
+              ME PLUS anime des sessions intra et inter-entreprises certifiantes partout au Maroc avec recyclage et remise des titres conformes.
+            </p>
+
+            <div class="space-y-2.5 mb-6 text-xs">
+              <a href="/formations.html?cat=securite" class="p-3 rounded-xl bg-slate-50 dark:bg-slate-800 hover:bg-blue-50 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700 block transition group">
+                <div class="font-bold text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-cyan-400">Habilitation Électrique B0 / H0</div>
+                <div class="text-[11px] text-slate-500 mt-0.5">Non électriciens en zone de voisinage électrique</div>
+              </a>
+              <a href="/formations.html?cat=securite" class="p-3 rounded-xl bg-slate-50 dark:bg-slate-800 hover:bg-blue-50 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700 block transition group">
+                <div class="font-bold text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-cyan-400">Habilitation Basse Tension (BT)</div>
+                <div class="text-[11px] text-slate-500 mt-0.5">Indices B1, B2, BR, BC, BE pour électriciens</div>
+              </a>
+              <a href="/formations.html?cat=securite" class="p-3 rounded-xl bg-slate-50 dark:bg-slate-800 hover:bg-blue-50 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700 block transition group">
+                <div class="font-bold text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-cyan-400">Habilitation Haute Tension (HT)</div>
+                <div class="text-[11px] text-slate-500 mt-0.5">Indices H1, H2, HC pour postes et cellules HT</div>
+              </a>
+            </div>
+
+            <!-- Simulator Reminder -->
+            <div class="p-4 rounded-2xl bg-gradient-to-br from-emerald-500/10 to-blue-500/10 border border-emerald-500/20 mb-6">
+              <div class="text-xs font-bold text-emerald-700 dark:text-emerald-400 mb-1 flex items-center gap-1.5">
+                <i data-lucide="piggy-bank" class="w-4 h-4"></i>
+                Prise en Charge CSF jusqu'à 80%
+              </div>
+              <p class="text-[11px] text-slate-600 dark:text-slate-300 leading-relaxed mb-3">
+                Cabinet homologué OFPPT &amp; DFP : récupérez jusqu'à 80% des frais engagés grâce aux Contrats Spéciaux de Formation.
+              </p>
+              <a href="/simulateur.html" class="text-xs font-bold text-blue-600 dark:text-cyan-400 hover:underline inline-flex items-center gap-1">
+                Calculer mon remboursement <i data-lucide="arrow-right" class="w-3 h-3"></i>
+              </a>
+            </div>
+
+            <!-- Direct Contact Button -->
+            <a href="/contact.html?sujet=Devis+Habilitation+Electrique" class="w-full py-3.5 rounded-full bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs shadow-lg shadow-blue-600/25 flex items-center justify-center gap-2 transition">
+              <span>Demander un devis &amp; calendrier</span>
+              <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+            </a>
+
+            <div class="mt-4 pt-4 border-t border-slate-200 dark:border-slate-800 text-center">
+              <a href="tel:+212661450248" class="text-xs font-bold text-slate-700 dark:text-slate-300 hover:text-blue-600 inline-flex items-center gap-1.5">
+                <i data-lucide="phone-call" class="w-3.5 h-3.5 text-blue-600"></i>
+                +212 6 61 45 02 48
+              </a>
+            </div>
+          </div>
+
+        </aside>
+
+      </div>
+    </div>
+  </main>
+
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div><a href="/index.html" class="site-brand"><span class="brand-symbol">M<span>+</span></span><span>ME PLUS<small>INGÉNIERIE & FORMATION</small></span></a><p>Des compétences durables.<br>Une industrie plus sûre.</p><span class="footer-caption">À vos côtés au Maroc depuis 2004.</span></div>
+    <div><h2>Nos expertises</h2><a href="/formations.html">Catalogue des formations</a><a href="/services.html">Conseil & audits</a><a href="/consultants.html">Nos experts</a></div>
+    <div><h2>Vos ressources</h2><a href="/simulateur.html">Simulateur de financement</a><a href="/reglementation.html">Bibliothèque réglementaire</a><a href="/index.html#homologations">Homologations OFPPT &amp; DFP</a><a href="/sujet-du-mois.html">Sujet du mois</a><a href="/contact.html">Demander un devis</a></div>
+    <div><h2>Rencontrons-nous</h2><a href="mailto:contact@meplus.ma">contact@meplus.ma</a><a href="tel:+212661450248">+212 6 61 45 02 48</a><p>Rue Moussa Al Kadim, Imm. Le Lys N° 21<br>Bourgogne, Casablanca, Maroc</p></div>
+  </div>
+  <div class="footer-bottom"><span>© 2026 ME PLUS. Tous droits réservés.</span><span>Ingénierie. Compétences. Confiance.</span><a href="#main-content">Haut de page ↑</a></div>
+</footer>
+
+  <nav aria-label="Accès rapide" class="mobile-dock md:hidden fixed bottom-3 left-4 right-4 z-40 floating-pill-nav rounded-full p-2 px-5 flex items-center justify-between shadow-2xl">
+    <a href="/index.html" class="flex flex-col items-center gap-0.5 text-[10px] text-slate-500 dark:text-slate-400">
+      <i data-lucide="home" class="w-4 h-4"></i>
+      <span>Accueil</span>
+    </a>
+    <a href="/formations.html" class="flex flex-col items-center gap-0.5 text-[10px] text-slate-500 dark:text-slate-400">
+      <i data-lucide="graduation-cap" class="w-4 h-4"></i>
+      <span>Formations</span>
+    </a>
+    <a href="/services.html" class="flex flex-col items-center gap-0.5 text-[10px] text-slate-500 dark:text-slate-400">
+      <i data-lucide="briefcase" class="w-4 h-4"></i>
+      <span>Services</span>
+    </a>
+    <a href="/contact.html" class="flex flex-col items-center gap-0.5 text-[10px] text-blue-600 dark:text-cyan-400 font-bold">
+      <i data-lucide="phone-call" class="w-4 h-4"></i>
+      <span>Devis</span>
+    </a>
+  </nav>
+
+  <script src="/app.js"></script>
+  <script>
+    if (window.lucide) {
+      window.lucide.createIcons();
+    }
+  </script>
+</body>
+</html>
