@@ -83,7 +83,7 @@ To host this website for free on GitHub Pages:
 - **Company**: ME PLUS (continuing ME Consult established in 2004)
 - **Accreditations**: Homologué DFP, OFPPT, GIAC, AFOM, Maroc PME
 - **Headquarters**: Rue Moussa Al Kadim, Imm. Le Lys N° 21, Bourgogne, Casablanca, Morocco
-- **Official Contact**: `+212 6 61 45 02 48` | `formation@meplus.ma`
+- **Official Contact**: `+212 6 61 45 02 48` | `contact@meplus.ma`
 - **Original Portal**: [https://meplus.ma/](https://meplus.ma/)
 
 ---

@@ -116,3 +116,28 @@ main :is(input:not([type=range]):not([type=checkbox]):not([type=radio]),select,t
  .detail-hero-image { width:100%; opacity:.12; mask-image:linear-gradient(90deg,transparent,#000 70%); }
 }
 @media (prefers-reduced-motion:reduce) { *,*::before,*::after { animation:none !important; transition:none !important; scroll-behavior:auto !important; } .reveal-on-scroll { opacity:1; transform:none; } }
+.homologation-documents{margin:24px 0 30px;padding:22px;border:1px solid #dce5f1;border-radius:16px;background:#f8faff}.homologation-documents h3{font-weight:750;font-size:18px;margin-bottom:6px}.homologation-documents p{font-size:13px;color:#64748b}.homologation-links{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px}.homologation-links a{display:flex;flex-direction:column;gap:6px;border:1px solid #dce5f1;border-radius:10px;background:white;padding:15px;font-size:13px;font-weight:650;color:#172b4d}.homologation-links span{font-size:11px;color:#2563eb}.dark .homologation-documents{background:#142139;border-color:#334155}.dark .homologation-links a{background:#1e293b;color:white;border-color:#334155}@media(max-width:700px){.homologation-links{grid-template-columns:1fr}}
+
+
+/* Mobile navigation: spacious glass sheet with clear active state and safe-area spacing. */
+@media(max-width:1100px){
+ .mobile-menu-toggle{width:46px;height:46px;border-radius:16px;background:var(--glass);box-shadow:inset 0 1px #fff9,0 5px 16px #16345b16;border-color:var(--ui-line)}
+ #mobile-drawer:not(.hidden){position:fixed;inset:0;display:flex;justify-content:flex-end;padding:0;overflow:hidden;animation:drawer-fade .18s ease-out}
+ #close-drawer-backdrop{background:#0714268c;backdrop-filter:blur(7px);-webkit-backdrop-filter:blur(7px)}
+ .site-drawer{width:min(440px,100%);max-width:100%;height:100%;height:100dvh;padding:max(22px,env(safe-area-inset-top)) 22px max(24px,env(safe-area-inset-bottom));background:var(--ui-paper);color:var(--ui-ink);border-left:1px solid var(--ui-line);box-shadow:-18px 0 60px #09172b30;backdrop-filter:none;-webkit-backdrop-filter:none;overflow-x:hidden;animation:drawer-slide .24s cubic-bezier(.2,.75,.25,1)}
+ .dark .site-drawer{background:#0b1728}
+ .drawer-heading{position:sticky;top:0;z-index:2;padding:5px 0 18px;margin-bottom:12px;background:inherit;border-bottom:1px solid var(--ui-line)}
+ .drawer-heading .site-brand{font-size:18px}.drawer-heading .icon-button{width:44px;height:44px;border-radius:14px;background:var(--glass)}
+ .site-drawer nav{gap:7px;margin:18px 0 22px}
+ .site-drawer nav a{display:flex;align-items:center;min-height:54px;padding:13px 15px;border:1px solid transparent;border-radius:13px;color:var(--ui-ink);font-size:15px;font-weight:650;transition:background .15s,border-color .15s,transform .15s}
+ .site-drawer nav a:active{transform:scale(.985)}
+ .site-drawer nav a:hover,.site-drawer nav a[aria-current]{border-color:#2563eb22;background:linear-gradient(110deg,#2563eb12,#38bdf80a);color:var(--ui-accent);box-shadow:none}
+ .site-drawer nav a[aria-current]::after{content:'';width:7px;height:7px;margin-left:auto;border-radius:50%;background:#2563eb;box-shadow:0 0 0 4px #2563eb17}
+ .site-drawer nav .nav-count{margin-left:auto;font-size:10px;padding:3px 8px}
+ .site-drawer nav a[aria-current] .nav-count{margin-left:8px}
+ .site-drawer>.ui-button{display:flex;width:100%;min-height:52px;border-radius:14px;font-size:14px;justify-content:space-between;padding:14px 18px}
+ .drawer-phone{margin-top:14px;padding:14px;border:1px solid var(--ui-line);border-radius:13px;text-align:center;color:var(--text-secondary);font-weight:650}
+}
+@media(max-width:640px){.site-header{padding:max(9px,env(safe-area-inset-top)) 14px 10px}.mobile-menu-toggle{width:44px;height:44px;border-radius:14px}.site-drawer{padding-left:18px;padding-right:18px}}
+@keyframes drawer-fade{from{opacity:0}to{opacity:1}}@keyframes drawer-slide{from{transform:translateX(28px);opacity:.8}to{transform:translateX(0);opacity:1}}
+@media(prefers-reduced-motion:reduce){#mobile-drawer:not(.hidden),.site-drawer,.site-drawer nav a{animation:none!important;transition:none!important}}

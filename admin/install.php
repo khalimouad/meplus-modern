@@ -325,7 +325,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
             // Contact
             ['contact', 'hero', 'Contactez Nos Conseillers Formation', 'Une question, un devis ou une demande d\'ingénierie ? Nous vous répondons sous 24h.', [
                 'phone' => '+212 6 61 45 02 48',
-                'email' => 'formation@meplus.ma',
+                'email' => 'contact@meplus.ma',
                 'address' => 'Rue Moussa Al Kadim, Imm. Le Lys N° 21, Bourgogne, Casablanca, Maroc',
                 'hours' => 'Du lundi au vendredi de 08h30 à 18h00'
             ]],
@@ -333,7 +333,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
                 'address' => 'Rue Moussa Al Kadim, Imm. Le Lys N° 21, Bourgogne, Casablanca, Maroc',
                 'phone1' => '+212 6 61 45 02 48',
                 'phone2' => '+212 5 22 48 39 48',
-                'email' => 'formation@meplus.ma',
+                'email' => 'contact@meplus.ma',
                 'hours' => 'Lundi - Vendredi : 08h30 - 18h00'
             ]]
         ];
